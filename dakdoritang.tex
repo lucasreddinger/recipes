@@ -1,5 +1,5 @@
 \documentclass[
-    fontsize=10pt,DIV=12,
+    fontsize=12pt,DIV=12,
     letterpaper,oneside,paper=portrait
 ]{scrartcl}
 
@@ -12,6 +12,9 @@
 \usepackage[x11names,svgnames,dvipsnames,table]{xcolor}
 \usepackage{hyperref}
 \usepackage{booktabs}
+\usepackage{array}
+\usepackage{nicefrac}
+\usepackage{multirow} % ADDED
 
 %%%% METADATA  %%%% %%%% %%%% %%%%
 \newcommand{\myname}{lipidless.com}
@@ -47,6 +50,9 @@
 % bold sans with some spacing, like a compact paragraph
 \newcommand{\paragrcompact}[1]{\textbf{\sffamily #1}\quad}
 
+% right-aligned paragraph column for amounts
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+
 \pagestyle{empty}
 
 \begin{document}
@@ -59,25 +65,26 @@ Classic spicy Korean chicken stew with potatoes, carrot, and onion simmered in a
 
 \begin{center}
 \renewcommand{\arraystretch}{1.15}
-\begin{tabular}{@{}p{0.52\linewidth}@{\hspace{1.5em}}p{0.43\linewidth}@{}}
+% cols: instructions | amount (right) | unit | ingredient
+\begin{tabular}{@{}p{0.43\linewidth} R{2em} @{\hspace{0.3em}} l @{\hspace{0.8em}} p{0.43\linewidth} @{}}
 \toprule
 Break down as desired. Remove skin if desired. Season with kosher salt and pepper.
-& 1 \quad whole chicken \\
+  & 1 &  & whole chicken \\
 \midrule
-Cook HP for 10 min and natural release for 5 minutes.
-& 2 \quad chopped yellow onions \\
-& 4 \quad cubed potatoes \\
-& 3 \quad chopped carrots \\
-& 8 \quad garlic cloves, grated \\
-& 1" \quad ginger, grated \\
-& 1/3 c \quad gochujang \\
-& 1/4 c \quad gochugaru \\
-& 1/2 c \quad soy sauce \\
-& 1/4 c \quad mirin \\
-& 3 T \quad honey \\
-& 1 t \quad black pepper \\
-& 1 T \quad chicken Better-Than-Bouillon \\
-& 1 c \quad water \\
+\multirow[t]{13}{\linewidth}{Cook on high pressure for 10 minutes; natural release for 5 minutes.}
+  & 2 &  & chopped yellow onions \\
+& 4 &  & cubed potatoes \\
+& 3 &  & chopped carrots \\
+& 8 &  & garlic cloves, grated \\
+& 1 & in & ginger, grated \\
+& \nicefrac{1}{3} & c & gochujang \\
+& \nicefrac{1}{4} & c & gochugaru \\
+& \nicefrac{1}{2} & c & soy sauce \\
+& \nicefrac{1}{4} & c & mirin \\
+& 3 & T & honey \\
+& 1 & t & black pepper \\
+& 1 & T & chicken Better-Than-Bouillon \\
+& 1 & c & water \\
 \bottomrule
 \end{tabular}
 \end{center}
