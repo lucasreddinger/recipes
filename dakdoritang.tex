@@ -1,0 +1,87 @@
+\documentclass[
+    fontsize=10pt,DIV=12,
+    letterpaper,oneside,paper=portrait
+]{scrartcl}
+
+\usepackage[charter]{mathdesign}
+\usepackage[sups,osf]{XCharter}
+\usepackage[semibold]{sourcesanspro}
+\usepackage[scaled=1.04,varqu,varl]{inconsolata}
+
+\usepackage{microtype}
+\usepackage[x11names,svgnames,dvipsnames,table]{xcolor}
+\usepackage{hyperref}
+\usepackage{booktabs}
+
+%%%% METADATA  %%%% %%%% %%%% %%%%
+\newcommand{\myname}{lipidless.com}
+\newcommand{\mydate}{9~November 2025}
+\newcommand{\mytitle}{Dakdoritang}
+\newcommand{\myurl}{https://www.lipidless.com/recipes/dakdoritang}
+%%%% %%%% %%%% %%%% %%%% %%%% %%%%
+
+% links
+\hypersetup{
+  colorlinks=false,
+  pdfborderstyle={/S/S/W 0.5},
+  pdfborder={0 0 0.5},
+  allbordercolors={0.8 0.8 1}
+}
+
+% no section numbering
+\setcounter{secnumdepth}{0}
+
+% reduce paragraph vspace
+\KOMAoptions{parskip=half}
+
+% do not indent paragraphs
+\setlength{\parindent}{0pt}
+
+% section heading styling
+\addtokomafont{section}{\sffamily\Large}
+\addtokomafont{subsection}{\sffamily\large}
+
+% bold sans
+\newcommand{\sfbf}[1]{\textbf{\sffamily #1}}
+
+% bold sans with some spacing, like a compact paragraph
+\newcommand{\paragrcompact}[1]{\textbf{\sffamily #1}\quad}
+
+\pagestyle{empty}
+
+\begin{document}
+
+{\sffamily \textbf{\LARGE \mytitle} \hfill \mydate \hfill \href{\myurl}{\myname}}
+
+\vspace{\baselineskip}
+
+Classic spicy Korean chicken stew with potatoes, carrot, and onion simmered in a chili–soy broth. Cozy, rich, and deeply savory.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{}p{0.52\linewidth}@{\hspace{1.5em}}p{0.43\linewidth}@{}}
+\toprule
+Break down as desired. Remove skin if desired. Season with kosher salt and pepper.
+& 1 \quad whole chicken \\
+\midrule
+Cook HP for 10 min and natural release for 5 minutes.
+& 2 \quad chopped yellow onions \\
+& 4 \quad cubed potatoes \\
+& 3 \quad chopped carrots \\
+& 8 \quad garlic cloves, grated \\
+& 1" \quad ginger, grated \\
+& 1/3 c \quad gochujang \\
+& 1/4 c \quad gochugaru \\
+& 1/2 c \quad soy sauce \\
+& 1/4 c \quad mirin \\
+& 3 T \quad honey \\
+& 1 t \quad black pepper \\
+& 1 T \quad chicken Better-Than-Bouillon \\
+& 1 c \quad water \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\vspace{\baselineskip}
+
+\end{document}
