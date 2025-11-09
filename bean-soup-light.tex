@@ -1,0 +1,60 @@
+\documentclass[
+    fontsize=12pt,DIV=12,
+    letterpaper,oneside,paper=portrait
+]{scrartcl}
+
+\usepackage[charter]{mathdesign}
+\usepackage[sups,osf]{XCharter}
+\usepackage[semibold]{sourcesanspro}
+\usepackage[scaled=1.04,varqu,varl]{inconsolata}
+
+\usepackage{microtype}
+\usepackage[automark,headsepline=false,plainheadsepline=false]{scrlayer-scrpage}
+\usepackage[x11names,svgnames,dvipsnames,table]{xcolor}
+\usepackage{hyperref}
+%\usepackage{lastpage} % no page numbers!
+
+%%%% METADATA  %%%% %%%% %%%% %%%%
+\newcommand{\myname}{Franny Glass}
+\newcommand{\mydate}{1~November 2025}
+\newcommand{\mytitle}{Bean soup, light}
+\newcommand{\myurl}{https://github.com/lucasreddinger/recipes/bean-soup-light}
+%%%% %%%% %%%% %%%% %%%% %%%% %%%%
+
+% links
+\hypersetup{
+  colorlinks=false,
+  pdfborderstyle={/S/S/W 0.5},
+  pdfborder={0 0 0.5},
+  allbordercolors={0.8 0.8 1}
+}
+
+% no section numbering
+\setcounter{secnumdepth}{0}
+
+% reduce paragraph vspace
+\KOMAoptions{parskip=half}
+
+% do not indent paragraphs
+\setlength{\parindent}{0pt}
+
+% section heading styling
+\addtokomafont{section}{\sffamily\large} %%%% smaller than some other docs!
+\addtokomafont{subsection}{\sffamily\normalsize}
+
+% bold sans
+\newcommand{\sfbf}[1]{\textbf{\sffamily #1}}
+
+% header and footer (no header on first page)
+\clearpairofpagestyles
+%\cfoot{Page \thepage\ of \pageref*{LastPage}}  % no page numbers!
+\ihead{\href{\myurl}{\mytitle}}
+\ohead{\myname}
+\ofoot{\mydate}
+\pagestyle{scrheadings}
+
+\begin{document}
+
+\section{\mytitle}
+
+\end{document}
