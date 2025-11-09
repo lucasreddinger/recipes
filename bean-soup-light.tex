@@ -1,5 +1,5 @@
 \documentclass[
-    fontsize=12pt,DIV=12,
+    fontsize=10pt,DIV=12,
     letterpaper,oneside,paper=portrait
 ]{scrartcl}
 
@@ -9,16 +9,15 @@
 \usepackage[scaled=1.04,varqu,varl]{inconsolata}
 
 \usepackage{microtype}
-\usepackage[automark,headsepline=false,plainheadsepline=false]{scrlayer-scrpage}
 \usepackage[x11names,svgnames,dvipsnames,table]{xcolor}
 \usepackage{hyperref}
-%\usepackage{lastpage} % no page numbers!
+\usepackage{paracol}
 
 %%%% METADATA  %%%% %%%% %%%% %%%%
 \newcommand{\myname}{Franny Glass}
-\newcommand{\mydate}{1~November 2025}
+\newcommand{\mydate}{9~November 2025}
 \newcommand{\mytitle}{Bean soup, light}
-\newcommand{\myurl}{https://github.com/lucasreddinger/recipes/bean-soup-light}
+\newcommand{\myurl}{https://www.lipidless.com/recipes/bean-soup-light}
 %%%% %%%% %%%% %%%% %%%% %%%% %%%%
 
 % links
@@ -39,22 +38,64 @@
 \setlength{\parindent}{0pt}
 
 % section heading styling
-\addtokomafont{section}{\sffamily\large} %%%% smaller than some other docs!
-\addtokomafont{subsection}{\sffamily\normalsize}
+\addtokomafont{section}{\sffamily\Large}
+\addtokomafont{subsection}{\sffamily\large}
 
 % bold sans
 \newcommand{\sfbf}[1]{\textbf{\sffamily #1}}
 
-% header and footer (no header on first page)
-\clearpairofpagestyles
-%\cfoot{Page \thepage\ of \pageref*{LastPage}}  % no page numbers!
-\ihead{\href{\myurl}{\mytitle}}
-\ohead{\myname}
-\ofoot{\mydate}
-\pagestyle{scrheadings}
+% bold sans with some spacing, like a compact paragraph
+\newcommand{\paragrcompact}[1]{\textbf{\sffamily #1}\quad}
+
+\pagestyle{empty}
 
 \begin{document}
 
-\section{\mytitle}
+{\sffamily \textbf{\LARGE \mytitle} \hfill \myname, \href{\myurl}{\mydate}}
+
+\vspace{\baselineskip}
+
+Fills a large (8~qt) Instant Pot to about 6 quarts.
+
+\section{Ingredients}
+
+\begin{paracol}{2}
+2~lb dry beans (great northern or 7-bean mix) \par
+2--3 large onions, diced \par
+3--4 carrots, diced \par
+3--4 celery stalks, diced \par
+4--8 garlic cloves, minced \par
+3--4 medium waxy potatoes, diced \par
+2--3 banana peppers, chopped or 1--2~Tbsp gochugaru \par
+8--12~oz mushrooms, chopped \par
+\switchcolumn
+2--3~Tbsp tomato paste \par
+3--4~Tbsp vegetable Better Than Bouillon \par
+2--3~Tbsp liquid aminos or soy sauce \par
+2--3~Tbsp olive or avocado oil \par
+Several bay leaves, thyme, oregano \par
+3--4~Tbsp MCT oil \par
+\end{paracol}
+
+\section{Instructions}
+
+\paragrcompact{Prep} Rinse beans and remove any junk (\textit{e.g.}, rocks). Rinse and cut other ingredients as desired.
+
+\paragrcompact{Sauté aromatics} Set Instant Pot to sauté. Add olive or avocado oil. Sweat onions, garlic, and half of the carrots and celery for 5--10 minutes (do not brown). Add mushrooms and cook 2--3 minutes more. Stir in tomato paste and toast for 2 minutes.
+
+\paragrcompact{Build base} Add beans, banana peppers or gochugaru, herbs (if using), bouillon, and enough water to reach the 6 quart mark. Add liquid aminos or soy sauce. Stir to combine. Count and lay bay leaves on top.
+
+\paragrcompact{Pressure cook} Cook on high pressure for 35--40 minutes. Allow natural release at least 20 minutes, then quick release any remaining pressure.
+
+\paragrcompact{Add potatoes and finish} Stir. Add potatoes and remaining carrot and celery. Set to sauté or slow cook for 15--20 minutes, until potatoes are just tender. Season to taste.
+
+\paragrcompact{Finish and adjust} Stir in MCT oil. Mash some beans or potatoes against the side if the soup is too brothy.  Add salt as needed.
+
+\section{Notes}
+
+\paragrcompact{Serving} Finish with black pepper and vinegar or lemon juice. Consider adding arugula, kale, or chard.
+
+\paragrcompact{Variations} Add smoked paprika for depth, but balance by finishing the soup with additional acid.
+
 
 \end{document}
