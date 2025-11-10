@@ -1,0 +1,135 @@
+\documentclass[
+    fontsize=12pt,DIV=12,
+    letterpaper,oneside,paper=portrait
+]{scrartcl}
+
+\usepackage[charter]{mathdesign}
+\usepackage[sups,osf]{XCharter}
+\usepackage[semibold]{sourcesanspro}
+\usepackage[scaled=1.04,varqu,varl]{inconsolata}
+
+\usepackage{microtype}
+\usepackage[x11names,svgnames,dvipsnames,table]{xcolor}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{nicefrac}
+\usepackage{multirow}
+\usepackage{enumitem}
+
+%%%% METADATA  %%%% %%%% %%%% %%%%
+\newcommand{\myname}{lipidless.com}
+\newcommand{\mydate}{10~November 2025}
+\newcommand{\mytitle}{timed: steak, taters, veg}
+\newcommand{\myurl}{https://www.lipidless.com/recipes/timed-meal-steak-tater-veg}
+%%%% %%%% %%%% %%%% %%%% %%%% %%%%
+
+% links
+\hypersetup{
+  colorlinks=false,
+  pdfborderstyle={/S/S/W 0.5},
+  pdfborder={0 0 0.5},
+  allbordercolors={0.8 0.8 1}
+}
+
+% no section numbering
+\setcounter{secnumdepth}{0}
+
+% reduce paragraph vspace
+\KOMAoptions{parskip=half}
+
+% do not indent paragraphs
+\setlength{\parindent}{0pt}
+
+% section heading styling
+\addtokomafont{section}{\sffamily\large}
+\addtokomafont{subsection}{\sffamily}
+
+% bold sans
+\newcommand{\sfbf}[1]{\textbf{\sffamily #1}}
+
+% bold sans with some spacing, like a compact paragraph
+\newcommand{\paragrcompact}[1]{\textbf{\sffamily #1}\quad}
+
+% right-aligned paragraph column for amounts
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+
+\pagestyle{empty}
+
+% make lists tighter
+\setlist{itemsep=0pt, topsep=0pt, parsep=0pt, partopsep=0pt}
+
+\begin{document}
+
+{\sffamily \textbf{\LARGE \mytitle} \hfill \mydate \hfill \href{\myurl}{\myname}}
+
+\vspace{\baselineskip}
+
+crispy potatoes, juicy steak, using only one pan.
+
+start potatoes hot, drop oven for a gentle steak roast, finish with a fast pan sear while asparagus cooks as the steak rests.
+
+\section{0:00 — preheat + prep}
+\begin{itemize}
+  \item Preheat oven to \textbf{425\,$^\circ$F}.
+  \item Wash and dry small potatoes. Halve if large.
+  \item Toss with olive oil, salt, pepper (optional: garlic, rosemary).
+  \item Spread in a single layer on a baking sheet.
+\end{itemize}
+
+\section{0:05 -- roast potatoes}
+\begin{itemize}
+  \item Roast for \textbf{25–30 minutes}, flipping halfway.
+  \item While roasting, season steak with salt and pepper.
+  \item Trim and prep asparagus.
+\end{itemize}
+
+\section{0:30 -- remove potatoes, start steak}
+\begin{itemize}
+  \item Remove potatoes; tent loosely with foil.
+  \item Lower oven to \textbf{250\,$^\circ$F}.
+  \item Place steak on a wire rack over a baking sheet.
+  \item Roast until internal temperature reaches:
+  \begin{itemize}
+    \item \textbf{115–120\,$^\circ$F} for rare
+    \item \textbf{120–125\,$^\circ$F} for medium rare
+  \end{itemize}
+  \item This typically takes \textbf{20–30 minutes}.
+\end{itemize}
+
+\section{0:50 -- heat cast iron}
+\begin{itemize}
+  \item Heat cast iron pan on high until blazing hot.
+\end{itemize}
+
+\section{1:00 -- sear steak}
+\begin{itemize}
+  \item Sear steak for \textbf{45–60 seconds per side}.
+  \item Optional: add butter, smashed garlic, and herbs to baste.
+  \item Rest steak \textbf{5–10 minutes}.
+\end{itemize}
+
+\section{1:00 -- cook asparagus while steak rests}
+\sfbf{option a: pan-sear (recommended)}
+\begin{itemize}
+  \item Wipe out cast iron pan.
+  \item Add olive oil and cook asparagus on medium-high heat.
+  \item Sauté \textbf{4–6 minutes}, until just tender.
+  \item Season with salt, pepper, optional lemon zest or a splash of balsamic.
+\end{itemize}
+
+\sfbf{option b: roast}
+\begin{itemize}
+  \item Toss asparagus with oil, salt, pepper.
+  \item Roast in the hot oven at \textbf{425\,$^\circ$F for 8–10 minutes}.
+  \item Do this while steak rests and potatoes reheat.
+\end{itemize}
+
+\section{1:10 -- plate and serve}
+\begin{itemize}
+  \item Rewarm potatoes in the oven if needed (about 5 minutes).
+  \item Slice steak \textbf{against the grain}.
+  \item Serve steak, potatoes, and asparagus hot.
+\end{itemize}
+
+\end{document}
