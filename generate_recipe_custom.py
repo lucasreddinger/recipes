@@ -101,14 +101,32 @@ md_lines = []
 
 title = data_raw.get("title", "")
 slug = data_raw.get("slug", "")
+draft = data_raw.get("draft", False)
+tags = data_raw.get("tags", [])
+categories = data_raw.get("categories", [])
 
 # front matter
 md_lines.append("---")
-md_lines.append(f"title: {quote_yaml_string(title)}")
+md_lines.append(f'title: {quote_yaml_string(title)}')
+
 if raw_date:
     md_lines.append(f"date: {raw_date}")
+
 if slug:
     md_lines.append(f"slug: {quote_yaml_string(slug)}")
+
+md_lines.append(f"draft: {'true' if draft else 'false'}")
+
+if tags:
+    md_lines.append("tags:")
+    for t in tags:
+        md_lines.append(f"  - {t}")
+
+if categories:
+    md_lines.append("categories:")
+    for c in categories:
+        md_lines.append(f"  - {c}")
+
 md_lines.append("type: recipe")
 md_lines.append("---")
 md_lines.append("")
