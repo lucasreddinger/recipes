@@ -5,8 +5,8 @@ slug: "dakdoritang"
 draft: false
 tags:
   - korean
-  - instant pot
   - chicken
+  - instant pot
 categories:
   - recipes
 type: recipe
