@@ -36,9 +36,12 @@ def format_date(d):
 def typographic_latex(text):
     if not isinstance(text, str):
         return text
+    # unicode dashes to LaTeX
     text = text.replace("—", "---")
     text = text.replace("–", "--")
+    # double quotes
     text = re.sub(r'"([^"]+)"', r"``\1''", text)
+    # single quotes (not apostrophes)
     text = re.sub(r"(?<!\w)'(.*?)'(?!\w)", r"`\1'", text)
     return text
 
@@ -58,7 +61,7 @@ with open(input_yaml, encoding="utf-8") as f:
     data = yaml.safe_load(f)
 
 ################################################################################
-# TeX output (unchanged logic, LaTeX formatting allowed)
+# TeX output (LaTeX formatting stays)
 ################################################################################
 
 data["date"] = format_date(data.get("date", ""))
@@ -91,14 +94,14 @@ with open(f"{base}.tex", "w", encoding="utf-8") as f:
 print(f"wrote: {base}.tex")
 
 ################################################################################
-# Markdown output for Hugo (NO LaTeX, raw Markdown)
+# Markdown output for Hugo (no LaTeX)
 ################################################################################
 
 md_lines = []
 
 title = data.get("title", "")
 slug = data.get("slug", "")
-raw_date = data.get("date_raw", None) or data.get("date", "")
+raw_date = data.get("date", "")
 draft = data.get("draft", False)
 tags = data.get("tags", [])
 categories = data.get("categories", [])
@@ -129,23 +132,28 @@ md_lines.append("type: recipe")
 md_lines.append("---")
 md_lines.append("")
 
-# description (raw markdown)
-desc_md = (yaml.safe_load(open(input_yaml, encoding="utf-8")).get("desc", "") or "").strip()
+# desc
+desc_md = (data.get("desc", "") or "").strip()
 if desc_md:
     md_lines.append(desc_md)
     md_lines.append("")
 
-# steps
-steps = yaml.safe_load(open(input_yaml, encoding="utf-8")).get("steps", [])
+# Steps
+steps = data.get("steps", [])
 if steps:
     md_lines.append("## Steps")
     md_lines.append("")
-    for i, step in enumerate(steps, start=1):
-        md_lines.append(f"### Step {i}")
+    for step in steps:
+        title = (step.get("title", "") or "").strip()
+        if title:
+            md_lines.append(f"### {title}")
+
         step_desc = (step.get("desc", "") or "").strip()
         if step_desc:
             md_lines.append(step_desc)
+
         md_lines.append("")
+
         items = step.get("items", []) or []
         for it in items:
             amt = it.get("amount", "")

@@ -13,12 +13,15 @@ type: recipe
 desc: Meal-prep Instant-Pot Korean chicken stew. Tenders for ease; may substitute skinless chicken pieces. Trivet lifts the solid mass to reach pressure more quickly. Freezes well. Reheat on stove-top after adding carrots, zucchini, onions, mushrooms, and water.
 
 steps:
-  - desc: Break down as desired. Remove skin if desired. Season with kosher salt and pepper.
+  - title: Prep chicken
+    desc: Break down as desired. Remove skin if desired. Season with kosher salt and pepper.
     items:
       - amount: 1
         unit: ""
         desc: whole chicken
-  - desc: Blend. Pour over chicken to thoroughly coat. Let marinate while prepping carrots, onions, potatoes (below), up to an hour.
+
+  - title: Make sauce
+    desc: Blend. Pour over chicken to thoroughly coat. Let marinate while prepping carrots, onions, potatoes (below), up to an hour.
     items:
       - amount: 12
         unit: ""
@@ -47,7 +50,9 @@ steps:
       - amount: 2
         unit: t
         desc: black pepper
-  - desc: |
+
+  - title: Cook
+    desc: |
       Place trivet in the Instant Pot. Combine boiling water, bouillon, and oil. Then add chicken, onions, potatoes, and carrots. Pour sauce over. Cook on high pressure for 10 minutes then allow natural release for 5 minutes. Simmer uncovered 5–8 minutes to achieve glossy reduction. Finish with salt to taste.
     items:
       - amount: 3
