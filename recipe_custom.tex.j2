@@ -1,0 +1,87 @@
+\documentclass[
+    fontsize=10pt,DIV=12,
+    letterpaper,oneside,paper=portrait
+]{scrartcl}
+
+\usepackage[charter]{mathdesign}
+\usepackage[sups,osf]{XCharter}
+\usepackage[semibold]{sourcesanspro}
+\usepackage[scaled=1.04,varqu,varl]{inconsolata}
+
+\usepackage{microtype}
+\usepackage[x11names,svgnames,dvipsnames,table]{xcolor}
+\usepackage{hyperref}
+\usepackage{paracol}
+
+%%%% METADATA  %%%% %%%% %%%% %%%%
+\newcommand{\myname}{lipidless.com}
+\newcommand{\mydate}{ {{- date -}} }
+\newcommand{\mytitle}{ {{- title -}} }
+\newcommand{\myurl}{https://www.lipidless.com/recipes/{{- slug -}}}
+%%%% %%%% %%%% %%%% %%%% %%%% %%%%
+
+% links
+\hypersetup{
+  colorlinks=false,
+  pdfborderstyle={/S/S/W 0.5},
+  pdfborder={0 0 0.5},
+  allbordercolors={0.8 0.8 1}
+}
+
+% no section numbering
+\setcounter{secnumdepth}{0}
+
+% reduce paragraph vspace
+\KOMAoptions{parskip=half}
+
+% do not indent paragraphs
+\setlength{\parindent}{0pt}
+
+% section heading styling
+\addtokomafont{section}{\sffamily\Large}
+\addtokomafont{subsection}{\sffamily\large}
+
+% bold sans
+\newcommand{\sfbf}[1]{\textbf{\sffamily #1}}
+
+% bold sans with some spacing, like a compact paragraph
+\newcommand{\paragrcompact}[1]{\textbf{\sffamily #1}\quad}
+
+% light rule
+\newcommand{\softrule}{\vspace{-0.5\baselineskip}\noindent\rule{\linewidth}{0.35pt}}
+
+\pagestyle{empty}
+
+\begin{document}
+
+{\sffamily \textbf{\LARGE \mytitle} \hfill \mydate \hfill \href{\myurl}{\myname}}
+
+\vspace{\baselineskip}
+
+{{ desc }}
+
+\vspace{\baselineskip}
+
+% tight vertical spacing for this block only
+{\setlength{\parskip}{0.25\baselineskip}\small
+
+\begin{paracol}{3}
+{% for group in groups %}
+\textbf{ {{- group.title -}} } \par
+{% for item in group["items"] %}
+{{ item }} \par
+{% endfor %}
+{% if not loop.last %}\switchcolumn
+{% endif %}
+{% endfor %}
+\end{paracol}
+}
+
+\vspace{\baselineskip}
+
+{% for step in steps %}
+\paragrcompact{ {{- step.title -}} } {{ step.desc }}
+
+{% endfor %}
+\end{document}
+
