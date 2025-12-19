@@ -78,7 +78,7 @@
 {{ step.desc }}
   & {{ step["items"][0].amount }} & {{ step["items"][0].unit }} & {{ step["items"][0].desc }} \\
 {% else %}
-\multirow[t]{ {{ n }} }{\linewidth}{ {{ step.desc }} }
+\multirow[t]{ {{- n -}} }{\linewidth}{ {{- step.desc -}} }
   & {{ step["items"][0].amount }} & {{ step["items"][0].unit }} & {{ step["items"][0].desc }} \\
 {% for item in step["items"][1:] %}
   & {{ item.amount }} & {{ item.unit }} & {{ item.desc }} \\

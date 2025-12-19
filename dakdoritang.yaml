@@ -53,7 +53,7 @@ steps:
       - amount: 2
         unit: T
         desc: chicken Better-Than-Bouillon
-      - amount: 2.25
+      - amount: 2
         unit: c
         desc: boiling water
       - amount: 2
