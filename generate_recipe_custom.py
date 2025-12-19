@@ -45,6 +45,12 @@ def quote_yaml_string(s):
     s = "" if s is None else str(s)
     return '"' + s.replace('"', '\\"') + '"'
 
+def norm(v):
+    """coerce YAML scalar → clean string, safe for ints/floats/None"""
+    if v is None:
+        return ""
+    return str(v).strip()
+
 if len(sys.argv) != 2:
     print("usage: python generate_recipe_custom.py <input.yaml>")
     sys.exit(1)
@@ -71,9 +77,26 @@ for step in data_tex.get("steps", []):
     step["title"] = typographic(step.get("title", ""))
     step["desc"] = typographic(step.get("desc", ""))
 
+# convert ingredient objects → formatted LaTeX strings
 for group in data_tex.get("groups", []):
     group["title"] = typographic(group.get("title", ""))
-    group["items"] = [typographic(x) for x in group.get("items", [])]
+    rendered_items = []
+    for it in group.get("items", []):
+        amt = norm(it.get("amount"))
+        unit = norm(it.get("unit"))
+        desc = typographic(norm(it.get("desc")))
+
+        if amt and unit:
+            txt = f"{amt} {unit} {desc}"
+        elif amt:
+            txt = f"{amt} {desc}"
+        else:
+            txt = desc
+
+        txt = typographic(txt)
+        rendered_items.append(txt)
+
+    group["items"] = rendered_items
 
 env = Environment(
     loader=FileSystemLoader('.'),
@@ -146,8 +169,19 @@ if groups:
         g_title = g.get("title", "")
         if g_title:
             md_lines.append(f"### {g_title}")
-        for item in g.get("items", []) or []:
-            md_lines.append(f"- {item}")
+        for it in g.get("items", []):
+            amt = norm(it.get("amount"))
+            unit = norm(it.get("unit"))
+            desc = norm(it.get("desc"))
+
+            if amt and unit:
+                line = f"- {amt} {unit} {desc}"
+            elif amt:
+                line = f"- {amt} {desc}"
+            else:
+                line = f"- {desc}"
+
+            md_lines.append(line)
         md_lines.append("")
 
 # steps
