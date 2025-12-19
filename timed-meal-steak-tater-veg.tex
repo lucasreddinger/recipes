@@ -1,5 +1,5 @@
 \documentclass[
-    fontsize=12pt,DIV=12,
+    fontsize=10pt,DIV=14,
     letterpaper,oneside,paper=portrait
 ]{scrartcl}
 
@@ -32,31 +32,30 @@
   allbordercolors={0.8 0.8 1}
 }
 
-% no section numbering
 \setcounter{secnumdepth}{0}
-
-% reduce paragraph vspace
 \KOMAoptions{parskip=half}
-
-% do not indent paragraphs
 \setlength{\parindent}{0pt}
 
 % section heading styling
 \addtokomafont{section}{\sffamily\large}
 \addtokomafont{subsection}{\sffamily}
 
+% reduce spacing around section headings
+\RedeclareSectionCommand[
+  beforeskip=0.5em,
+  afterskip=0em
+]{section}
+
+
 % bold sans
 \newcommand{\sfbf}[1]{\textbf{\sffamily #1}}
-
-% bold sans with some spacing, like a compact paragraph
-\newcommand{\paragrcompact}[1]{\textbf{\sffamily #1}\quad}
 
 % right-aligned paragraph column for amounts
 \newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
 
 \pagestyle{empty}
 
-% make lists tighter
+% tight lists, no extra space
 \setlist{itemsep=0pt, topsep=0pt, parsep=0pt, partopsep=0pt}
 
 \begin{document}
@@ -69,67 +68,69 @@ crispy potatoes, juicy steak, using only one pan.
 
 start potatoes hot, drop oven for a gentle steak roast, finish with a fast pan sear while asparagus cooks as the steak rests.
 
-\section{0:00 — preheat + prep}
+\section{0:00 --- preheat + prep}
 \begin{itemize}
-  \item Preheat oven to \textbf{425\,$^\circ$F}.
-  \item Wash and dry small potatoes. Halve if large.
-  \item Toss with olive oil, salt, pepper (optional: garlic, rosemary).
-  \item Spread in a single layer on a baking sheet.
+  \item Preheat oven to \textbf{425\,$^\circ$F}
+  \item Wash and dry small potatoes; halve if large
+  \item Toss with olive oil, salt, pepper (optional: garlic, rosemary)
+  \item Spread in a single layer on a baking sheet
 \end{itemize}
 
-\section{0:05 -- roast potatoes}
+\section{0:05 --- roast potatoes}
 \begin{itemize}
-  \item Roast for \textbf{25–30 minutes}, flipping halfway.
-  \item While roasting, season steak with salt and pepper.
-  \item Trim and prep asparagus.
+  \item Roast for \textbf{25--30 min}, flipping halfway
+  \item While roasting, season steak with salt and pepper
+  \item Trim and prep asparagus
 \end{itemize}
 
-\section{0:30 -- remove potatoes, start steak}
+\section{0:30 --- remove potatoes, start steak}
 \begin{itemize}
-  \item Remove potatoes; tent loosely with foil.
-  \item Lower oven to \textbf{250\,$^\circ$F}.
-  \item Place steak on a wire rack over a baking sheet.
-  \item Roast until internal temperature reaches:
+  \item Remove potatoes; tent loosely with foil
+  \item Lower oven to \textbf{250\,$^\circ$F}
+  \item Place steak on a wire rack over a baking sheet
+  \item Roast until internal temp reaches:
   \begin{itemize}
-    \item \textbf{115–120\,$^\circ$F} for rare
-    \item \textbf{120–125\,$^\circ$F} for medium rare
+    \item \textbf{115--120\,$^\circ$F} for rare
+    \item \textbf{120--125\,$^\circ$F} for medium rare
   \end{itemize}
-  \item This typically takes \textbf{20–30 minutes}.
+  \item This typically takes \textbf{20--30 min}
 \end{itemize}
 
-\section{0:50 -- heat cast iron}
+\section{0:50 --- heat cast iron}
 \begin{itemize}
-  \item Heat cast iron pan on high until blazing hot.
+  \item Heat cast iron pan on high until blazing hot
 \end{itemize}
 
-\section{1:00 -- sear steak}
+\section{1:00 --- sear steak}
 \begin{itemize}
-  \item Sear steak for \textbf{45–60 seconds per side}.
-  \item Optional: add butter, smashed garlic, and herbs to baste.
-  \item Rest steak \textbf{5–10 minutes}.
+  \item Sear steak for \textbf{45--60 sec} per side
+  \item Optional: add butter, smashed garlic, and herbs to baste
+  \item Rest steak \textbf{5--10 min}
 \end{itemize}
 
-\section{1:00 -- cook asparagus while steak rests}
+\section{1:00 --- cook asparagus while steak rests}
+\vspace{0.2em}
 \sfbf{option a: pan-sear (recommended)}
 \begin{itemize}
-  \item Wipe out cast iron pan.
-  \item Add olive oil and cook asparagus on medium-high heat.
-  \item Sauté \textbf{4–6 minutes}, until just tender.
-  \item Season with salt, pepper, optional lemon zest or a splash of balsamic.
+  \item Wipe out cast iron pan
+  \item Add olive oil and cook asparagus on medium-high heat
+  \item Sauté \textbf{4--6 min}, until just tender
+  \item Season with salt, pepper, optional lemon zest or a splash of balsamic
 \end{itemize}
 
+\vspace{0.2em}
 \sfbf{option b: roast}
 \begin{itemize}
-  \item Toss asparagus with oil, salt, pepper.
-  \item Roast in the hot oven at \textbf{425\,$^\circ$F for 8–10 minutes}.
-  \item Do this while steak rests and potatoes reheat.
+  \item Toss asparagus with oil, salt, pepper
+  \item Roast in hot oven at \textbf{425\,$^\circ$F for 8--10 min}
+  \item Do this while steak rests and potatoes reheat
 \end{itemize}
 
-\section{1:10 -- plate and serve}
+\section{1:10 --- plate and serve}
 \begin{itemize}
-  \item Rewarm potatoes in the oven if needed (about 5 minutes).
-  \item Slice steak \textbf{against the grain}.
-  \item Serve steak, potatoes, and asparagus hot.
+  \item Rewarm potatoes in oven if needed (\textasciitilde5 min)
+  \item Slice steak \textbf{against the grain}
+  \item Serve steak, potatoes, and asparagus hot
 \end{itemize}
 
 \end{document}
