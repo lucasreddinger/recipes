@@ -25,19 +25,15 @@ def typographic(text):
     if not isinstance(text, str):
         return text
 
-    # unicode dashes
+    # unicode dashes → latex dashes
     text = text.replace("—", "---").replace("–", "--")
 
-    # Markdown italics
+    # markdown italics → \textit{}
     text = re.sub(r'\*([^\*]+)\*', r'\\textit{\1}', text)
 
-    # quotes
+    # smart quotes
     text = re.sub(r'"([^"]+)"', r"``\1''", text)
     text = re.sub(r"(?<!\w)'(.*?)'(?!\w)", r"`\1'", text)
-
-    # special textual conventions
-    text = text.replace("e.g.", r"\textit{e.g.}")
-    text = re.sub(r'\bOptional:', r'\\textit{Optional:}', text)
 
     # units to nonbreaking spacing
     text = latex_units(text)
