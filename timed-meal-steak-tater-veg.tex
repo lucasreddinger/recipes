@@ -1,5 +1,5 @@
 \documentclass[
-    fontsize=10pt,DIV=14,
+    fontsize=10pt,DIV=16,
     letterpaper,oneside,paper=portrait
 ]{scrartcl}
 
@@ -32,8 +32,13 @@
   allbordercolors={0.8 0.8 1}
 }
 
+% no section numbering
 \setcounter{secnumdepth}{0}
+
+% reduce paragraph vspace
 \KOMAoptions{parskip=half}
+
+% do not indent paragraphs
 \setlength{\parindent}{0pt}
 
 % section heading styling
@@ -42,13 +47,16 @@
 
 % reduce spacing around section headings
 \RedeclareSectionCommand[
-  beforeskip=0.5em,
+  beforeskip=0.2em,
   afterskip=0em
 ]{section}
 
 
 % bold sans
 \newcommand{\sfbf}[1]{\textbf{\sffamily #1}}
+
+% bold sans with some spacing, like a compact paragraph
+\newcommand{\paragrcompact}[1]{\textbf{\sffamily #1}\quad}
 
 % right-aligned paragraph column for amounts
 \newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
