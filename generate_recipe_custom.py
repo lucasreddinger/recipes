@@ -2,6 +2,7 @@ import yaml
 import sys
 import os
 import platform
+import copy
 from jinja2 import Environment, FileSystemLoader
 from datetime import datetime, date
 import re
@@ -40,6 +41,10 @@ def typographic(text):
 
     return text.strip()
 
+def quote_yaml_string(s):
+    s = "" if s is None else str(s)
+    return '"' + s.replace('"', '\\"') + '"'
+
 if len(sys.argv) != 2:
     print("usage: python generate_recipe_custom.py <input.yaml>")
     sys.exit(1)
@@ -48,16 +53,25 @@ input_yaml = sys.argv[1]
 base = os.path.splitext(os.path.basename(input_yaml))[0]
 
 with open(input_yaml, encoding="utf-8") as f:
-    data = yaml.safe_load(f)
+    data_raw = yaml.safe_load(f)
 
-data["date"] = format_date(data.get("date", ""))
-data["desc"] = typographic(data.get("desc", ""))
+# keep raw ISO date for Hugo
+raw_date = data_raw.get("date", "")
 
-for step in data.get("steps", []):
+################################################################################
+# TeX output (uses LaTeX typography)
+################################################################################
+
+data_tex = copy.deepcopy(data_raw)
+
+data_tex["date"] = format_date(data_tex.get("date", ""))
+data_tex["desc"] = typographic(data_tex.get("desc", ""))
+
+for step in data_tex.get("steps", []):
     step["title"] = typographic(step.get("title", ""))
     step["desc"] = typographic(step.get("desc", ""))
 
-for group in data.get("groups", []):
+for group in data_tex.get("groups", []):
     group["title"] = typographic(group.get("title", ""))
     group["items"] = [typographic(x) for x in group.get("items", [])]
 
@@ -74,10 +88,67 @@ env = Environment(
 )
 
 template = env.get_template("recipe_custom.tex.j2")
-output = template.render(**data)
+output_tex = template.render(**data_tex)
 
 with open(f"{base}.tex", "w", encoding="utf-8") as f:
-    f.write(output)
+    f.write(output_tex)
+
+################################################################################
+# Markdown output for Hugo (no LaTeX, just Markdown / unicode)
+################################################################################
+
+md_lines = []
+
+title = data_raw.get("title", "")
+slug = data_raw.get("slug", "")
+
+# front matter
+md_lines.append("---")
+md_lines.append(f"title: {quote_yaml_string(title)}")
+if raw_date:
+    md_lines.append(f"date: {raw_date}")
+if slug:
+    md_lines.append(f"slug: {quote_yaml_string(slug)}")
+md_lines.append("type: recipe")
+md_lines.append("---")
+md_lines.append("")
+
+# description (raw markdown from YAML)
+desc_md = (data_raw.get("desc", "") or "").strip()
+if desc_md:
+    md_lines.append(desc_md)
+    md_lines.append("")
+
+# ingredients
+groups = data_raw.get("groups", [])
+if groups:
+    md_lines.append("## Ingredients")
+    md_lines.append("")
+    for g in groups:
+        g_title = g.get("title", "")
+        if g_title:
+            md_lines.append(f"### {g_title}")
+        for item in g.get("items", []) or []:
+            md_lines.append(f"- {item}")
+        md_lines.append("")
+
+# steps
+steps = data_raw.get("steps", [])
+if steps:
+    md_lines.append("## Steps")
+    md_lines.append("")
+    for step in steps:
+        st_title = step.get("title", "")
+        if st_title:
+            md_lines.append(f"### {st_title}")
+        step_desc = (step.get("desc", "") or "").strip()
+        if step_desc:
+            md_lines.append(step_desc)
+        md_lines.append("")
+
+with open(f"{base}.md", "w", encoding="utf-8") as f:
+    f.write("\n".join(md_lines))
 
 print(f"wrote: {base}.tex")
+print(f"wrote: {base}.md")
 
