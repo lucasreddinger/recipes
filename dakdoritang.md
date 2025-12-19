@@ -1,6 +1,6 @@
 ---
 title: "Dakdoritang"
-date: 18~December 2025
+date: 2025-12-18
 slug: "dakdoritang"
 draft: false
 tags:
@@ -27,15 +27,15 @@ Blend. Pour over chicken to thoroughly coat. Let marinate while prepping carrots
 - 12 garlic cloves, grated
 - 2 in ginger, grated
 - 1 c gochujang
-- \nicefrac{1}{4} c coarse gochugaru
-- \nicefrac{1}{4} c fine gochugaru
+- 0.25 c coarse gochugaru
+- 0.25 c fine gochugaru
 - 1 c soy sauce
-- \nicefrac{1}{3} c mirin
+- 0.33 c mirin
 - 6 T honey
 - 2 t black pepper
 
 ### Cook
-Place trivet in the Instant Pot. Combine boiling water, bouillon, and oil. Then add chicken, onions, potatoes, and carrots. Pour sauce over. Cook on high pressure for 10 minutes then allow natural release for 5 minutes. Simmer uncovered 5--8 minutes to achieve glossy reduction. Finish with salt to taste.
+Place trivet in the Instant Pot. Combine boiling water, bouillon, and oil. Then add chicken, onions, potatoes, and carrots. Pour sauce over. Cook on high pressure for 10 minutes then allow natural release for 5 minutes. Simmer uncovered 5–8 minutes to achieve glossy reduction. Finish with salt to taste.
 
 - 3 chopped yellow onions
 - 4 cubed potatoes
