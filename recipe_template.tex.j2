@@ -1,0 +1,99 @@
+\documentclass[
+    fontsize=12pt,DIV=12,
+    letterpaper,oneside,paper=portrait
+]{scrartcl}
+
+\usepackage[charter]{mathdesign}
+\usepackage[sups,osf]{XCharter}
+\usepackage[semibold]{sourcesanspro}
+\usepackage[scaled=1.04,varqu,varl]{inconsolata}
+
+\usepackage{microtype}
+\usepackage[x11names,svgnames,dvipsnames,table]{xcolor}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{nicefrac}
+\usepackage{multirow}
+\usepackage{tabularx}
+
+%%%% METADATA  %%%% %%%% %%%% %%%%
+\newcommand{\myname}{lipidless.com}
+\newcommand{\mydate}{ {{ date|trim }} }
+\newcommand{\mytitle}{ {{ title|trim }} }
+\newcommand{\myurl}{ https://www.lipidless.com/recipes/{{ slug|trim }} }
+%%%% %%%% %%%% %%%% %%%% %%%% %%%%
+
+% links
+\hypersetup{
+  colorlinks=false,
+  pdfborderstyle={/S/S/W 0.5},
+  pdfborder={0 0 0.5},
+  allbordercolors={0.8 0.8 1}
+}
+
+% no section numbering
+\setcounter{secnumdepth}{0}
+
+% reduce paragraph vspace
+\KOMAoptions{parskip=half}
+
+% do not indent paragraphs
+\setlength{\parindent}{0pt}
+
+% section heading styling
+\addtokomafont{section}{\sffamily\Large}
+\addtokomafont{subsection}{\sffamily\large}
+
+% bold sans
+\newcommand{\sfbf}[1]{\textbf{\sffamily #1}}
+
+% bold sans with some spacing, like a compact paragraph
+\newcommand{\paragrcompact}[1]{\textbf{\sffamily #1}\quad}
+
+% right-aligned paragraph column for amounts
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+
+\pagestyle{empty}
+
+\begin{document}
+
+{\sffamily \textbf{\LARGE \mytitle} \hfill \mydate \hfill \href{\myurl}{\myname}}
+
+\vspace{\baselineskip}
+
+{{ desc }}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.15}
+
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X
+    R{2em} @{\hspace{0.3em}}
+    l @{\hspace{0.8em}}
+    l @{}}
+\toprule
+{% for step in steps %}
+{% set n = step["items"] | length %}
+{% if n == 1 %}
+{{ step.desc }}
+  & {{ step["items"][0].amount }} & {{ step["items"][0].unit }} & {{ step["items"][0].desc }} \\
+{% else %}
+\multirow[t]{ {{ n }} }{\linewidth}{ {{ step.desc }} }
+  & {{ step["items"][0].amount }} & {{ step["items"][0].unit }} & {{ step["items"][0].desc }} \\
+{% for item in step["items"][1:] %}
+  & {{ item.amount }} & {{ item.unit }} & {{ item.desc }} \\
+{% endfor %}
+{% endif %}
+{% if not loop.last %}
+\midrule
+{% endif %}
+{% endfor %}
+\bottomrule
+\end{tabularx}
+
+\end{center}
+
+\vspace{\baselineskip}
+
+\end{document}
+
