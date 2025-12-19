@@ -10,8 +10,8 @@ import re
 ###############################################################################
 # template filenames
 ###############################################################################
-TEX_TEMPLATE_STEPS = "recipe_template.tex.j2"     # old: steps->items
-TEX_TEMPLATE_GROUPS = "recipe_custom.tex.j2"      # new: groups->items
+TEX_TEMPLATE_STEPS = "recipe_steps.tex.j2"
+TEX_TEMPLATE_GROUPS = "recipe_groups.tex.j2"
 
 ###############################################################################
 # helpers
