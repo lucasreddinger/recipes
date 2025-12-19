@@ -8,37 +8,79 @@ tags:
   - instant pot
 categories:
   - recipes
-desc: "Fills a large (8 qt) Instant Pot to about 6 quarts."
+type: recipe
+
+desc: Fills a large (8 qt) Instant Pot to about 6 quarts.
 
 groups:
   - title: Essential
     items:
-      - "2 lb dry beans (great northern or mix)"
-      - "2–3 large onions, diced"
-      - "3–4 carrots, diced"
-      - "3–4 celery stalks, diced"
-      - "4–8 garlic cloves, minced"
-      - "3–4 medium potatoes, diced"
-      - "3–4 Tbsp veg. Better Than Bouillon"
-      - "2–3 Tbsp olive or avocado oil"
+      - amount: 2
+        unit: lb
+        desc: dry beans (great northern or mix)
+      - amount: 2–3
+        unit: ""
+        desc: large onions, diced
+      - amount: 3–4
+        unit: ""
+        desc: carrots, diced
+      - amount: 3–4
+        unit: ""
+        desc: celery stalks, diced
+      - amount: 4–8
+        unit: ""
+        desc: garlic cloves, minced
+      - amount: 3–4
+        unit: ""
+        desc: medium potatoes, diced
+      - amount: 3–4
+        unit: Tbsp
+        desc: veg. Better Than Bouillon
+      - amount: 2–3
+        unit: Tbsp
+        desc: olive or avocado oil
 
   - title: Recommended
     items:
-      - "8–12 oz mushrooms, chopped"
-      - "1–2 Tbsp gochugaru"
-      - "3–4 Tbsp MCT oil"
-      - "2–3 Tbsp liquid aminos"
-      - "Several bay leaves"
-      - "Apple cider vinegar"
+      - amount: 8–12
+        unit: oz
+        desc: mushrooms, chopped
+      - amount: 1–2
+        unit: Tbsp
+        desc: gochugaru
+      - amount: 3–4
+        unit: Tbsp
+        desc: MCT oil
+      - amount: 2–3
+        unit: Tbsp
+        desc: liquid aminos
+      - amount: ""
+        unit: ""
+        desc: Several bay leaves
+      - amount: ""
+        unit: ""
+        desc: Apple cider vinegar
 
   - title: Nice to have
     items:
-      - "2–3 Tbsp tomato paste"
-      - "Arugula"
-      - "Thyme, oregano"
-      - "Miso paste"
-      - "Greens (*e.g.*, beet, dandelion)"
-      - "Smoked paprika"
+      - amount: 2–3
+        unit: Tbsp
+        desc: tomato paste
+      - amount: ""
+        unit: ""
+        desc: Arugula
+      - amount: ""
+        unit: ""
+        desc: Thyme, oregano
+      - amount: ""
+        unit: ""
+        desc: Miso paste
+      - amount: ""
+        unit: ""
+        desc: Greens (*e.g.*, beet, dandelion)
+      - amount: ""
+        unit: ""
+        desc: Smoked paprika
 
 steps:
   - title: Prep
