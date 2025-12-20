@@ -1,0 +1,91 @@
+\documentclass[
+    fontsize=10pt,DIV=12,
+    letterpaper,oneside,paper=portrait
+]{scrartcl}
+
+\usepackage[charter]{mathdesign}
+\usepackage[sups,osf]{XCharter}
+\usepackage[semibold]{sourcesanspro}
+\usepackage[scaled=1.04,varqu,varl]{inconsolata}
+
+\usepackage{microtype}
+\usepackage[x11names,svgnames,dvipsnames,table]{xcolor}
+\usepackage{hyperref}
+\usepackage{paracol}
+
+%%%% METADATA  %%%% %%%% %%%% %%%%
+\newcommand{\myname}{lipidless.com}
+\newcommand{\mydate}{15~February 2024}
+\newcommand{\mytitle}{Oral rehydration solution}
+\newcommand{\myurl}{https://www.lipidless.com/recipes/oral-rehydration-solution}
+%%%% %%%% %%%% %%%% %%%% %%%% %%%%
+
+% links
+\hypersetup{
+  colorlinks=false,
+  pdfborderstyle={/S/S/W 0.5},
+  pdfborder={0 0 0.5},
+  allbordercolors={0.8 0.8 1}
+}
+
+% no section numbering
+\setcounter{secnumdepth}{0}
+
+% reduce paragraph vspace
+\KOMAoptions{parskip=half}
+
+% do not indent paragraphs
+\setlength{\parindent}{0pt}
+
+% section heading styling
+\addtokomafont{section}{\sffamily\Large}
+\addtokomafont{subsection}{\sffamily\large}
+
+% bold sans
+\newcommand{\sfbf}[1]{\textbf{\sffamily #1}}
+
+% bold sans with some spacing, like a compact paragraph
+\newcommand{\paragrcompact}[1]{\textbf{\sffamily #1}\quad}
+
+% light rule
+\newcommand{\softrule}{\vspace{-0.5\baselineskip}\noindent\rule{\linewidth}{0.35pt}}
+
+\pagestyle{empty}
+
+\begin{document}
+
+{\sffamily \textbf{\LARGE \mytitle} \hfill \mydate \hfill \href{\myurl}{\myname}}
+
+\vspace{\baselineskip}
+
+Low-osmolatiry is strongly recommended for beginners.
+
+\vspace{\baselineskip}
+
+% tight vertical spacing for this block only
+{\setlength{\parskip}{0.25\baselineskip}\small
+
+\begin{paracol}{3}
+\textbf{Standard formulation (1~L)} \par
+3.5~g NaCl (salt) \par
+2.9~g Trisodium citrate dihydrate \par
+1.5~g KCl (NoSalt) \par
+20.0~g Anhydrous glucose \par
+27.9~g Total \par
+\switchcolumn
+\textbf{Low-osmolarity formulation (1~L)} \par
+2.6~g NaCl (salt) \par
+2.9~g Trisodium citrate dihydrate \par
+1.5~g KCl (NoSalt) \par
+13.5~g Anhydrous glucose \par
+20.5~g Total \par
+\end{paracol}
+}
+
+\vspace{\baselineskip}
+
+\paragrcompact{Prepare} Dissolve all ingredients in 1/2~cup hot water. Then add cold water to fill to 1~Liter.
+
+\paragrcompact{Substitutions} I use ``sodium citrate'' and dextrose instead of glucose.
+
+\end{document}
