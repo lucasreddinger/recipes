@@ -11,6 +11,8 @@ categories:
   - recipes
 type: recipe
 
+desc: "Yield: one tray of muffins (12 standard or 6 jumbo)."
+
 steps:
   - title: Preheat
     desc: Preheat the oven to 375°F.
@@ -65,8 +67,8 @@ steps:
     desc: Mix the contents of the wet bowl into the dry bowl until just combined and still lumpy.
     items: []
 
-  - title: Dole and top
-    desc: Dole out batter into muffin pan, then top muffins with sliced almonds if desired.
+  - title: Portion and top
+    desc: Portion batter into muffin pan, then top muffins with sliced almonds if desired.
     items: []
 
   - title: Bake

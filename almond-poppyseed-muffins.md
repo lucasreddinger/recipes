@@ -13,6 +13,8 @@ categories:
 type: recipe
 ---
 
+Yield: one tray of muffins (12 standard or 6 jumbo).
+
 ## Steps
 
 ### Preheat
@@ -46,8 +48,8 @@ Add to creamed mixture.
 Mix the contents of the wet bowl into the dry bowl until just combined and still lumpy.
 
 
-### Dole and top
-Dole out batter into muffin pan, then top muffins with sliced almonds if desired.
+### Portion and top
+Portion batter into muffin pan, then top muffins with sliced almonds if desired.
 
 
 ### Bake
