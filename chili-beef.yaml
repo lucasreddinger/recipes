@@ -1,0 +1,110 @@
+title: Chili, beef
+date: 2025-01-18
+slug: chili-beef
+draft: true
+tags:
+  - chili
+  - beef
+  - meal prep
+  - freezes well
+  - instant pot
+categories:
+  - recipes
+type: recipe
+
+desc: Please verify against cloud doc!
+
+steps:
+  - title: Saute onions
+    desc: |
+      Set Instant Pot to Saute on medium. Add oil. While oil heats, chop or dice onions (use food processor if desired). Once oil shimmers, add onions and saute a few minutes.
+    items:
+      - amount: 2
+        unit: ct
+        desc: med/lg yellow onions
+      - amount: 2
+        unit: T
+        desc: neutral oil (e.g., avocado)
+
+  - title: Add garlic and serrano
+    desc: Mince garlic and chilis (food processor recommended). Add to pot and saute a few minutes.
+    items:
+      - amount: 1
+        unit: head
+        desc: garlic
+      - amount: 6
+        unit: ct
+        desc: serrano chili peppers
+
+  - title: Add spices
+    desc: |
+      Add to pot and saute a few minutes.  
+      *Can substitute cayenne pepper (maybe 1–2 T?) or gochugaru (maybe 3 T?) in place of serranos.*
+    items:
+      - amount: 4
+        unit: T
+        desc: chili powder
+      - amount: 2
+        unit: T
+        desc: ground cumin
+      - amount: 3
+        unit: T
+        desc: mexican oregano
+      - amount: 2
+        unit: t
+        desc: sea salt
+      - amount: 1
+        unit: t
+        desc: ground black pepper
+
+  - title: Deglaze with bouillon
+    desc: Add to pot using hot water to deglaze and clean spoon used for bouillon.
+    items:
+      - amount: 4
+        unit: T
+        desc: beef Better-Than-Bouillon
+      - amount: 10
+        unit: c
+        desc: boiling water
+
+  - title: Add beans, tomato, and bay
+    desc: |
+      Pick out crummy beans and rinse well. Add to pot with diced tomato and tomato sauce. Stir. Lay bay leaves on top (count them so you can remove later).
+    items:
+      - amount: 2
+        unit: lbs
+        desc: beans of choice
+      - amount: 14
+        unit: fl oz
+        desc: diced tomato (canned or fresh)
+      - amount: 14
+        unit: fl oz
+        desc: tomato sauce (canned)
+      - amount: 8
+        unit: ct
+        desc: bay leaves
+
+  - title: Pressure cook
+    desc: |
+      Cancel saute. Secure lid. Switch to vent, then to seal. Cook on high pressure for 1 hour. Allow natural release for 30 minutes. Then cancel and remove lid. Pick out bay leaves.
+    items: []
+
+  - title: Reduce
+    desc: Saute on high until desired consistency is reached.
+    items: []
+
+  - title: Brown and add beef
+    desc: Meanwhile, brown ground beef separately. Drain fat and add to pot.
+    items:
+      - amount: 2
+        unit: lbs
+        desc: ground beef
+
+notes: |
+  Cooked this exact recipe (without oregano) on 2024-01-15.
+
+  Next time, consider: 
+  - 1 t paprika  
+  - 2 T brown sugar  
+  - 1 t cacao powder
+
