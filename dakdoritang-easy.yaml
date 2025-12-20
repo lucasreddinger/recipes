@@ -1,6 +1,6 @@
-title: Dakdoritang
+title: Dakdoritang, easy
 date: 2025-12-18
-slug: dakdoritang
+slug: dakdoritang-easy
 draft: false
 tags:
   - korean
@@ -10,15 +10,15 @@ categories:
   - recipes
 type: recipe
 
-desc: Meal-prep Instant-Pot Korean chicken stew. May substitute chicken tenders for ease. Trivet lifts the solid mass to reach pressure more quickly. Freezes well. Reheat on stove-top after adding carrots, zucchini, onions, mushrooms, and water.
+desc: Meal-prep Instant-Pot Korean chicken stew. Tenders for ease; may substitute skinless chicken pieces. Trivet lifts the solid mass to reach pressure more quickly. Freezes well. Reheat on stove-top after adding carrots, zucchini, onions, mushrooms, and water.
 
 steps:
   - title: Prep chicken
-    desc: Break down as desired. Remove skin if desired. Season with kosher salt and pepper.
+    desc: Drain and pat dry. Season with kosher salt and pepper.
     items:
-      - amount: 1
-        unit: ""
-        desc: whole chicken
+      - amount: 5
+        unit: lbs
+        desc: chicken tenderloins
 
   - title: Make sauce
     desc: Blend. Pour over chicken to thoroughly coat. Let marinate while prepping carrots, onions, potatoes (below), up to an hour.
