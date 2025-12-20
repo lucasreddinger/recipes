@@ -1,0 +1,112 @@
+\documentclass[
+    fontsize=12pt,DIV=12,
+    letterpaper,oneside,paper=portrait
+]{scrartcl}
+
+\usepackage[charter]{mathdesign}
+\usepackage[sups,osf]{XCharter}
+\usepackage[semibold]{sourcesanspro}
+\usepackage[scaled=1.04,varqu,varl]{inconsolata}
+
+\usepackage{microtype}
+\usepackage[x11names,svgnames,dvipsnames,table]{xcolor}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{nicefrac}
+\usepackage{multirow}
+\usepackage{tabularx}
+
+%%%% METADATA  %%%% %%%% %%%% %%%%
+\newcommand{\myname}{lipidless.com}
+\newcommand{\mydate}{10~March 2024}
+\newcommand{\mytitle}{Aloo gobi}
+\newcommand{\myurl}{https://www.lipidless.com/recipes/aloo-gobi}
+%%%% %%%% %%%% %%%% %%%% %%%% %%%%
+
+% links
+\hypersetup{
+  colorlinks=false,
+  pdfborderstyle={/S/S/W 0.5},
+  pdfborder={0 0 0.5},
+  allbordercolors={0.8 0.8 1}
+}
+
+% no section numbering
+\setcounter{secnumdepth}{0}
+
+% reduce paragraph vspace
+\KOMAoptions{parskip=half}
+
+% do not indent paragraphs
+\setlength{\parindent}{0pt}
+
+% section heading styling
+\addtokomafont{section}{\sffamily\Large}
+\addtokomafont{subsection}{\sffamily\large}
+
+% bold sans
+\newcommand{\sfbf}[1]{\textbf{\sffamily #1}}
+
+% bold sans with some spacing, like a compact paragraph
+\newcommand{\paragrcompact}[1]{\textbf{\sffamily #1}\quad}
+
+% right-aligned paragraph column for amounts
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+
+\pagestyle{empty}
+
+\begin{document}
+
+{\sffamily \textbf{\LARGE \mytitle} \hfill \mydate \hfill \href{\myurl}{\myname}}
+
+\vspace{\baselineskip}
+
+Indian potato-cauliflower dish made in an Instant Pot.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.15}
+
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X
+    R{2em} @{\hspace{0.3em}}
+    l @{\hspace{0.8em}}
+    l @{}}
+\toprule
+\multirow[t]{3}{\linewidth}{Saute until cumin seeds brown and mustard seeds pop.}
+  & 3 & T & oil \\
+  & 1 & t & cumin seeds \\
+  & ½ & t & black mustard seeds \\
+\midrule
+\multirow[t]{2}{\linewidth}{Add and continue saute for about 6~minutes until onions begin to brown.}
+  & 1 &  & onion diced \\
+  & 3 &  & serrano peppers, minced \\
+\midrule
+\multirow[t]{2}{\linewidth}{Add and saute for 30~seconds.}
+  & 2 & t & minced garlic \\
+  & 2 & t & minced ginger \\
+\midrule
+\multirow[t]{2}{\linewidth}{Deglaze and mix.}
+  & ¼ & c & water \\
+  & 1 & lb & potatoes, peeled, 1~inch cubes \\
+\midrule
+Move to Instant Pot (if sauteed elsewhere) and cook at high pressure for 3~minutes then quick-release pressure.
+  &  &  &  \\
+\midrule
+\multirow[t]{6}{\linewidth}{Add florets. Sprinkle spices thereon. Cook at high pressure for 1~minute then quick-release pressure.}
+  & 1 &  & cauliflower, cut into florets \\
+  & 1 & t & paprika \\
+  & 1 & t & salt \\
+  & 1 & t & turmeric \\
+  & ½ & t & garam masala \\
+  & 1 & t & cayenne \\
+\midrule
+Remove contents immediately to avoid overcooking! Garnish.
+  &  &  & cilantro leaves, chopped \\
+\bottomrule
+\end{tabularx}
+
+\end{center}
+
+\vspace{\baselineskip}
+
+\end{document}

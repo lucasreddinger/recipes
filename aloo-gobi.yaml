@@ -1,0 +1,91 @@
+title: Aloo gobi
+date: 2024-03-10
+slug: aloo-gobi
+draft: false
+tags:
+  - indian
+  - vegetarian
+  - instant pot
+categories:
+  - recipes
+type: recipe
+
+desc: Indian potato-cauliflower dish made in an Instant Pot.
+
+steps:
+  - title: Saute whole spices
+    desc: Saute until cumin seeds brown and mustard seeds pop.
+    items:
+      - amount: 3
+        unit: T
+        desc: oil
+      - amount: 1
+        unit: t
+        desc: cumin seeds
+      - amount: ½
+        unit: t
+        desc: black mustard seeds
+
+  - title: Add onions and peppers
+    desc: Add and continue saute for about 6 minutes until onions begin to brown.
+    items:
+      - amount: 1
+        unit: ""
+        desc: onion diced
+      - amount: 3
+        unit: ""
+        desc: serrano peppers, minced
+
+  - title: Add garlic and ginger
+    desc: Add and saute for 30 seconds.
+    items:
+      - amount: 2
+        unit: t
+        desc: minced garlic
+      - amount: 2
+        unit: t
+        desc: minced ginger
+
+  - title: Deglaze and add potatoes
+    desc: Deglaze and mix.
+    items:
+      - amount: ¼
+        unit: c
+        desc: water
+      - amount: 1
+        unit: lb
+        desc: potatoes, peeled, 1 inch cubes
+
+  - title: Pressure cook potatoes
+    desc: Move to Instant Pot (if sauteed elsewhere) and cook at high pressure for 3 minutes then quick-release pressure.
+    items: []
+
+  - title: Add cauliflower and spices
+    desc: Add florets. Sprinkle spices thereon. Cook at high pressure for 1 minute then quick-release pressure.
+    items:
+      - amount: 1
+        unit: ""
+        desc: cauliflower, cut into florets
+      - amount: 1
+        unit: t
+        desc: paprika
+      - amount: 1
+        unit: t
+        desc: salt
+      - amount: 1
+        unit: t
+        desc: turmeric
+      - amount: ½
+        unit: t
+        desc: garam masala
+      - amount: 1
+        unit: t
+        desc: cayenne
+
+  - title: Finish
+    desc: Remove contents immediately to avoid overcooking! Garnish.
+    items:
+      - amount: ""
+        unit: ""
+        desc: cilantro leaves, chopped
+
