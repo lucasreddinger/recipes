@@ -1,0 +1,110 @@
+\documentclass[
+    fontsize=12pt,DIV=12,
+    letterpaper,oneside,paper=portrait
+]{scrartcl}
+
+\usepackage[charter]{mathdesign}
+\usepackage[sups,osf]{XCharter}
+\usepackage[semibold]{sourcesanspro}
+\usepackage[scaled=1.04,varqu,varl]{inconsolata}
+
+\usepackage{microtype}
+\usepackage[x11names,svgnames,dvipsnames,table]{xcolor}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{nicefrac}
+\usepackage{multirow}
+\usepackage{tabularx}
+
+%%%% METADATA  %%%% %%%% %%%% %%%%
+\newcommand{\myname}{lipidless.com}
+\newcommand{\mydate}{15~November 2016}
+\newcommand{\mytitle}{Almond poppy seed muffins}
+\newcommand{\myurl}{https://www.lipidless.com/recipes/almond-poppy-seed-muffins}
+%%%% %%%% %%%% %%%% %%%% %%%% %%%%
+
+% links
+\hypersetup{
+  colorlinks=false,
+  pdfborderstyle={/S/S/W 0.5},
+  pdfborder={0 0 0.5},
+  allbordercolors={0.8 0.8 1}
+}
+
+% no section numbering
+\setcounter{secnumdepth}{0}
+
+% reduce paragraph vspace
+\KOMAoptions{parskip=half}
+
+% do not indent paragraphs
+\setlength{\parindent}{0pt}
+
+% section heading styling
+\addtokomafont{section}{\sffamily\Large}
+\addtokomafont{subsection}{\sffamily\large}
+
+% bold sans
+\newcommand{\sfbf}[1]{\textbf{\sffamily #1}}
+
+% bold sans with some spacing, like a compact paragraph
+\newcommand{\paragrcompact}[1]{\textbf{\sffamily #1}\quad}
+
+% right-aligned paragraph column for amounts
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+
+\pagestyle{empty}
+
+\begin{document}
+
+{\sffamily \textbf{\LARGE \mytitle} \hfill \mydate \hfill \href{\myurl}{\myname}}
+
+\vspace{\baselineskip}
+
+
+
+\begin{center}
+\renewcommand{\arraystretch}{1.15}
+
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X
+    R{2em} @{\hspace{0.3em}}
+    l @{\hspace{0.8em}}
+    l @{}}
+\toprule
+Preheat the oven to 375°F.
+  &  &  &  \\
+\midrule
+\multirow[t]{4}{\linewidth}{Combine in a bowl.}
+  & 2 & cups & flour \\
+  & 1 & Tbsp & baking powder \\
+  & \nicefrac{1}{2} & tsp & baking soda \\
+  & \nicefrac{1}{2} & tsp & salt \\
+\midrule
+\multirow[t]{2}{\linewidth}{In another larger bowl, cream for 3~minutes.}
+  & 1 & stick & butter \\
+  & 2/3 & cup & sugar \\
+\midrule
+\multirow[t]{5}{\linewidth}{Add to creamed mixture.}
+  & 2 &  & large eggs \\
+  & 1 & cup & cream \\
+  & 1 & Tbsp & almond extract \\
+  & 1 & tsp & vanilla extract \\
+  & 2 & Tbsp & poppy seeds \\
+\midrule
+Mix the contents of the wet bowl into the dry bowl until just combined and still lumpy.
+  &  &  &  \\
+\midrule
+Dole out batter into muffin pan, then top muffins with sliced almonds if desired.
+  &  &  &  \\
+\midrule
+Bake for 20--22~minutes.
+  &  &  &  \\
+\bottomrule
+\end{tabularx}
+
+\end{center}
+
+\vspace{\baselineskip}
+
+\end{document}

@@ -1,0 +1,75 @@
+title: Almond poppy seed muffins
+date: 2016-11-15
+slug: almond-poppy-seed-muffins
+draft: false
+tags:
+  - baking
+  - muffins
+  - almond
+  - non-non-fat
+categories:
+  - recipes
+type: recipe
+
+steps:
+  - title: Preheat
+    desc: Preheat the oven to 375°F.
+    items: []
+
+  - title: Mix dry ingredients
+    desc: Combine in a bowl.
+    items:
+      - amount: 2
+        unit: cups
+        desc: flour
+      - amount: 1
+        unit: Tbsp
+        desc: baking powder
+      - amount: 0.5
+        unit: tsp
+        desc: baking soda
+      - amount: 0.5
+        unit: tsp
+        desc: salt
+
+  - title: Cream butter and sugar
+    desc: In another larger bowl, cream for 3 minutes.
+    items:
+      - amount: 1
+        unit: stick
+        desc: butter
+      - amount: 2/3
+        unit: cup
+        desc: sugar
+
+  - title: Add remaining wet ingredients
+    desc: Add to creamed mixture.
+    items:
+      - amount: 2
+        unit: ""
+        desc: large eggs
+      - amount: 1
+        unit: cup
+        desc: cream
+      - amount: 1
+        unit: Tbsp
+        desc: almond extract
+      - amount: 1
+        unit: tsp
+        desc: vanilla extract
+      - amount: 2
+        unit: Tbsp
+        desc: poppy seeds
+
+  - title: Combine
+    desc: Mix the contents of the wet bowl into the dry bowl until just combined and still lumpy.
+    items: []
+
+  - title: Dole and top
+    desc: Dole out batter into muffin pan, then top muffins with sliced almonds if desired.
+    items: []
+
+  - title: Bake
+    desc: Bake for 20–22 minutes.
+    items: []
+
