@@ -4,8 +4,11 @@ date: 2025-12-18
 slug: "dakdoritang"
 draft: false
 tags:
+  - stew
   - korean
   - chicken
+  - meal prep
+  - freezes well
   - instant pot
 categories:
   - recipes

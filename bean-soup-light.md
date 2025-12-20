@@ -6,6 +6,9 @@ draft: false
 tags:
   - soup
   - beans
+  - vegan
+  - meal prep
+  - freezes well
   - instant pot
 categories:
   - recipes

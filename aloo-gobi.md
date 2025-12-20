@@ -5,7 +5,7 @@ slug: "aloo-gobi"
 draft: false
 tags:
   - indian
-  - vegetarian
+  - vegan
   - instant pot
 categories:
   - recipes
