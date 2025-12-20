@@ -1,0 +1,72 @@
+title: German potato salad
+date: 2024-04-29
+slug: german-potato-salad
+draft: true
+tags:
+  - potato
+  - salad
+  - german
+  - instant pot
+  - meal prep
+categories:
+  - recipes
+type: recipe
+
+desc: |
+  Cold potato salad using mustard and vinegar (no mayonnaise). Potatoes freeze poorly, so this is best kept refrigerated. 
+
+steps:
+  - desc: Scrub and rinse.
+    items:
+      - amount: 5
+        unit: lbs
+        desc: medium russet potatoes
+
+  - desc: |
+      Add 1 cup of water to the Instant Pot. Insert a metal trivet to keep the potatoes above the water. Stack potatoes above the water level. Cook on high pressure for 16 minutes. Allow 10 minutes of natural pressure release.
+    items:
+      - amount: 1
+        unit: c
+        desc: water
+
+  - desc: |
+      In a stovetop pot, bring to a boil over medium heat. Once at a rolling boil, remove from heat.
+    items:
+      - amount: 2
+        unit: ""
+        desc: chopped yellow onions
+      - amount: 1.5
+        unit: c
+        desc: water
+      - amount: 0.5
+        unit: c
+        desc: vinegar
+      - amount: 2
+        unit: t
+        desc: sea salt
+      - amount: 1
+        unit: t
+        desc: ground black pepper
+      - amount: 0.25
+        unit: t
+        desc: white pepper, if desired
+      - amount: 2
+        unit: T
+        desc: Alstertor Dusseldorf-style mustard
+      - amount: 2
+        unit: T
+        desc: beef or veg Better-Than-Bouillon
+
+  - desc: |
+      When cool enough to handle, peel potatoes. Cut off and discard any brown spots. Chop into 3/4" to 1" cubes. Collect potato cubes in a 9x12" glass pan, or a (preferably non-metal) bowl. Pour sauce over still-hot potatoes. As they cool, occasionally mix gently. Once cooled, place in the fridge for at least 12 hours. Remove, drizzle MCT oil over potatoes, and toss. As the oil works into the sauced potatoes, it should become creamy and emulsified. If desired, garnish with minced green onions.
+    items:
+      - amount: 0.4
+        unit: c
+        desc: MCT oil
+      - amount: 1
+        unit: ""
+        desc: green onion bunch
+
+notes: |
+  Variation: Peel and cut 2.5 lbs of russet potatoes into 0.5" cubes up-front. Cook HP for 6 min and QR pressure. Use 1 medium onion, 1 cup water, 0.5 cups vinegar, 1 t salt, 0.5 t no-salt, 0.5 t ground black pepper, and 1 T Better-Than-Bouillon.
+
