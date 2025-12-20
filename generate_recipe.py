@@ -101,7 +101,7 @@ steps = data_raw.get("steps", []) or []
 groups = data_raw.get("groups", []) or []
 
 # schema detection
-has_step_items = any(isinstance(s.get("items"), list) and s.get("items") for s in steps)
+has_step_items = any("items" in s for s in steps)
 has_groups = bool(groups)
 
 if has_step_items and has_groups:

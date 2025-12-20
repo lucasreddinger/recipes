@@ -74,7 +74,10 @@
 \toprule
 {% for step in steps %}
 {% set n = step["items"] | length %}
-{% if n == 1 %}
+{% if n == 0 %}
+{{ step.desc }}
+  &  &  &  \\
+{% elif n == 1 %}
 {{ step.desc }}
   & {{ step["items"][0].amount }} & {{ step["items"][0].unit }} & {{ step["items"][0].desc }} \\
 {% else %}
