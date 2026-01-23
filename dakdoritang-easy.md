@@ -15,7 +15,7 @@ categories:
 type: recipe
 ---
 
-Meal-prep Instant-Pot Korean chicken stew. Tenders for ease; may substitute skinless chicken pieces. Trivet lifts the solid mass to reach pressure more quickly. Freezes well. Reheat on stove-top after adding carrots, zucchini, onions, mushrooms, and water.
+Meal-prep Instant-Pot Korean chicken stew. Tenders for ease; may substitute skinless chicken pieces. Trivet lifts the solid mass to reach pressure more quickly. Freezes well. Reheat on stove-top after adding carrots, zucchini, onions, mushrooms, and water. Add a side of [oi muchim](https://www.koreanbapsang.com/oi-muchim-korean-style-cucumber-salad/)!
 
 ## Steps
 
