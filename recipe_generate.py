@@ -6,6 +6,7 @@ import copy
 from jinja2 import Environment, FileSystemLoader
 from datetime import datetime, date
 import re
+import mistune
 
 ###############################################################################
 # template filenames
@@ -16,6 +17,33 @@ TEX_TEMPLATE_GROUPS = "recipe_groups.tex.j2"
 ###############################################################################
 # helpers
 ###############################################################################
+
+class InlineLatexRenderer(mistune.HTMLRenderer):
+    def text(self, text):
+        return text
+
+    def link(self, text, url, title=None):
+        return r'\href{%s}{%s}' % (url, text or url)
+
+    def emphasis(self, text):
+        return r'\textit{%s}' % text
+
+    def strong(self, text):
+        return r'\textbf{%s}' % text
+
+    def codespan(self, text):
+        return r'\texttt{%s}' % text
+
+    def linebreak(self):
+        return r"\\" 
+
+    def paragraph(self, text):
+        return text
+
+md_inline_to_latex = mistune.create_markdown(renderer=InlineLatexRenderer())
+
+def parse_inline_md(text):
+    return md_inline_to_latex(text)
 
 def format_amount(val):
     fraction_map = {
@@ -50,7 +78,7 @@ def typographic(text):
     if not isinstance(text, str):
         return text
     text = text.replace("—", "---").replace("–", "--")
-    text = re.sub(r'\*([^\*]+)\*', r'\\textit{\1}', text)
+    text = parse_inline_md(text)
     text = re.sub(r'"([^"]+)"', r"``\1''", text)
     text = re.sub(r"(?<!\w)'(.*?)'(?!\w)", r"`\1'", text)
     return latex_units(text).strip()
