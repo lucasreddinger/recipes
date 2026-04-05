@@ -46,7 +46,7 @@ In a stovetop pot, bring to a boil over medium heat. Once at a rolling boil, rem
 ### 4
 When cool enough to handle, peel potatoes. Cut off and discard any brown spots. Chop into 3/4" to 1" cubes. Collect potato cubes in a 9×12" glass pan, or a (preferably non-metal) bowl. Pour sauce over still-hot potatoes. As they cool, occasionally mix gently. Once cooled, place in the fridge for at least 12 hours. Remove, drizzle MCT oil over potatoes, and toss. As the oil works into the sauced potatoes, it should become creamy and emulsified. If desired, garnish with minced green onions.
 
-- 0.4 c MCT oil
+- 1/2 c MCT oil
 - 1 green onion bunch
 
 ## Notes
