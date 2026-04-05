@@ -1,5 +1,5 @@
 \documentclass[
-    fontsize=11pt,DIV=12,
+    fontsize=11pt,
     letterpaper,oneside,paper=portrait
 ]{scrartcl}
 
@@ -14,7 +14,9 @@
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{nicefrac}
-\usepackage{tabularx}
+\usepackage{longtable}
+
+\usepackage[margin=0.75in]{geometry}
 
 %%%% METADATA  %%%% %%%% %%%% %%%%
 \newcommand{\myname}{lipidless.com}
@@ -50,10 +52,28 @@
 % bold sans with some spacing, like a compact paragraph
 \newcommand{\paragrcompact}[1]{\textbf{\sffamily #1}\quad}
 
-% right-aligned paragraph column for amounts
-\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+% shared recipe layout lengths
+\newlength{\recipeamountwidth}
+\newlength{\recipeunitwidth}
+\newlength{\recipedescnaturalwidth}
+\newlength{\recipeingredientdescwidth}
+\newlength{\recipeingredientblockwidth}
+\newlength{\recipestepwidth}
+\newlength{\recipecolumngap}
+\newlength{\recipeamountunitgap}
+\newlength{\recipeunitdescgap}
+\newlength{\recipewidthbuffer}
+\newcommand{\measuremaxwidth}[2]{
+
+  \settowidth{\dimen0}{#2}%
+  \ifdim\dimen0>#1\relax
+    #1=\dimen0\relax
+  \fi
+}
 
 \pagestyle{empty}
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{0pt}
 
 \begin{document}
 
@@ -65,50 +85,92 @@ Cold potato salad using mustard and vinegar (no mayonnaise). Potatoes freeze poo
 
 \subsection*{Steps}
 
-\begin{center}
 \renewcommand{\arraystretch}{1.15}
+\setlength{\recipecolumngap}{1.0em}
+\setlength{\recipeamountunitgap}{0.3em}
+\setlength{\recipeunitdescgap}{0.8em}
+\setlength{\recipewidthbuffer}{0.35em}
+\setlength{\recipeamountwidth}{2em}
+\setlength{\recipeunitwidth}{0pt}
+\setlength{\recipedescnaturalwidth}{0pt}
+\measuremaxwidth{\recipeamountwidth}{5}
+\measuremaxwidth{\recipeunitwidth}{lbs}
+\measuremaxwidth{\recipedescnaturalwidth}{medium russet potatoes}
+\measuremaxwidth{\recipeamountwidth}{1}
+\measuremaxwidth{\recipeunitwidth}{c}
+\measuremaxwidth{\recipedescnaturalwidth}{water}
+\measuremaxwidth{\recipeamountwidth}{2}
+\measuremaxwidth{\recipeunitwidth}{\mbox{}}
+\measuremaxwidth{\recipedescnaturalwidth}{chopped yellow onions}
+\measuremaxwidth{\recipeamountwidth}{1.5}
+\measuremaxwidth{\recipeunitwidth}{c}
+\measuremaxwidth{\recipedescnaturalwidth}{water}
+\measuremaxwidth{\recipeamountwidth}{1/2}
+\measuremaxwidth{\recipeunitwidth}{c}
+\measuremaxwidth{\recipedescnaturalwidth}{vinegar}
+\measuremaxwidth{\recipeamountwidth}{2}
+\measuremaxwidth{\recipeunitwidth}{t}
+\measuremaxwidth{\recipedescnaturalwidth}{sea salt}
+\measuremaxwidth{\recipeamountwidth}{1}
+\measuremaxwidth{\recipeunitwidth}{t}
+\measuremaxwidth{\recipedescnaturalwidth}{ground black pepper}
+\measuremaxwidth{\recipeamountwidth}{1/4}
+\measuremaxwidth{\recipeunitwidth}{t}
+\measuremaxwidth{\recipedescnaturalwidth}{white pepper, if desired}
+\measuremaxwidth{\recipeamountwidth}{2}
+\measuremaxwidth{\recipeunitwidth}{T}
+\measuremaxwidth{\recipedescnaturalwidth}{Alstertor Dusseldorf-style mustard}
+\measuremaxwidth{\recipeamountwidth}{2}
+\measuremaxwidth{\recipeunitwidth}{T}
+\measuremaxwidth{\recipedescnaturalwidth}{beef or veg Better-Than-Bouillon}
+\measuremaxwidth{\recipeamountwidth}{1/2}
+\measuremaxwidth{\recipeunitwidth}{c}
+\measuremaxwidth{\recipedescnaturalwidth}{MCT oil}
+\measuremaxwidth{\recipeamountwidth}{1}
+\measuremaxwidth{\recipeunitwidth}{\mbox{}}
+\measuremaxwidth{\recipedescnaturalwidth}{green onion bunch}
+\setlength{\recipeingredientdescwidth}{\dimexpr\recipedescnaturalwidth+\recipewidthbuffer\relax}
+\setlength{\recipeingredientblockwidth}{\dimexpr\recipeamountwidth+\recipeamountunitgap+\recipeunitwidth+\recipeunitdescgap+\recipeingredientdescwidth\relax}
+\ifdim\recipeingredientblockwidth>0.48\textwidth
+  \setlength{\recipeingredientblockwidth}{0.48\textwidth}
+  \setlength{\recipeingredientdescwidth}{\dimexpr\recipeingredientblockwidth-\recipeamountwidth-\recipeamountunitgap-\recipeunitwidth-\recipeunitdescgap\relax}
+\fi
+\setlength{\recipestepwidth}{\dimexpr\textwidth-\recipecolumngap-\recipeingredientblockwidth\relax}
 
-\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X l@{}}
+{\setlength{\parskip}{0pt}%
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\recipestepwidth}@{\hspace{\recipecolumngap}}>{\raggedright\arraybackslash}p{\recipeingredientblockwidth}@{}}
 \toprule
-Scrub and rinse.
-  &
-  \begin{tabular}[t]{@{}R{2em}@{\hspace{0.3em}}l@{\hspace{0.8em}}l@{}}
-  5 & lbs & medium russet potatoes \\
-  \end{tabular}
-\\
-\midrule
-Add 1~cup of water to the Instant Pot. Insert a metal trivet to keep the potatoes above the water. Stack potatoes above the water level. Cook on high pressure for 16~minutes. Allow 10~minutes of natural pressure release.
-  &
-  \begin{tabular}[t]{@{}R{2em}@{\hspace{0.3em}}l@{\hspace{0.8em}}l@{}}
-  1 & c & water \\
-  \end{tabular}
-\\
-\midrule
-In a stovetop pot, bring to a boil over medium heat. Once at a rolling boil, remove from heat.
-  &
-  \begin{tabular}[t]{@{}R{2em}@{\hspace{0.3em}}l@{\hspace{0.8em}}l@{}}
-  2 & \mbox{} & chopped yellow onions \\
-  1.5 & c & water \\
-  1/2 & c & vinegar \\
-  2 & t & sea salt \\
-  1 & t & ground black pepper \\
-  1/4 & t & white pepper, if desired \\
-  2 & T & Alstertor Dusseldorf-style mustard \\
-  2 & T & beef or veg Better-Than-Bouillon \\
-  \end{tabular}
-\\
-\midrule
-When cool enough to handle, peel potatoes. Cut off and discard any brown spots. Chop into 3/4" to 1" cubes. Collect potato cubes in a 9×12" glass pan, or a (preferably non-metal) bowl. Pour sauce over still-hot potatoes. As they cool, occasionally mix gently. Once cooled, place in the fridge for at least 12~hours. Remove, drizzle MCT oil over potatoes, and toss. As the oil works into the sauced potatoes, it should become creamy and emulsified. If desired, garnish with minced green onions.
-  &
-  \begin{tabular}[t]{@{}R{2em}@{\hspace{0.3em}}l@{\hspace{0.8em}}l@{}}
-  1/2 & c & MCT oil \\
-  1 & \mbox{} & green onion bunch \\
-  \end{tabular}
-\\
+\endfirsthead
+\toprule
+\endhead
 \bottomrule
-\end{tabularx}
-
-\end{center}
+\endfoot
+\bottomrule
+\endlastfoot
+Scrub and rinse.& \parbox[t]{\recipeingredientblockwidth}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{\recipeamountwidth}@{\hspace{\recipeamountunitgap}}>{\raggedright\arraybackslash}p{\recipeunitwidth}@{\hspace{\recipeunitdescgap}}>{\raggedright\arraybackslash}p{\recipeingredientdescwidth}@{}}%
+5&lbs&medium russet potatoes\\
+\end{tabular}}\tabularnewline
+\midrule
+Add 1~cup of water to the Instant Pot. Insert a metal trivet to keep the potatoes above the water. Stack potatoes above the water level. Cook on high pressure for 16~minutes. Allow 10~minutes of natural pressure release.& \parbox[t]{\recipeingredientblockwidth}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{\recipeamountwidth}@{\hspace{\recipeamountunitgap}}>{\raggedright\arraybackslash}p{\recipeunitwidth}@{\hspace{\recipeunitdescgap}}>{\raggedright\arraybackslash}p{\recipeingredientdescwidth}@{}}%
+1&c&water\\
+\end{tabular}}\tabularnewline
+\midrule
+In a stovetop pot, bring to a boil over medium heat. Once at a rolling boil, remove from heat.& \parbox[t]{\recipeingredientblockwidth}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{\recipeamountwidth}@{\hspace{\recipeamountunitgap}}>{\raggedright\arraybackslash}p{\recipeunitwidth}@{\hspace{\recipeunitdescgap}}>{\raggedright\arraybackslash}p{\recipeingredientdescwidth}@{}}%
+2&\mbox{}&chopped yellow onions\\
+1.5&c&water\\
+1/2&c&vinegar\\
+2&t&sea salt\\
+1&t&ground black pepper\\
+1/4&t&white pepper, if desired\\
+2&T&Alstertor Dusseldorf-style mustard\\
+2&T&beef or veg Better-Than-Bouillon\\
+\end{tabular}}\tabularnewline
+\midrule
+When cool enough to handle, peel potatoes. Cut off and discard any brown spots. Chop into 3/4" to 1" cubes. Collect potato cubes in a 9×12" glass pan, or a (preferably non-metal) bowl. Pour sauce over still-hot potatoes. As they cool, occasionally mix gently. Once cooled, place in the fridge for at least 12~hours. Remove, drizzle MCT oil over potatoes, and toss. As the oil works into the sauced potatoes, it should become creamy and emulsified. If desired, garnish with minced green onions.& \parbox[t]{\recipeingredientblockwidth}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{\recipeamountwidth}@{\hspace{\recipeamountunitgap}}>{\raggedright\arraybackslash}p{\recipeunitwidth}@{\hspace{\recipeunitdescgap}}>{\raggedright\arraybackslash}p{\recipeingredientdescwidth}@{}}%
+1/2&c&MCT oil\\
+1&\mbox{}&green onion bunch\\
+\end{tabular}}\tabularnewline
+\end{longtable}}
 
 \subsection*{Notes}
 

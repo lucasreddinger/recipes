@@ -1,5 +1,5 @@
 \documentclass[
-    fontsize=11pt,DIV=12,
+    fontsize=11pt,
     letterpaper,oneside,paper=portrait
 ]{scrartcl}
 
@@ -14,7 +14,9 @@
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{nicefrac}
-\usepackage{tabularx}
+\usepackage{longtable}
+
+\usepackage[margin=0.75in]{geometry}
 
 %%%% METADATA  %%%% %%%% %%%% %%%%
 \newcommand{\myname}{lipidless.com}
@@ -50,10 +52,28 @@
 % bold sans with some spacing, like a compact paragraph
 \newcommand{\paragrcompact}[1]{\textbf{\sffamily #1}\quad}
 
-% right-aligned paragraph column for amounts
-\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+% shared recipe layout lengths
+\newlength{\recipeamountwidth}
+\newlength{\recipeunitwidth}
+\newlength{\recipedescnaturalwidth}
+\newlength{\recipeingredientdescwidth}
+\newlength{\recipeingredientblockwidth}
+\newlength{\recipestepwidth}
+\newlength{\recipecolumngap}
+\newlength{\recipeamountunitgap}
+\newlength{\recipeunitdescgap}
+\newlength{\recipewidthbuffer}
+\newcommand{\measuremaxwidth}[2]{
+
+  \settowidth{\dimen0}{#2}%
+  \ifdim\dimen0>#1\relax
+    #1=\dimen0\relax
+  \fi
+}
 
 \pagestyle{empty}
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{0pt}
 
 \begin{document}
 
@@ -65,70 +85,115 @@ Indian potato-cauliflower dish made in an Instant Pot.
 
 \subsection*{Steps}
 
-\begin{center}
 \renewcommand{\arraystretch}{1.15}
+\setlength{\recipecolumngap}{1.0em}
+\setlength{\recipeamountunitgap}{0.3em}
+\setlength{\recipeunitdescgap}{0.8em}
+\setlength{\recipewidthbuffer}{0.35em}
+\setlength{\recipeamountwidth}{2em}
+\setlength{\recipeunitwidth}{0pt}
+\setlength{\recipedescnaturalwidth}{0pt}
+\measuremaxwidth{\recipeamountwidth}{3}
+\measuremaxwidth{\recipeunitwidth}{T}
+\measuremaxwidth{\recipedescnaturalwidth}{oil}
+\measuremaxwidth{\recipeamountwidth}{1}
+\measuremaxwidth{\recipeunitwidth}{t}
+\measuremaxwidth{\recipedescnaturalwidth}{cumin seeds}
+\measuremaxwidth{\recipeamountwidth}{1/2}
+\measuremaxwidth{\recipeunitwidth}{t}
+\measuremaxwidth{\recipedescnaturalwidth}{black mustard seeds}
+\measuremaxwidth{\recipeamountwidth}{1}
+\measuremaxwidth{\recipeunitwidth}{\mbox{}}
+\measuremaxwidth{\recipedescnaturalwidth}{onion diced}
+\measuremaxwidth{\recipeamountwidth}{3}
+\measuremaxwidth{\recipeunitwidth}{\mbox{}}
+\measuremaxwidth{\recipedescnaturalwidth}{serrano peppers, minced}
+\measuremaxwidth{\recipeamountwidth}{2}
+\measuremaxwidth{\recipeunitwidth}{t}
+\measuremaxwidth{\recipedescnaturalwidth}{minced garlic}
+\measuremaxwidth{\recipeamountwidth}{2}
+\measuremaxwidth{\recipeunitwidth}{t}
+\measuremaxwidth{\recipedescnaturalwidth}{minced ginger}
+\measuremaxwidth{\recipeamountwidth}{1/4}
+\measuremaxwidth{\recipeunitwidth}{c}
+\measuremaxwidth{\recipedescnaturalwidth}{water}
+\measuremaxwidth{\recipeamountwidth}{1}
+\measuremaxwidth{\recipeunitwidth}{lb}
+\measuremaxwidth{\recipedescnaturalwidth}{potatoes, peeled, 1~inch cubes}
+\measuremaxwidth{\recipeamountwidth}{1}
+\measuremaxwidth{\recipeunitwidth}{\mbox{}}
+\measuremaxwidth{\recipedescnaturalwidth}{cauliflower, cut into florets}
+\measuremaxwidth{\recipeamountwidth}{1}
+\measuremaxwidth{\recipeunitwidth}{t}
+\measuremaxwidth{\recipedescnaturalwidth}{paprika}
+\measuremaxwidth{\recipeamountwidth}{1}
+\measuremaxwidth{\recipeunitwidth}{t}
+\measuremaxwidth{\recipedescnaturalwidth}{salt}
+\measuremaxwidth{\recipeamountwidth}{1}
+\measuremaxwidth{\recipeunitwidth}{t}
+\measuremaxwidth{\recipedescnaturalwidth}{turmeric}
+\measuremaxwidth{\recipeamountwidth}{1/2}
+\measuremaxwidth{\recipeunitwidth}{t}
+\measuremaxwidth{\recipedescnaturalwidth}{garam masala}
+\measuremaxwidth{\recipeamountwidth}{1}
+\measuremaxwidth{\recipeunitwidth}{t}
+\measuremaxwidth{\recipedescnaturalwidth}{cayenne}
+\measuremaxwidth{\recipeamountwidth}{\mbox{}}
+\measuremaxwidth{\recipeunitwidth}{\mbox{}}
+\measuremaxwidth{\recipedescnaturalwidth}{cilantro leaves, chopped}
+\setlength{\recipeingredientdescwidth}{\dimexpr\recipedescnaturalwidth+\recipewidthbuffer\relax}
+\setlength{\recipeingredientblockwidth}{\dimexpr\recipeamountwidth+\recipeamountunitgap+\recipeunitwidth+\recipeunitdescgap+\recipeingredientdescwidth\relax}
+\ifdim\recipeingredientblockwidth>0.48\textwidth
+  \setlength{\recipeingredientblockwidth}{0.48\textwidth}
+  \setlength{\recipeingredientdescwidth}{\dimexpr\recipeingredientblockwidth-\recipeamountwidth-\recipeamountunitgap-\recipeunitwidth-\recipeunitdescgap\relax}
+\fi
+\setlength{\recipestepwidth}{\dimexpr\textwidth-\recipecolumngap-\recipeingredientblockwidth\relax}
 
-\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X l@{}}
+{\setlength{\parskip}{0pt}%
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\recipestepwidth}@{\hspace{\recipecolumngap}}>{\raggedright\arraybackslash}p{\recipeingredientblockwidth}@{}}
 \toprule
-Saute until cumin seeds brown and mustard seeds pop.
-  &
-  \begin{tabular}[t]{@{}R{2em}@{\hspace{0.3em}}l@{\hspace{0.8em}}l@{}}
-  3 & T & oil \\
-  1 & t & cumin seeds \\
-  1/2 & t & black mustard seeds \\
-  \end{tabular}
-\\
-\midrule
-Add and continue saute for about 6~minutes until onions begin to brown.
-  &
-  \begin{tabular}[t]{@{}R{2em}@{\hspace{0.3em}}l@{\hspace{0.8em}}l@{}}
-  1 & \mbox{} & onion diced \\
-  3 & \mbox{} & serrano peppers, minced \\
-  \end{tabular}
-\\
-\midrule
-Add and saute for 30~seconds.
-  &
-  \begin{tabular}[t]{@{}R{2em}@{\hspace{0.3em}}l@{\hspace{0.8em}}l@{}}
-  2 & t & minced garlic \\
-  2 & t & minced ginger \\
-  \end{tabular}
-\\
-\midrule
-Deglaze and mix.
-  &
-  \begin{tabular}[t]{@{}R{2em}@{\hspace{0.3em}}l@{\hspace{0.8em}}l@{}}
-  1/4 & c & water \\
-  1 & lb & potatoes, peeled, 1~inch cubes \\
-  \end{tabular}
-\\
-\midrule
-Move to Instant Pot (if sauteed elsewhere) and cook at high pressure for 3~minutes then quick-release pressure.
-  &
-  \mbox{}
-\\
-\midrule
-Add florets. Sprinkle spices thereon. Cook at high pressure for 1~minute then quick-release pressure.
-  &
-  \begin{tabular}[t]{@{}R{2em}@{\hspace{0.3em}}l@{\hspace{0.8em}}l@{}}
-  1 & \mbox{} & cauliflower, cut into florets \\
-  1 & t & paprika \\
-  1 & t & salt \\
-  1 & t & turmeric \\
-  1/2 & t & garam masala \\
-  1 & t & cayenne \\
-  \end{tabular}
-\\
-\midrule
-Remove contents immediately to avoid overcooking! Garnish.
-  &
-  \begin{tabular}[t]{@{}R{2em}@{\hspace{0.3em}}l@{\hspace{0.8em}}l@{}}
-   & \mbox{} & cilantro leaves, chopped \\
-  \end{tabular}
-\\
+\endfirsthead
+\toprule
+\endhead
 \bottomrule
-\end{tabularx}
-
-\end{center}
+\endfoot
+\bottomrule
+\endlastfoot
+Saute until cumin seeds brown and mustard seeds pop.& \parbox[t]{\recipeingredientblockwidth}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{\recipeamountwidth}@{\hspace{\recipeamountunitgap}}>{\raggedright\arraybackslash}p{\recipeunitwidth}@{\hspace{\recipeunitdescgap}}>{\raggedright\arraybackslash}p{\recipeingredientdescwidth}@{}}%
+3&T&oil\\
+1&t&cumin seeds\\
+1/2&t&black mustard seeds\\
+\end{tabular}}\tabularnewline
+\midrule
+Add and continue saute for about 6~minutes until onions begin to brown.& \parbox[t]{\recipeingredientblockwidth}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{\recipeamountwidth}@{\hspace{\recipeamountunitgap}}>{\raggedright\arraybackslash}p{\recipeunitwidth}@{\hspace{\recipeunitdescgap}}>{\raggedright\arraybackslash}p{\recipeingredientdescwidth}@{}}%
+1&\mbox{}&onion diced\\
+3&\mbox{}&serrano peppers, minced\\
+\end{tabular}}\tabularnewline
+\midrule
+Add and saute for 30~seconds.& \parbox[t]{\recipeingredientblockwidth}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{\recipeamountwidth}@{\hspace{\recipeamountunitgap}}>{\raggedright\arraybackslash}p{\recipeunitwidth}@{\hspace{\recipeunitdescgap}}>{\raggedright\arraybackslash}p{\recipeingredientdescwidth}@{}}%
+2&t&minced garlic\\
+2&t&minced ginger\\
+\end{tabular}}\tabularnewline
+\midrule
+Deglaze and mix.& \parbox[t]{\recipeingredientblockwidth}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{\recipeamountwidth}@{\hspace{\recipeamountunitgap}}>{\raggedright\arraybackslash}p{\recipeunitwidth}@{\hspace{\recipeunitdescgap}}>{\raggedright\arraybackslash}p{\recipeingredientdescwidth}@{}}%
+1/4&c&water\\
+1&lb&potatoes, peeled, 1~inch cubes\\
+\end{tabular}}\tabularnewline
+\midrule
+Move to Instant Pot (if sauteed elsewhere) and cook at high pressure for 3~minutes then quick-release pressure.& \mbox{}\tabularnewline
+\midrule
+Add florets. Sprinkle spices thereon. Cook at high pressure for 1~minute then quick-release pressure.& \parbox[t]{\recipeingredientblockwidth}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{\recipeamountwidth}@{\hspace{\recipeamountunitgap}}>{\raggedright\arraybackslash}p{\recipeunitwidth}@{\hspace{\recipeunitdescgap}}>{\raggedright\arraybackslash}p{\recipeingredientdescwidth}@{}}%
+1&\mbox{}&cauliflower, cut into florets\\
+1&t&paprika\\
+1&t&salt\\
+1&t&turmeric\\
+1/2&t&garam masala\\
+1&t&cayenne\\
+\end{tabular}}\tabularnewline
+\midrule
+Remove contents immediately to avoid overcooking! Garnish.& \parbox[t]{\recipeingredientblockwidth}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{\recipeamountwidth}@{\hspace{\recipeamountunitgap}}>{\raggedright\arraybackslash}p{\recipeunitwidth}@{\hspace{\recipeunitdescgap}}>{\raggedright\arraybackslash}p{\recipeingredientdescwidth}@{}}%
+&\mbox{}&cilantro leaves, chopped\\
+\end{tabular}}\tabularnewline
+\end{longtable}}
 
 \end{document}

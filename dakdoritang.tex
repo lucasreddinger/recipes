@@ -1,5 +1,5 @@
 \documentclass[
-    fontsize=11pt,DIV=12,
+    fontsize=11pt,
     letterpaper,oneside,paper=portrait
 ]{scrartcl}
 
@@ -14,7 +14,9 @@
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{nicefrac}
-\usepackage{tabularx}
+\usepackage{longtable}
+
+\usepackage[margin=0.75in]{geometry}
 
 %%%% METADATA  %%%% %%%% %%%% %%%%
 \newcommand{\myname}{lipidless.com}
@@ -50,10 +52,28 @@
 % bold sans with some spacing, like a compact paragraph
 \newcommand{\paragrcompact}[1]{\textbf{\sffamily #1}\quad}
 
-% right-aligned paragraph column for amounts
-\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+% shared recipe layout lengths
+\newlength{\recipeamountwidth}
+\newlength{\recipeunitwidth}
+\newlength{\recipedescnaturalwidth}
+\newlength{\recipeingredientdescwidth}
+\newlength{\recipeingredientblockwidth}
+\newlength{\recipestepwidth}
+\newlength{\recipecolumngap}
+\newlength{\recipeamountunitgap}
+\newlength{\recipeunitdescgap}
+\newlength{\recipewidthbuffer}
+\newcommand{\measuremaxwidth}[2]{
+
+  \settowidth{\dimen0}{#2}%
+  \ifdim\dimen0>#1\relax
+    #1=\dimen0\relax
+  \fi
+}
 
 \pagestyle{empty}
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{0pt}
 
 \begin{document}
 
@@ -65,49 +85,109 @@ Meal-prep Instant-Pot Korean chicken stew. May substitute chicken tenders for ea
 
 \subsection*{Steps}
 
-\begin{center}
 \renewcommand{\arraystretch}{1.15}
+\setlength{\recipecolumngap}{1.0em}
+\setlength{\recipeamountunitgap}{0.3em}
+\setlength{\recipeunitdescgap}{0.8em}
+\setlength{\recipewidthbuffer}{0.35em}
+\setlength{\recipeamountwidth}{2em}
+\setlength{\recipeunitwidth}{0pt}
+\setlength{\recipedescnaturalwidth}{0pt}
+\measuremaxwidth{\recipeamountwidth}{1}
+\measuremaxwidth{\recipeunitwidth}{\mbox{}}
+\measuremaxwidth{\recipedescnaturalwidth}{whole chicken}
+\measuremaxwidth{\recipeamountwidth}{12}
+\measuremaxwidth{\recipeunitwidth}{\mbox{}}
+\measuremaxwidth{\recipedescnaturalwidth}{garlic cloves, grated}
+\measuremaxwidth{\recipeamountwidth}{2}
+\measuremaxwidth{\recipeunitwidth}{in}
+\measuremaxwidth{\recipedescnaturalwidth}{ginger, grated}
+\measuremaxwidth{\recipeamountwidth}{1}
+\measuremaxwidth{\recipeunitwidth}{c}
+\measuremaxwidth{\recipedescnaturalwidth}{gochujang}
+\measuremaxwidth{\recipeamountwidth}{1/4}
+\measuremaxwidth{\recipeunitwidth}{c}
+\measuremaxwidth{\recipedescnaturalwidth}{coarse gochugaru}
+\measuremaxwidth{\recipeamountwidth}{1/4}
+\measuremaxwidth{\recipeunitwidth}{c}
+\measuremaxwidth{\recipedescnaturalwidth}{fine gochugaru}
+\measuremaxwidth{\recipeamountwidth}{1}
+\measuremaxwidth{\recipeunitwidth}{c}
+\measuremaxwidth{\recipedescnaturalwidth}{soy sauce}
+\measuremaxwidth{\recipeamountwidth}{1/3}
+\measuremaxwidth{\recipeunitwidth}{c}
+\measuremaxwidth{\recipedescnaturalwidth}{mirin}
+\measuremaxwidth{\recipeamountwidth}{6}
+\measuremaxwidth{\recipeunitwidth}{T}
+\measuremaxwidth{\recipedescnaturalwidth}{honey}
+\measuremaxwidth{\recipeamountwidth}{2}
+\measuremaxwidth{\recipeunitwidth}{t}
+\measuremaxwidth{\recipedescnaturalwidth}{black pepper}
+\measuremaxwidth{\recipeamountwidth}{3}
+\measuremaxwidth{\recipeunitwidth}{\mbox{}}
+\measuremaxwidth{\recipedescnaturalwidth}{chopped yellow onions}
+\measuremaxwidth{\recipeamountwidth}{4}
+\measuremaxwidth{\recipeunitwidth}{\mbox{}}
+\measuremaxwidth{\recipedescnaturalwidth}{cubed potatoes}
+\measuremaxwidth{\recipeamountwidth}{4}
+\measuremaxwidth{\recipeunitwidth}{\mbox{}}
+\measuremaxwidth{\recipedescnaturalwidth}{chopped carrots}
+\measuremaxwidth{\recipeamountwidth}{2}
+\measuremaxwidth{\recipeunitwidth}{T}
+\measuremaxwidth{\recipedescnaturalwidth}{chicken Better-Than-Bouillon}
+\measuremaxwidth{\recipeamountwidth}{2}
+\measuremaxwidth{\recipeunitwidth}{c}
+\measuremaxwidth{\recipedescnaturalwidth}{boiling water}
+\measuremaxwidth{\recipeamountwidth}{2}
+\measuremaxwidth{\recipeunitwidth}{T}
+\measuremaxwidth{\recipedescnaturalwidth}{neutral oil (or sesame for aroma)}
+\measuremaxwidth{\recipeamountwidth}{1}
+\measuremaxwidth{\recipeunitwidth}{t}
+\measuremaxwidth{\recipedescnaturalwidth}{fine salt, to finish}
+\setlength{\recipeingredientdescwidth}{\dimexpr\recipedescnaturalwidth+\recipewidthbuffer\relax}
+\setlength{\recipeingredientblockwidth}{\dimexpr\recipeamountwidth+\recipeamountunitgap+\recipeunitwidth+\recipeunitdescgap+\recipeingredientdescwidth\relax}
+\ifdim\recipeingredientblockwidth>0.48\textwidth
+  \setlength{\recipeingredientblockwidth}{0.48\textwidth}
+  \setlength{\recipeingredientdescwidth}{\dimexpr\recipeingredientblockwidth-\recipeamountwidth-\recipeamountunitgap-\recipeunitwidth-\recipeunitdescgap\relax}
+\fi
+\setlength{\recipestepwidth}{\dimexpr\textwidth-\recipecolumngap-\recipeingredientblockwidth\relax}
 
-\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X l@{}}
+{\setlength{\parskip}{0pt}%
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\recipestepwidth}@{\hspace{\recipecolumngap}}>{\raggedright\arraybackslash}p{\recipeingredientblockwidth}@{}}
 \toprule
-Break down as desired. Remove skin if desired. Season with kosher salt and pepper.
-  &
-  \begin{tabular}[t]{@{}R{2em}@{\hspace{0.3em}}l@{\hspace{0.8em}}l@{}}
-  1 & \mbox{} & whole chicken \\
-  \end{tabular}
-\\
-\midrule
-Blend. Pour over chicken to thoroughly coat. Let marinate while prepping carrots, onions, potatoes (below), up to an hour.
-  &
-  \begin{tabular}[t]{@{}R{2em}@{\hspace{0.3em}}l@{\hspace{0.8em}}l@{}}
-  12 & \mbox{} & garlic cloves, grated \\
-  2 & in & ginger, grated \\
-  1 & c & gochujang \\
-  1/4 & c & coarse gochugaru \\
-  1/4 & c & fine gochugaru \\
-  1 & c & soy sauce \\
-  1/3 & c & mirin \\
-  6 & T & honey \\
-  2 & t & black pepper \\
-  \end{tabular}
-\\
-\midrule
-Place trivet in the Instant Pot. Combine boiling water, bouillon, and oil. Then add chicken, onions, potatoes, and carrots. Pour sauce over. Cook on high pressure for 10~minutes then allow natural release for 5~minutes. Simmer uncovered 5--8~minutes to achieve glossy reduction. Finish with salt to taste.
-  &
-  \begin{tabular}[t]{@{}R{2em}@{\hspace{0.3em}}l@{\hspace{0.8em}}l@{}}
-  3 & \mbox{} & chopped yellow onions \\
-  4 & \mbox{} & cubed potatoes \\
-  4 & \mbox{} & chopped carrots \\
-  2 & T & chicken Better-Than-Bouillon \\
-  2 & c & boiling water \\
-  2 & T & neutral oil (or sesame for aroma) \\
-  1 & t & fine salt, to finish \\
-  \end{tabular}
-\\
+\endfirsthead
+\toprule
+\endhead
 \bottomrule
-\end{tabularx}
-
-\end{center}
+\endfoot
+\bottomrule
+\endlastfoot
+Break down as desired. Remove skin if desired. Season with kosher salt and pepper.& \parbox[t]{\recipeingredientblockwidth}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{\recipeamountwidth}@{\hspace{\recipeamountunitgap}}>{\raggedright\arraybackslash}p{\recipeunitwidth}@{\hspace{\recipeunitdescgap}}>{\raggedright\arraybackslash}p{\recipeingredientdescwidth}@{}}%
+1&\mbox{}&whole chicken\\
+\end{tabular}}\tabularnewline
+\midrule
+Blend. Pour over chicken to thoroughly coat. Let marinate while prepping carrots, onions, potatoes (below), up to an hour.& \parbox[t]{\recipeingredientblockwidth}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{\recipeamountwidth}@{\hspace{\recipeamountunitgap}}>{\raggedright\arraybackslash}p{\recipeunitwidth}@{\hspace{\recipeunitdescgap}}>{\raggedright\arraybackslash}p{\recipeingredientdescwidth}@{}}%
+12&\mbox{}&garlic cloves, grated\\
+2&in&ginger, grated\\
+1&c&gochujang\\
+1/4&c&coarse gochugaru\\
+1/4&c&fine gochugaru\\
+1&c&soy sauce\\
+1/3&c&mirin\\
+6&T&honey\\
+2&t&black pepper\\
+\end{tabular}}\tabularnewline
+\midrule
+Place trivet in the Instant Pot. Combine boiling water, bouillon, and oil. Then add chicken, onions, potatoes, and carrots. Pour sauce over. Cook on high pressure for 10~minutes then allow natural release for 5~minutes. Simmer uncovered 5--8~minutes to achieve glossy reduction. Finish with salt to taste.& \parbox[t]{\recipeingredientblockwidth}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{\recipeamountwidth}@{\hspace{\recipeamountunitgap}}>{\raggedright\arraybackslash}p{\recipeunitwidth}@{\hspace{\recipeunitdescgap}}>{\raggedright\arraybackslash}p{\recipeingredientdescwidth}@{}}%
+3&\mbox{}&chopped yellow onions\\
+4&\mbox{}&cubed potatoes\\
+4&\mbox{}&chopped carrots\\
+2&T&chicken Better-Than-Bouillon\\
+2&c&boiling water\\
+2&T&neutral oil (or sesame for aroma)\\
+1&t&fine salt, to finish\\
+\end{tabular}}\tabularnewline
+\end{longtable}}
 
 \subsection*{Notes}
 

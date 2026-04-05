@@ -1,5 +1,5 @@
 \documentclass[
-    fontsize=11pt,DIV=12,
+    fontsize=11pt,
     letterpaper,oneside,paper=portrait
 ]{scrartcl}
 
@@ -14,7 +14,9 @@
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{nicefrac}
-\usepackage{tabularx}
+\usepackage{longtable}
+
+\usepackage[margin=0.75in]{geometry}
 
 %%%% METADATA  %%%% %%%% %%%% %%%%
 \newcommand{\myname}{lipidless.com}
@@ -50,10 +52,28 @@
 % bold sans with some spacing, like a compact paragraph
 \newcommand{\paragrcompact}[1]{\textbf{\sffamily #1}\quad}
 
-% right-aligned paragraph column for amounts
-\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+% shared recipe layout lengths
+\newlength{\recipeamountwidth}
+\newlength{\recipeunitwidth}
+\newlength{\recipedescnaturalwidth}
+\newlength{\recipeingredientdescwidth}
+\newlength{\recipeingredientblockwidth}
+\newlength{\recipestepwidth}
+\newlength{\recipecolumngap}
+\newlength{\recipeamountunitgap}
+\newlength{\recipeunitdescgap}
+\newlength{\recipewidthbuffer}
+\newcommand{\measuremaxwidth}[2]{
+
+  \settowidth{\dimen0}{#2}%
+  \ifdim\dimen0>#1\relax
+    #1=\dimen0\relax
+  \fi
+}
 
 \pagestyle{empty}
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{0pt}
 
 \begin{document}
 
@@ -65,62 +85,92 @@ My attempt at a knock-off of a favorite muffin from a major chain in the U.S. Yi
 
 \subsection*{Steps}
 
-\begin{center}
 \renewcommand{\arraystretch}{1.15}
+\setlength{\recipecolumngap}{1.0em}
+\setlength{\recipeamountunitgap}{0.3em}
+\setlength{\recipeunitdescgap}{0.8em}
+\setlength{\recipewidthbuffer}{0.35em}
+\setlength{\recipeamountwidth}{2em}
+\setlength{\recipeunitwidth}{0pt}
+\setlength{\recipedescnaturalwidth}{0pt}
+\measuremaxwidth{\recipeamountwidth}{2}
+\measuremaxwidth{\recipeunitwidth}{cups}
+\measuremaxwidth{\recipedescnaturalwidth}{flour}
+\measuremaxwidth{\recipeamountwidth}{1}
+\measuremaxwidth{\recipeunitwidth}{Tbsp}
+\measuremaxwidth{\recipedescnaturalwidth}{baking powder}
+\measuremaxwidth{\recipeamountwidth}{1/2}
+\measuremaxwidth{\recipeunitwidth}{tsp}
+\measuremaxwidth{\recipedescnaturalwidth}{baking soda}
+\measuremaxwidth{\recipeamountwidth}{1/2}
+\measuremaxwidth{\recipeunitwidth}{tsp}
+\measuremaxwidth{\recipedescnaturalwidth}{salt}
+\measuremaxwidth{\recipeamountwidth}{1}
+\measuremaxwidth{\recipeunitwidth}{stick}
+\measuremaxwidth{\recipedescnaturalwidth}{butter}
+\measuremaxwidth{\recipeamountwidth}{2/3}
+\measuremaxwidth{\recipeunitwidth}{cup}
+\measuremaxwidth{\recipedescnaturalwidth}{sugar}
+\measuremaxwidth{\recipeamountwidth}{2}
+\measuremaxwidth{\recipeunitwidth}{\mbox{}}
+\measuremaxwidth{\recipedescnaturalwidth}{large eggs}
+\measuremaxwidth{\recipeamountwidth}{1}
+\measuremaxwidth{\recipeunitwidth}{cup}
+\measuremaxwidth{\recipedescnaturalwidth}{cream}
+\measuremaxwidth{\recipeamountwidth}{1}
+\measuremaxwidth{\recipeunitwidth}{Tbsp}
+\measuremaxwidth{\recipedescnaturalwidth}{almond extract}
+\measuremaxwidth{\recipeamountwidth}{1}
+\measuremaxwidth{\recipeunitwidth}{tsp}
+\measuremaxwidth{\recipedescnaturalwidth}{vanilla extract}
+\measuremaxwidth{\recipeamountwidth}{2}
+\measuremaxwidth{\recipeunitwidth}{Tbsp}
+\measuremaxwidth{\recipedescnaturalwidth}{poppy seeds}
+\setlength{\recipeingredientdescwidth}{\dimexpr\recipedescnaturalwidth+\recipewidthbuffer\relax}
+\setlength{\recipeingredientblockwidth}{\dimexpr\recipeamountwidth+\recipeamountunitgap+\recipeunitwidth+\recipeunitdescgap+\recipeingredientdescwidth\relax}
+\ifdim\recipeingredientblockwidth>0.48\textwidth
+  \setlength{\recipeingredientblockwidth}{0.48\textwidth}
+  \setlength{\recipeingredientdescwidth}{\dimexpr\recipeingredientblockwidth-\recipeamountwidth-\recipeamountunitgap-\recipeunitwidth-\recipeunitdescgap\relax}
+\fi
+\setlength{\recipestepwidth}{\dimexpr\textwidth-\recipecolumngap-\recipeingredientblockwidth\relax}
 
-\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X l@{}}
+{\setlength{\parskip}{0pt}%
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\recipestepwidth}@{\hspace{\recipecolumngap}}>{\raggedright\arraybackslash}p{\recipeingredientblockwidth}@{}}
 \toprule
-Preheat the oven to 375°F.
-  &
-  \mbox{}
-\\
-\midrule
-Combine in a bowl.
-  &
-  \begin{tabular}[t]{@{}R{2em}@{\hspace{0.3em}}l@{\hspace{0.8em}}l@{}}
-  2 & cups & flour \\
-  1 & Tbsp & baking powder \\
-  1/2 & tsp & baking soda \\
-  1/2 & tsp & salt \\
-  \end{tabular}
-\\
-\midrule
-In another larger bowl, cream for 3~minutes.
-  &
-  \begin{tabular}[t]{@{}R{2em}@{\hspace{0.3em}}l@{\hspace{0.8em}}l@{}}
-  1 & stick & butter \\
-  2/3 & cup & sugar \\
-  \end{tabular}
-\\
-\midrule
-Add to creamed mixture.
-  &
-  \begin{tabular}[t]{@{}R{2em}@{\hspace{0.3em}}l@{\hspace{0.8em}}l@{}}
-  2 & \mbox{} & large eggs \\
-  1 & cup & cream \\
-  1 & Tbsp & almond extract \\
-  1 & tsp & vanilla extract \\
-  2 & Tbsp & poppy seeds \\
-  \end{tabular}
-\\
-\midrule
-Mix the contents of the wet bowl into the dry bowl until just combined and still lumpy.
-  &
-  \mbox{}
-\\
-\midrule
-Portion batter into muffin pan, then top muffins with sliced almonds if desired.
-  &
-  \mbox{}
-\\
-\midrule
-Bake for 20--22~minutes.
-  &
-  \mbox{}
-\\
+\endfirsthead
+\toprule
+\endhead
 \bottomrule
-\end{tabularx}
-
-\end{center}
+\endfoot
+\bottomrule
+\endlastfoot
+Preheat the oven to 375°F.& \mbox{}\tabularnewline
+\midrule
+Combine in a bowl.& \parbox[t]{\recipeingredientblockwidth}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{\recipeamountwidth}@{\hspace{\recipeamountunitgap}}>{\raggedright\arraybackslash}p{\recipeunitwidth}@{\hspace{\recipeunitdescgap}}>{\raggedright\arraybackslash}p{\recipeingredientdescwidth}@{}}%
+2&cups&flour\\
+1&Tbsp&baking powder\\
+1/2&tsp&baking soda\\
+1/2&tsp&salt\\
+\end{tabular}}\tabularnewline
+\midrule
+In another larger bowl, cream for 3~minutes.& \parbox[t]{\recipeingredientblockwidth}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{\recipeamountwidth}@{\hspace{\recipeamountunitgap}}>{\raggedright\arraybackslash}p{\recipeunitwidth}@{\hspace{\recipeunitdescgap}}>{\raggedright\arraybackslash}p{\recipeingredientdescwidth}@{}}%
+1&stick&butter\\
+2/3&cup&sugar\\
+\end{tabular}}\tabularnewline
+\midrule
+Add to creamed mixture.& \parbox[t]{\recipeingredientblockwidth}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{\recipeamountwidth}@{\hspace{\recipeamountunitgap}}>{\raggedright\arraybackslash}p{\recipeunitwidth}@{\hspace{\recipeunitdescgap}}>{\raggedright\arraybackslash}p{\recipeingredientdescwidth}@{}}%
+2&\mbox{}&large eggs\\
+1&cup&cream\\
+1&Tbsp&almond extract\\
+1&tsp&vanilla extract\\
+2&Tbsp&poppy seeds\\
+\end{tabular}}\tabularnewline
+\midrule
+Mix the contents of the wet bowl into the dry bowl until just combined and still lumpy.& \mbox{}\tabularnewline
+\midrule
+Portion batter into muffin pan, then top muffins with sliced almonds if desired.& \mbox{}\tabularnewline
+\midrule
+Bake for 20--22~minutes.& \mbox{}\tabularnewline
+\end{longtable}}
 
 \end{document}

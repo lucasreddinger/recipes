@@ -1,5 +1,5 @@
 \documentclass[
-    fontsize=11pt,DIV=12,
+    fontsize=11pt,
     letterpaper,oneside,paper=portrait
 ]{scrartcl}
 
@@ -14,7 +14,9 @@
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{nicefrac}
-\usepackage{tabularx}
+\usepackage{longtable}
+
+\usepackage[margin=0.75in]{geometry}
 
 %%%% METADATA  %%%% %%%% %%%% %%%%
 \newcommand{\myname}{lipidless.com}
@@ -50,10 +52,28 @@
 % bold sans with some spacing, like a compact paragraph
 \newcommand{\paragrcompact}[1]{\textbf{\sffamily #1}\quad}
 
-% right-aligned paragraph column for amounts
-\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+% shared recipe layout lengths
+\newlength{\recipeamountwidth}
+\newlength{\recipeunitwidth}
+\newlength{\recipedescnaturalwidth}
+\newlength{\recipeingredientdescwidth}
+\newlength{\recipeingredientblockwidth}
+\newlength{\recipestepwidth}
+\newlength{\recipecolumngap}
+\newlength{\recipeamountunitgap}
+\newlength{\recipeunitdescgap}
+\newlength{\recipewidthbuffer}
+\newcommand{\measuremaxwidth}[2]{
+
+  \settowidth{\dimen0}{#2}%
+  \ifdim\dimen0>#1\relax
+    #1=\dimen0\relax
+  \fi
+}
 
 \pagestyle{empty}
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{0pt}
 
 \begin{document}
 
@@ -65,36 +85,78 @@ Quick spicy cucumber salad. Extra bright and salty for garnishing umami-rich dis
 
 \subsection*{Steps}
 
-\begin{center}
 \renewcommand{\arraystretch}{1.15}
+\setlength{\recipecolumngap}{1.0em}
+\setlength{\recipeamountunitgap}{0.3em}
+\setlength{\recipeunitdescgap}{0.8em}
+\setlength{\recipewidthbuffer}{0.35em}
+\setlength{\recipeamountwidth}{2em}
+\setlength{\recipeunitwidth}{0pt}
+\setlength{\recipedescnaturalwidth}{0pt}
+\measuremaxwidth{\recipeamountwidth}{2}
+\measuremaxwidth{\recipeunitwidth}{\mbox{}}
+\measuremaxwidth{\recipedescnaturalwidth}{cucumbers, sliced}
+\measuremaxwidth{\recipeamountwidth}{1}
+\measuremaxwidth{\recipeunitwidth}{t}
+\measuremaxwidth{\recipedescnaturalwidth}{kosher salt}
+\measuremaxwidth{\recipeamountwidth}{1}
+\measuremaxwidth{\recipeunitwidth}{T}
+\measuremaxwidth{\recipedescnaturalwidth}{coarse gochugaru}
+\measuremaxwidth{\recipeamountwidth}{1}
+\measuremaxwidth{\recipeunitwidth}{T}
+\measuremaxwidth{\recipedescnaturalwidth}{chopped scallion}
+\measuremaxwidth{\recipeamountwidth}{1}
+\measuremaxwidth{\recipeunitwidth}{\mbox{}}
+\measuremaxwidth{\recipedescnaturalwidth}{garlic clove, grated}
+\measuremaxwidth{\recipeamountwidth}{4}
+\measuremaxwidth{\recipeunitwidth}{T}
+\measuremaxwidth{\recipedescnaturalwidth}{rice vinegar}
+\measuremaxwidth{\recipeamountwidth}{2}
+\measuremaxwidth{\recipeunitwidth}{T}
+\measuremaxwidth{\recipedescnaturalwidth}{soy sauce}
+\measuremaxwidth{\recipeamountwidth}{1}
+\measuremaxwidth{\recipeunitwidth}{t}
+\measuremaxwidth{\recipedescnaturalwidth}{sugar}
+\measuremaxwidth{\recipeamountwidth}{1}
+\measuremaxwidth{\recipeunitwidth}{t}
+\measuremaxwidth{\recipedescnaturalwidth}{toasted sesame seeds}
+\measuremaxwidth{\recipeamountwidth}{1}
+\measuremaxwidth{\recipeunitwidth}{t}
+\measuremaxwidth{\recipedescnaturalwidth}{toasted sesame oil}
+\setlength{\recipeingredientdescwidth}{\dimexpr\recipedescnaturalwidth+\recipewidthbuffer\relax}
+\setlength{\recipeingredientblockwidth}{\dimexpr\recipeamountwidth+\recipeamountunitgap+\recipeunitwidth+\recipeunitdescgap+\recipeingredientdescwidth\relax}
+\ifdim\recipeingredientblockwidth>0.48\textwidth
+  \setlength{\recipeingredientblockwidth}{0.48\textwidth}
+  \setlength{\recipeingredientdescwidth}{\dimexpr\recipeingredientblockwidth-\recipeamountwidth-\recipeamountunitgap-\recipeunitwidth-\recipeunitdescgap\relax}
+\fi
+\setlength{\recipestepwidth}{\dimexpr\textwidth-\recipecolumngap-\recipeingredientblockwidth\relax}
 
-\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X l@{}}
+{\setlength{\parskip}{0pt}%
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\recipestepwidth}@{\hspace{\recipecolumngap}}>{\raggedright\arraybackslash}p{\recipeingredientblockwidth}@{}}
 \toprule
-Thinly slice. Toss with salt and set aside 15~minutes.
-  &
-  \begin{tabular}[t]{@{}R{2em}@{\hspace{0.3em}}l@{\hspace{0.8em}}l@{}}
-  2 & \mbox{} & cucumbers, sliced \\
-  1 & t & kosher salt \\
-  \end{tabular}
-\\
-\midrule
-Drain well, but do not squeeze. Add remaining ingredients and mix thoroughly. Let sit 5~minutes if desired.
-  &
-  \begin{tabular}[t]{@{}R{2em}@{\hspace{0.3em}}l@{\hspace{0.8em}}l@{}}
-  1 & T & coarse gochugaru \\
-  1 & T & chopped scallion \\
-  1 & \mbox{} & garlic clove, grated \\
-  4 & T & rice vinegar \\
-  2 & T & soy sauce \\
-  1 & t & sugar \\
-  1 & t & toasted sesame seeds \\
-  1 & t & toasted sesame oil \\
-  \end{tabular}
-\\
+\endfirsthead
+\toprule
+\endhead
 \bottomrule
-\end{tabularx}
-
-\end{center}
+\endfoot
+\bottomrule
+\endlastfoot
+Thinly slice. Toss with salt and set aside 15~minutes.& \parbox[t]{\recipeingredientblockwidth}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{\recipeamountwidth}@{\hspace{\recipeamountunitgap}}>{\raggedright\arraybackslash}p{\recipeunitwidth}@{\hspace{\recipeunitdescgap}}>{\raggedright\arraybackslash}p{\recipeingredientdescwidth}@{}}%
+2&\mbox{}&cucumbers, sliced\\
+1&t&kosher salt\\
+\end{tabular}}\tabularnewline
+\midrule
+Drain well, but do not squeeze. Add remaining ingredients and mix thoroughly. Let sit 5~minutes if desired.& \parbox[t]{\recipeingredientblockwidth}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{\recipeamountwidth}@{\hspace{\recipeamountunitgap}}>{\raggedright\arraybackslash}p{\recipeunitwidth}@{\hspace{\recipeunitdescgap}}>{\raggedright\arraybackslash}p{\recipeingredientdescwidth}@{}}%
+1&T&coarse gochugaru\\
+1&T&chopped scallion\\
+1&\mbox{}&garlic clove, grated\\
+4&T&rice vinegar\\
+2&T&soy sauce\\
+1&t&sugar\\
+1&t&toasted sesame seeds\\
+1&t&toasted sesame oil\\
+\end{tabular}}\tabularnewline
+\end{longtable}}
 
 \subsection*{Notes}
 

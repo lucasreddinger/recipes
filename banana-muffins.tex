@@ -1,5 +1,5 @@
 \documentclass[
-    fontsize=11pt,DIV=12,
+    fontsize=11pt,
     letterpaper,oneside,paper=portrait
 ]{scrartcl}
 
@@ -14,7 +14,9 @@
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{nicefrac}
-\usepackage{tabularx}
+\usepackage{longtable}
+
+\usepackage[margin=0.75in]{geometry}
 
 %%%% METADATA  %%%% %%%% %%%% %%%%
 \newcommand{\myname}{lipidless.com}
@@ -50,10 +52,28 @@
 % bold sans with some spacing, like a compact paragraph
 \newcommand{\paragrcompact}[1]{\textbf{\sffamily #1}\quad}
 
-% right-aligned paragraph column for amounts
-\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+% shared recipe layout lengths
+\newlength{\recipeamountwidth}
+\newlength{\recipeunitwidth}
+\newlength{\recipedescnaturalwidth}
+\newlength{\recipeingredientdescwidth}
+\newlength{\recipeingredientblockwidth}
+\newlength{\recipestepwidth}
+\newlength{\recipecolumngap}
+\newlength{\recipeamountunitgap}
+\newlength{\recipeunitdescgap}
+\newlength{\recipewidthbuffer}
+\newcommand{\measuremaxwidth}[2]{
+
+  \settowidth{\dimen0}{#2}%
+  \ifdim\dimen0>#1\relax
+    #1=\dimen0\relax
+  \fi
+}
 
 \pagestyle{empty}
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{0pt}
 
 \begin{document}
 
@@ -65,49 +85,94 @@ Banana muffins with wheat bran. Yield: one tray of muffins (12~standard or 6~jum
 
 \subsection*{Steps}
 
-\begin{center}
 \renewcommand{\arraystretch}{1.15}
+\setlength{\recipecolumngap}{1.0em}
+\setlength{\recipeamountunitgap}{0.3em}
+\setlength{\recipeunitdescgap}{0.8em}
+\setlength{\recipewidthbuffer}{0.35em}
+\setlength{\recipeamountwidth}{2em}
+\setlength{\recipeunitwidth}{0pt}
+\setlength{\recipedescnaturalwidth}{0pt}
+\measuremaxwidth{\recipeamountwidth}{1.5}
+\measuremaxwidth{\recipeunitwidth}{c}
+\measuremaxwidth{\recipedescnaturalwidth}{all-purpose flour}
+\measuremaxwidth{\recipeamountwidth}{1/2}
+\measuremaxwidth{\recipeunitwidth}{c}
+\measuremaxwidth{\recipedescnaturalwidth}{wheat bran}
+\measuremaxwidth{\recipeamountwidth}{2}
+\measuremaxwidth{\recipeunitwidth}{t}
+\measuremaxwidth{\recipedescnaturalwidth}{baking powder}
+\measuremaxwidth{\recipeamountwidth}{1}
+\measuremaxwidth{\recipeunitwidth}{t}
+\measuremaxwidth{\recipedescnaturalwidth}{ground cinnamon}
+\measuremaxwidth{\recipeamountwidth}{1/2}
+\measuremaxwidth{\recipeunitwidth}{t}
+\measuremaxwidth{\recipedescnaturalwidth}{baking soda}
+\measuremaxwidth{\recipeamountwidth}{1/4}
+\measuremaxwidth{\recipeunitwidth}{t}
+\measuremaxwidth{\recipedescnaturalwidth}{salt}
+\measuremaxwidth{\recipeamountwidth}{1/8}
+\measuremaxwidth{\recipeunitwidth}{t}
+\measuremaxwidth{\recipedescnaturalwidth}{ground nutmeg (optional)}
+\measuremaxwidth{\recipeamountwidth}{2/3}
+\measuremaxwidth{\recipeunitwidth}{c}
+\measuremaxwidth{\recipedescnaturalwidth}{chopped walnuts (optional)}
+\measuremaxwidth{\recipeamountwidth}{1}
+\measuremaxwidth{\recipeunitwidth}{\mbox{}}
+\measuremaxwidth{\recipedescnaturalwidth}{egg}
+\measuremaxwidth{\recipeamountwidth}{3/4}
+\measuremaxwidth{\recipeunitwidth}{c}
+\measuremaxwidth{\recipedescnaturalwidth}{packed brown sugar}
+\measuremaxwidth{\recipeamountwidth}{3}
+\measuremaxwidth{\recipeunitwidth}{\mbox{}}
+\measuremaxwidth{\recipedescnaturalwidth}{ripe bananas}
+\measuremaxwidth{\recipeamountwidth}{6}
+\measuremaxwidth{\recipeunitwidth}{T}
+\measuremaxwidth{\recipedescnaturalwidth}{vegetable oil}
+\measuremaxwidth{\recipeamountwidth}{1}
+\measuremaxwidth{\recipeunitwidth}{t}
+\measuremaxwidth{\recipedescnaturalwidth}{vanilla}
+\setlength{\recipeingredientdescwidth}{\dimexpr\recipedescnaturalwidth+\recipewidthbuffer\relax}
+\setlength{\recipeingredientblockwidth}{\dimexpr\recipeamountwidth+\recipeamountunitgap+\recipeunitwidth+\recipeunitdescgap+\recipeingredientdescwidth\relax}
+\ifdim\recipeingredientblockwidth>0.48\textwidth
+  \setlength{\recipeingredientblockwidth}{0.48\textwidth}
+  \setlength{\recipeingredientdescwidth}{\dimexpr\recipeingredientblockwidth-\recipeamountwidth-\recipeamountunitgap-\recipeunitwidth-\recipeunitdescgap\relax}
+\fi
+\setlength{\recipestepwidth}{\dimexpr\textwidth-\recipecolumngap-\recipeingredientblockwidth\relax}
 
-\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X l@{}}
+{\setlength{\parskip}{0pt}%
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\recipestepwidth}@{\hspace{\recipecolumngap}}>{\raggedright\arraybackslash}p{\recipeingredientblockwidth}@{}}
 \toprule
-Preheat the oven to 375°F. Use a non-stick muffin pan or paper cups.
-  &
-  \mbox{}
-\\
-\midrule
-Add to a bowl and Whisk thoroughly. Stir in walnuts.
-  &
-  \begin{tabular}[t]{@{}R{2em}@{\hspace{0.3em}}l@{\hspace{0.8em}}l@{}}
-  1.5 & c & all-purpose flour \\
-  1/2 & c & wheat bran \\
-  2 & t & baking powder \\
-  1 & t & ground cinnamon \\
-  1/2 & t & baking soda \\
-  1/4 & t & salt \\
-  1/8 & t & ground nutmeg (optional) \\
-  2/3 & c & chopped walnuts (optional) \\
-  \end{tabular}
-\\
-\midrule
-Whisk together in a large bowl until mixed (lumps of banana are fine). Add the flour mixture and mix with a few light strokes. Don't overmix; the batter should not be smooth.
-  &
-  \begin{tabular}[t]{@{}R{2em}@{\hspace{0.3em}}l@{\hspace{0.8em}}l@{}}
-  1 & \mbox{} & egg \\
-  3/4 & c & packed brown sugar \\
-  3 & \mbox{} & ripe bananas \\
-  6 & T & vegetable oil \\
-  1 & t & vanilla \\
-  \end{tabular}
-\\
-\midrule
-Divide the batter among the muffin tin cups. Bake about 18~minutes. Let cool for 2~to 3~minutes, then remove to a rack to cool.
-  &
-  \mbox{}
-\\
+\endfirsthead
+\toprule
+\endhead
 \bottomrule
-\end{tabularx}
-
-\end{center}
+\endfoot
+\bottomrule
+\endlastfoot
+Preheat the oven to 375°F. Use a non-stick muffin pan or paper cups.& \mbox{}\tabularnewline
+\midrule
+Add to a bowl and Whisk thoroughly. Stir in walnuts.& \parbox[t]{\recipeingredientblockwidth}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{\recipeamountwidth}@{\hspace{\recipeamountunitgap}}>{\raggedright\arraybackslash}p{\recipeunitwidth}@{\hspace{\recipeunitdescgap}}>{\raggedright\arraybackslash}p{\recipeingredientdescwidth}@{}}%
+1.5&c&all-purpose flour\\
+1/2&c&wheat bran\\
+2&t&baking powder\\
+1&t&ground cinnamon\\
+1/2&t&baking soda\\
+1/4&t&salt\\
+1/8&t&ground nutmeg (optional)\\
+2/3&c&chopped walnuts (optional)\\
+\end{tabular}}\tabularnewline
+\midrule
+Whisk together in a large bowl until mixed (lumps of banana are fine). Add the flour mixture and mix with a few light strokes. Don't overmix; the batter should not be smooth.& \parbox[t]{\recipeingredientblockwidth}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{\recipeamountwidth}@{\hspace{\recipeamountunitgap}}>{\raggedright\arraybackslash}p{\recipeunitwidth}@{\hspace{\recipeunitdescgap}}>{\raggedright\arraybackslash}p{\recipeingredientdescwidth}@{}}%
+1&\mbox{}&egg\\
+3/4&c&packed brown sugar\\
+3&\mbox{}&ripe bananas\\
+6&T&vegetable oil\\
+1&t&vanilla\\
+\end{tabular}}\tabularnewline
+\midrule
+Divide the batter among the muffin tin cups. Bake about 18~minutes. Let cool for 2~to 3~minutes, then remove to a rack to cool.& \mbox{}\tabularnewline
+\end{longtable}}
 
 \subsection*{Notes}
 

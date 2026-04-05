@@ -1,5 +1,5 @@
 \documentclass[
-    fontsize=11pt,DIV=12,
+    fontsize=11pt,
     letterpaper,oneside,paper=portrait
 ]{scrartcl}
 
@@ -14,7 +14,9 @@
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{nicefrac}
-\usepackage{tabularx}
+\usepackage{longtable}
+
+\usepackage[margin=0.75in]{geometry}
 
 %%%% METADATA  %%%% %%%% %%%% %%%%
 \newcommand{\myname}{lipidless.com}
@@ -50,10 +52,28 @@
 % bold sans with some spacing, like a compact paragraph
 \newcommand{\paragrcompact}[1]{\textbf{\sffamily #1}\quad}
 
-% right-aligned paragraph column for amounts
-\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+% shared recipe layout lengths
+\newlength{\recipeamountwidth}
+\newlength{\recipeunitwidth}
+\newlength{\recipedescnaturalwidth}
+\newlength{\recipeingredientdescwidth}
+\newlength{\recipeingredientblockwidth}
+\newlength{\recipestepwidth}
+\newlength{\recipecolumngap}
+\newlength{\recipeamountunitgap}
+\newlength{\recipeunitdescgap}
+\newlength{\recipewidthbuffer}
+\newcommand{\measuremaxwidth}[2]{
+
+  \settowidth{\dimen0}{#2}%
+  \ifdim\dimen0>#1\relax
+    #1=\dimen0\relax
+  \fi
+}
 
 \pagestyle{empty}
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{0pt}
 
 \begin{document}
 
@@ -65,76 +85,118 @@ Basic chili con carne.
 
 \subsection*{Steps}
 
-\begin{center}
 \renewcommand{\arraystretch}{1.15}
+\setlength{\recipecolumngap}{1.0em}
+\setlength{\recipeamountunitgap}{0.3em}
+\setlength{\recipeunitdescgap}{0.8em}
+\setlength{\recipewidthbuffer}{0.35em}
+\setlength{\recipeamountwidth}{2em}
+\setlength{\recipeunitwidth}{0pt}
+\setlength{\recipedescnaturalwidth}{0pt}
+\measuremaxwidth{\recipeamountwidth}{2}
+\measuremaxwidth{\recipeunitwidth}{ct}
+\measuremaxwidth{\recipedescnaturalwidth}{med/lg yellow onions}
+\measuremaxwidth{\recipeamountwidth}{2}
+\measuremaxwidth{\recipeunitwidth}{T}
+\measuremaxwidth{\recipedescnaturalwidth}{neutral oil (e.g., avocado)}
+\measuremaxwidth{\recipeamountwidth}{1}
+\measuremaxwidth{\recipeunitwidth}{head}
+\measuremaxwidth{\recipedescnaturalwidth}{garlic}
+\measuremaxwidth{\recipeamountwidth}{6}
+\measuremaxwidth{\recipeunitwidth}{ct}
+\measuremaxwidth{\recipedescnaturalwidth}{serrano chili peppers}
+\measuremaxwidth{\recipeamountwidth}{4}
+\measuremaxwidth{\recipeunitwidth}{T}
+\measuremaxwidth{\recipedescnaturalwidth}{chili powder}
+\measuremaxwidth{\recipeamountwidth}{2}
+\measuremaxwidth{\recipeunitwidth}{T}
+\measuremaxwidth{\recipedescnaturalwidth}{ground cumin}
+\measuremaxwidth{\recipeamountwidth}{3}
+\measuremaxwidth{\recipeunitwidth}{T}
+\measuremaxwidth{\recipedescnaturalwidth}{mexican oregano}
+\measuremaxwidth{\recipeamountwidth}{2}
+\measuremaxwidth{\recipeunitwidth}{t}
+\measuremaxwidth{\recipedescnaturalwidth}{sea salt}
+\measuremaxwidth{\recipeamountwidth}{1}
+\measuremaxwidth{\recipeunitwidth}{t}
+\measuremaxwidth{\recipedescnaturalwidth}{ground black pepper}
+\measuremaxwidth{\recipeamountwidth}{4}
+\measuremaxwidth{\recipeunitwidth}{T}
+\measuremaxwidth{\recipedescnaturalwidth}{beef Better-Than-Bouillon}
+\measuremaxwidth{\recipeamountwidth}{10}
+\measuremaxwidth{\recipeunitwidth}{c}
+\measuremaxwidth{\recipedescnaturalwidth}{boiling water}
+\measuremaxwidth{\recipeamountwidth}{2}
+\measuremaxwidth{\recipeunitwidth}{lbs}
+\measuremaxwidth{\recipedescnaturalwidth}{beans of choice}
+\measuremaxwidth{\recipeamountwidth}{14}
+\measuremaxwidth{\recipeunitwidth}{fl oz}
+\measuremaxwidth{\recipedescnaturalwidth}{diced tomato (canned or fresh)}
+\measuremaxwidth{\recipeamountwidth}{14}
+\measuremaxwidth{\recipeunitwidth}{fl oz}
+\measuremaxwidth{\recipedescnaturalwidth}{tomato sauce (canned)}
+\measuremaxwidth{\recipeamountwidth}{8}
+\measuremaxwidth{\recipeunitwidth}{ct}
+\measuremaxwidth{\recipedescnaturalwidth}{bay leaves}
+\measuremaxwidth{\recipeamountwidth}{2}
+\measuremaxwidth{\recipeunitwidth}{lbs}
+\measuremaxwidth{\recipedescnaturalwidth}{ground beef}
+\setlength{\recipeingredientdescwidth}{\dimexpr\recipedescnaturalwidth+\recipewidthbuffer\relax}
+\setlength{\recipeingredientblockwidth}{\dimexpr\recipeamountwidth+\recipeamountunitgap+\recipeunitwidth+\recipeunitdescgap+\recipeingredientdescwidth\relax}
+\ifdim\recipeingredientblockwidth>0.48\textwidth
+  \setlength{\recipeingredientblockwidth}{0.48\textwidth}
+  \setlength{\recipeingredientdescwidth}{\dimexpr\recipeingredientblockwidth-\recipeamountwidth-\recipeamountunitgap-\recipeunitwidth-\recipeunitdescgap\relax}
+\fi
+\setlength{\recipestepwidth}{\dimexpr\textwidth-\recipecolumngap-\recipeingredientblockwidth\relax}
 
-\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X l@{}}
+{\setlength{\parskip}{0pt}%
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\recipestepwidth}@{\hspace{\recipecolumngap}}>{\raggedright\arraybackslash}p{\recipeingredientblockwidth}@{}}
 \toprule
-Set Instant Pot to Saute on medium. Add oil. While oil heats, chop or dice onions (use food processor if desired). Once oil shimmers, add onions and saute a few minutes.
-  &
-  \begin{tabular}[t]{@{}R{2em}@{\hspace{0.3em}}l@{\hspace{0.8em}}l@{}}
-  2 & ct & med/lg yellow onions \\
-  2 & T & neutral oil (e.g., avocado) \\
-  \end{tabular}
-\\
-\midrule
-Mince garlic and chilis (food processor recommended). Add to pot and saute a few minutes.
-  &
-  \begin{tabular}[t]{@{}R{2em}@{\hspace{0.3em}}l@{\hspace{0.8em}}l@{}}
-  1 & head & garlic \\
-  6 & ct & serrano chili peppers \\
-  \end{tabular}
-\\
-\midrule
-Add to pot and saute a few minutes.\\\textit{Can substitute cayenne pepper (maybe 1--2~T?) or gochugaru (maybe 3~T?) in place of serranos.}
-  &
-  \begin{tabular}[t]{@{}R{2em}@{\hspace{0.3em}}l@{\hspace{0.8em}}l@{}}
-  4 & T & chili powder \\
-  2 & T & ground cumin \\
-  3 & T & mexican oregano \\
-  2 & t & sea salt \\
-  1 & t & ground black pepper \\
-  \end{tabular}
-\\
-\midrule
-Add to pot using hot water to deglaze and clean spoon used for bouillon.
-  &
-  \begin{tabular}[t]{@{}R{2em}@{\hspace{0.3em}}l@{\hspace{0.8em}}l@{}}
-  4 & T & beef Better-Than-Bouillon \\
-  10 & c & boiling water \\
-  \end{tabular}
-\\
-\midrule
-Pick out crummy beans and rinse well. Add to pot with diced tomato and tomato sauce. Stir. Lay bay leaves on top (count them so you can remove later).
-  &
-  \begin{tabular}[t]{@{}R{2em}@{\hspace{0.3em}}l@{\hspace{0.8em}}l@{}}
-  2 & lbs & beans of choice \\
-  14 & fl oz & diced tomato (canned or fresh) \\
-  14 & fl oz & tomato sauce (canned) \\
-  8 & ct & bay leaves \\
-  \end{tabular}
-\\
-\midrule
-Cancel saute. Secure lid. Switch to vent, then to seal. Cook on high pressure for 1~hour. Allow natural release for 30~minutes. Then cancel and remove lid. Pick out bay leaves.
-  &
-  \mbox{}
-\\
-\midrule
-Saute on high until desired consistency is reached.
-  &
-  \mbox{}
-\\
-\midrule
-Meanwhile, brown ground beef separately. Drain fat and add to pot.
-  &
-  \begin{tabular}[t]{@{}R{2em}@{\hspace{0.3em}}l@{\hspace{0.8em}}l@{}}
-  2 & lbs & ground beef \\
-  \end{tabular}
-\\
+\endfirsthead
+\toprule
+\endhead
 \bottomrule
-\end{tabularx}
-
-\end{center}
+\endfoot
+\bottomrule
+\endlastfoot
+Set Instant Pot to Saute on medium. Add oil. While oil heats, chop or dice onions (use food processor if desired). Once oil shimmers, add onions and saute a few minutes.& \parbox[t]{\recipeingredientblockwidth}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{\recipeamountwidth}@{\hspace{\recipeamountunitgap}}>{\raggedright\arraybackslash}p{\recipeunitwidth}@{\hspace{\recipeunitdescgap}}>{\raggedright\arraybackslash}p{\recipeingredientdescwidth}@{}}%
+2&ct&med/lg yellow onions\\
+2&T&neutral oil (e.g., avocado)\\
+\end{tabular}}\tabularnewline
+\midrule
+Mince garlic and chilis (food processor recommended). Add to pot and saute a few minutes.& \parbox[t]{\recipeingredientblockwidth}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{\recipeamountwidth}@{\hspace{\recipeamountunitgap}}>{\raggedright\arraybackslash}p{\recipeunitwidth}@{\hspace{\recipeunitdescgap}}>{\raggedright\arraybackslash}p{\recipeingredientdescwidth}@{}}%
+1&head&garlic\\
+6&ct&serrano chili peppers\\
+\end{tabular}}\tabularnewline
+\midrule
+Add to pot and saute a few minutes.\\\textit{Can substitute cayenne pepper (maybe 1--2~T?) or gochugaru (maybe 3~T?) in place of serranos.}& \parbox[t]{\recipeingredientblockwidth}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{\recipeamountwidth}@{\hspace{\recipeamountunitgap}}>{\raggedright\arraybackslash}p{\recipeunitwidth}@{\hspace{\recipeunitdescgap}}>{\raggedright\arraybackslash}p{\recipeingredientdescwidth}@{}}%
+4&T&chili powder\\
+2&T&ground cumin\\
+3&T&mexican oregano\\
+2&t&sea salt\\
+1&t&ground black pepper\\
+\end{tabular}}\tabularnewline
+\midrule
+Add to pot using hot water to deglaze and clean spoon used for bouillon.& \parbox[t]{\recipeingredientblockwidth}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{\recipeamountwidth}@{\hspace{\recipeamountunitgap}}>{\raggedright\arraybackslash}p{\recipeunitwidth}@{\hspace{\recipeunitdescgap}}>{\raggedright\arraybackslash}p{\recipeingredientdescwidth}@{}}%
+4&T&beef Better-Than-Bouillon\\
+10&c&boiling water\\
+\end{tabular}}\tabularnewline
+\midrule
+Pick out crummy beans and rinse well. Add to pot with diced tomato and tomato sauce. Stir. Lay bay leaves on top (count them so you can remove later).& \parbox[t]{\recipeingredientblockwidth}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{\recipeamountwidth}@{\hspace{\recipeamountunitgap}}>{\raggedright\arraybackslash}p{\recipeunitwidth}@{\hspace{\recipeunitdescgap}}>{\raggedright\arraybackslash}p{\recipeingredientdescwidth}@{}}%
+2&lbs&beans of choice\\
+14&fl oz&diced tomato (canned or fresh)\\
+14&fl oz&tomato sauce (canned)\\
+8&ct&bay leaves\\
+\end{tabular}}\tabularnewline
+\midrule
+Cancel saute. Secure lid. Switch to vent, then to seal. Cook on high pressure for 1~hour. Allow natural release for 30~minutes. Then cancel and remove lid. Pick out bay leaves.& \mbox{}\tabularnewline
+\midrule
+Saute on high until desired consistency is reached.& \mbox{}\tabularnewline
+\midrule
+Meanwhile, brown ground beef separately. Drain fat and add to pot.& \parbox[t]{\recipeingredientblockwidth}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{\recipeamountwidth}@{\hspace{\recipeamountunitgap}}>{\raggedright\arraybackslash}p{\recipeunitwidth}@{\hspace{\recipeunitdescgap}}>{\raggedright\arraybackslash}p{\recipeingredientdescwidth}@{}}%
+2&lbs&ground beef\\
+\end{tabular}}\tabularnewline
+\end{longtable}}
 
 \subsection*{Notes}
 
