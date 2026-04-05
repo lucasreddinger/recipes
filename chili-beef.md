@@ -2,7 +2,7 @@
 title: "Chili, beef"
 date: 2025-01-18
 slug: "chili-beef"
-draft: true
+draft: false
 tags:
   - chili
   - beef
@@ -18,7 +18,7 @@ categories:
 type: recipe
 ---
 
-Please verify against cloud doc!
+Basic chili con carne.
 
 ## Steps
 
@@ -75,3 +75,6 @@ Meanwhile, brown ground beef separately. Drain fat and add to pot.
 
 ### 2024-01-15
 I made this without oregano. Next time, consider: 1 t paprika, 2 T brown sugar, and 1 t cacao powder.
+
+### To self
+Verify this against your old version.

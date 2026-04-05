@@ -1,7 +1,7 @@
 title: Chili, beef
 date: 2025-01-18
 slug: chili-beef
-draft: true
+draft: false
 index_tags:
   - meal prep
   - freezes well
@@ -16,7 +16,7 @@ categories:
   - recipes
 type: recipe
 
-desc: Please verify against cloud doc!
+desc: Basic chili con carne.
 
 steps:
   - title: Saute onions
@@ -108,3 +108,6 @@ notes:
   - title: "2024-01-15"
     desc: |
       I made this without oregano. Next time, consider: 1 t paprika, 2 T brown sugar, and 1 t cacao powder.
+  - title: "To self"
+    desc: |
+      Verify this against your old version.

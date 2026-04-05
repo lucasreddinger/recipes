@@ -1,0 +1,60 @@
+title: Oi muchim
+date: 2026-04-05
+slug: oi-muchim
+draft: false
+index_tags:
+  - korean
+  - garnish
+tags:
+  - korean
+  - cucumber
+  - garnish
+categories:
+  - recipes
+type: recipe
+
+desc: Quick spicy cucumber salad. Extra bright and salty for garnishing umami-rich dishes.
+
+steps:
+  - title: Salt cucumbers
+    desc: Thinly slice. Toss with salt and set aside 15 minutes.
+    items:
+      - amount: 2
+        unit: ""
+        desc: cucumbers, sliced
+      - amount: 1
+        unit: t
+        desc: kosher salt
+
+  - title: Season
+    desc: Drain well, but do not squeeze. Add remaining ingredients and mix thoroughly. Let sit 5 minutes if desired.
+    items:
+      - amount: 1
+        unit: T
+        desc: coarse gochugaru
+      - amount: 1
+        unit: T
+        desc: chopped scallion
+      - amount: 1
+        unit: ""
+        desc: garlic clove, grated
+      - amount: 4
+        unit: T
+        desc: rice vinegar
+      - amount: 2
+        unit: T
+        desc: soy sauce
+      - amount: 1
+        unit: t
+        desc: sugar
+      - amount: 1
+        unit: t
+        desc: toasted sesame seeds
+      - amount: 1
+        unit: t
+        desc: toasted sesame oil
+
+notes:
+  - title: Reference
+    desc: |
+      Adapted from [Korean Bapsang's oi muchim](https://www.koreanbapsang.com/oi-muchim-korean-style-cucumber-salad/); I use more vinegar and add soy sauce.

@@ -2,7 +2,7 @@
 title: "German potato salad"
 date: 2024-04-29
 slug: "german-potato-salad"
-draft: true
+draft: false
 tags:
   - potato
   - salad
