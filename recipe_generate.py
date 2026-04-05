@@ -92,7 +92,8 @@ def typographic(text):
         return text
     text = text.replace("—", "---").replace("–", "--")
     text = parse_inline_md(text)
-    text = re.sub(r'"([^"]+)"', r"``\1''", text)
+    # Convert quoted phrases to TeX quotes, but leave inch marks such as 3/4" or 9x12" alone.
+    text = re.sub(r'(?<!\w)"([^"\n]+)"(?!\w)', r"``\1''", text)
     text = re.sub(r"(?<!\w)'(.*?)'(?!\w)", r"`\1'", text)
     return latex_units(text).strip()
 
