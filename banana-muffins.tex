@@ -1,0 +1,104 @@
+\documentclass[
+    fontsize=12pt,DIV=12,
+    letterpaper,oneside,paper=portrait
+]{scrartcl}
+
+\usepackage[charter]{mathdesign}
+\usepackage[sups,osf]{XCharter}
+\usepackage[semibold]{sourcesanspro}
+\usepackage[scaled=1.04,varqu,varl]{inconsolata}
+
+\usepackage{microtype}
+\usepackage[x11names,svgnames,dvipsnames,table]{xcolor}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{nicefrac}
+\usepackage{multirow}
+\usepackage{tabularx}
+
+%%%% METADATA  %%%% %%%% %%%% %%%%
+\newcommand{\myname}{lipidless.com}
+\newcommand{\mydate}{5~April 2026}
+\newcommand{\mytitle}{Banana muffins}
+\newcommand{\myurl}{https://www.lipidless.com/recipes/banana-muffins}
+%%%% %%%% %%%% %%%% %%%% %%%% %%%%
+
+% links
+\hypersetup{
+  colorlinks=false,
+  pdfborderstyle={/S/S/W 0.5},
+  pdfborder={0 0 0.5},
+  allbordercolors={0.8 0.8 1}
+}
+
+% no section numbering
+\setcounter{secnumdepth}{0}
+
+% reduce paragraph vspace
+\KOMAoptions{parskip=half}
+
+% do not indent paragraphs
+\setlength{\parindent}{0pt}
+
+% section heading styling
+\addtokomafont{section}{\sffamily\Large}
+\addtokomafont{subsection}{\sffamily\large}
+
+% bold sans
+\newcommand{\sfbf}[1]{\textbf{\sffamily #1}}
+
+% bold sans with some spacing, like a compact paragraph
+\newcommand{\paragrcompact}[1]{\textbf{\sffamily #1}\quad}
+
+% right-aligned paragraph column for amounts
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+
+\pagestyle{empty}
+
+\begin{document}
+
+{\sffamily \textbf{\LARGE \mytitle} \hfill \mydate \hfill \href{\myurl}{\myname}}
+
+\vspace{\baselineskip}
+
+Banana muffins with wheat bran. Yield: 12~standard muffins.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.15}
+
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X
+    R{2em} @{\hspace{0.3em}}
+    l @{\hspace{0.8em}}
+    l @{}}
+\toprule
+Preheat the oven to 375°F. Grease a standard 12-muffin pan (or line with paper cups).
+  &  &  &  \\
+\midrule
+\multirow[t]{8}{\linewidth}{Add to a bowl and Whisk thoroughly. Stir in walnuts.}
+  & 1.5 & c & all-purpose flour \\
+  & \nicefrac{1}{2} & c & wheat bran \\
+  & 2 & t & baking powder \\
+  & 1 & t & ground cinnamon \\
+  & \nicefrac{1}{2} & t & baking soda \\
+  & \nicefrac{1}{4} & t & salt \\
+  & 1/8 & t & ground nutmeg (optional) \\
+  & 2/3 & c & coarsely chopped walnuts (optional) \\
+\midrule
+\multirow[t]{5}{\linewidth}{Whisk together in a large bowl until mixed (lumps of banana are fine). Add the flour mixture and mix with a few light strokes. Don't overmix; the batter should not be smooth.}
+  & 1 &  & egg \\
+  & 3/4 & c & packed brown sugar \\
+  & 3 &  & ripe bananas \\
+  & 6 & T & vegetable oil \\
+  & 1 & t & vanilla \\
+\midrule
+Divide the batter among the muffin tin cups. Bake about 18~minutes. Let cool for 2~to 3~minutes, then remove to a rack to cool.
+  &  &  &  \\
+\bottomrule
+\end{tabularx}
+
+\end{center}
+
+\vspace{\baselineskip}
+
+\end{document}

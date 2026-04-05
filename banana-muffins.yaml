@@ -1,0 +1,73 @@
+title: Banana muffins
+date: 2026-04-05
+slug: banana-muffins
+draft: true
+tags:
+  - baking
+  - muffins
+  - banana
+  - walnut
+  - non-non-fat
+categories:
+  - recipes
+type: recipe
+
+desc: |
+  Banana muffins with wheat bran. Yield: 12 standard muffins.
+
+steps:
+  - title: Preheat
+    desc: Preheat the oven to 375°F. Grease a standard 12-muffin pan (or line with paper cups).
+    items: []
+
+  - title: Mix dry ingredients
+    desc: Add to a bowl and Whisk thoroughly. Stir in walnuts.
+    items:
+      - amount: 1.5
+        unit: c
+        desc: all-purpose flour
+      - amount: 0.5
+        unit: c
+        desc: wheat bran
+      - amount: 2
+        unit: t
+        desc: baking powder
+      - amount: 1
+        unit: t
+        desc: ground cinnamon
+      - amount: 0.5
+        unit: t
+        desc: baking soda
+      - amount: 0.25
+        unit: t
+        desc: salt
+      - amount: "1/8"
+        unit: t
+        desc: ground nutmeg (optional)
+      - amount: "2/3"
+        unit: c
+        desc: coarsely chopped walnuts (optional)
+
+  - title: Mix wet ingredients
+    desc: Whisk together in a large bowl until mixed (lumps of banana are fine). Add the flour mixture and mix with a few light strokes. Don't overmix; the batter should not be smooth.
+    items:
+      - amount: 1
+        unit: ""
+        desc: egg
+      - amount: "3/4"
+        unit: c
+        desc: packed brown sugar
+      - amount: 3
+        unit: ""
+        desc: ripe bananas
+      - amount: 6
+        unit: T
+        desc: vegetable oil
+      - amount: 1
+        unit: t
+        desc: vanilla
+
+
+  - title: Bake
+    desc: Divide the batter among the muffin tin cups. Bake about 18 minutes. Let cool for 2 to 3 minutes, then remove to a rack to cool.
+    items: []
