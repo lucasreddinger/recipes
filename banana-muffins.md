@@ -32,7 +32,7 @@ Add to a bowl and Whisk thoroughly. Stir in walnuts.
 - 0.5 t baking soda
 - 0.25 t salt
 - 1/8 t ground nutmeg (optional)
-- 2/3 c coarsely chopped walnuts (optional)
+- 2/3 c chopped walnuts (optional)
 
 ### Mix wet ingredients
 Whisk together in a large bowl until mixed (lumps of banana are fine). Add the flour mixture and mix with a few light strokes. Don't overmix; the batter should not be smooth.

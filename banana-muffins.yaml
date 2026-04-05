@@ -46,7 +46,7 @@ steps:
         desc: ground nutmeg (optional)
       - amount: "2/3"
         unit: c
-        desc: coarsely chopped walnuts (optional)
+        desc: chopped walnuts (optional)
 
   - title: Mix wet ingredients
     desc: Whisk together in a large bowl until mixed (lumps of banana are fine). Add the flour mixture and mix with a few light strokes. Don't overmix; the batter should not be smooth.
