@@ -14,7 +14,6 @@
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{nicefrac}
-\usepackage{multirow}
 \usepackage{tabularx}
 
 %%%% METADATA  %%%% %%%% %%%% %%%%
@@ -62,51 +61,76 @@
 
 \vspace{\baselineskip}
 
-Please verify against cloud doc!
+Basic chili con carne.
 
 \subsection*{Steps}
 
 \begin{center}
 \renewcommand{\arraystretch}{1.15}
 
-\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X
-    R{2em} @{\hspace{0.3em}}
-    l @{\hspace{0.8em}}
-    l @{}}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X l@{}}
 \toprule
-\multirow[t]{2}{\linewidth}{Set Instant Pot to Saute on medium. Add oil. While oil heats, chop or dice onions (use food processor if desired). Once oil shimmers, add onions and saute a few minutes.}
-  & 2 & ct & med/lg yellow onions \\
-  & 2 & T & neutral oil (e.g., avocado) \\
+Set Instant Pot to Saute on medium. Add oil. While oil heats, chop or dice onions (use food processor if desired). Once oil shimmers, add onions and saute a few minutes.
+  &
+  \begin{tabular}[t]{@{}R{2em}@{\hspace{0.3em}}l@{\hspace{0.8em}}l@{}}
+  2 & ct & med/lg yellow onions \\
+  2 & T & neutral oil (e.g., avocado) \\
+  \end{tabular}
+\\
 \midrule
-\multirow[t]{2}{\linewidth}{Mince garlic and chilis (food processor recommended). Add to pot and saute a few minutes.}
-  & 1 & head & garlic \\
-  & 6 & ct & serrano chili peppers \\
+Mince garlic and chilis (food processor recommended). Add to pot and saute a few minutes.
+  &
+  \begin{tabular}[t]{@{}R{2em}@{\hspace{0.3em}}l@{\hspace{0.8em}}l@{}}
+  1 & head & garlic \\
+  6 & ct & serrano chili peppers \\
+  \end{tabular}
+\\
 \midrule
-\multirow[t]{5}{\linewidth}{Add to pot and saute a few minutes.\\\textit{Can substitute cayenne pepper (maybe 1--2~T?) or gochugaru (maybe 3~T?) in place of serranos.}}
-  & 4 & T & chili powder \\
-  & 2 & T & ground cumin \\
-  & 3 & T & mexican oregano \\
-  & 2 & t & sea salt \\
-  & 1 & t & ground black pepper \\
+Add to pot and saute a few minutes.\\\textit{Can substitute cayenne pepper (maybe 1--2~T?) or gochugaru (maybe 3~T?) in place of serranos.}
+  &
+  \begin{tabular}[t]{@{}R{2em}@{\hspace{0.3em}}l@{\hspace{0.8em}}l@{}}
+  4 & T & chili powder \\
+  2 & T & ground cumin \\
+  3 & T & mexican oregano \\
+  2 & t & sea salt \\
+  1 & t & ground black pepper \\
+  \end{tabular}
+\\
 \midrule
-\multirow[t]{2}{\linewidth}{Add to pot using hot water to deglaze and clean spoon used for bouillon.}
-  & 4 & T & beef Better-Than-Bouillon \\
-  & 10 & c & boiling water \\
+Add to pot using hot water to deglaze and clean spoon used for bouillon.
+  &
+  \begin{tabular}[t]{@{}R{2em}@{\hspace{0.3em}}l@{\hspace{0.8em}}l@{}}
+  4 & T & beef Better-Than-Bouillon \\
+  10 & c & boiling water \\
+  \end{tabular}
+\\
 \midrule
-\multirow[t]{4}{\linewidth}{Pick out crummy beans and rinse well. Add to pot with diced tomato and tomato sauce. Stir. Lay bay leaves on top (count them so you can remove later).}
-  & 2 & lbs & beans of choice \\
-  & 14 & fl oz & diced tomato (canned or fresh) \\
-  & 14 & fl oz & tomato sauce (canned) \\
-  & 8 & ct & bay leaves \\
+Pick out crummy beans and rinse well. Add to pot with diced tomato and tomato sauce. Stir. Lay bay leaves on top (count them so you can remove later).
+  &
+  \begin{tabular}[t]{@{}R{2em}@{\hspace{0.3em}}l@{\hspace{0.8em}}l@{}}
+  2 & lbs & beans of choice \\
+  14 & fl oz & diced tomato (canned or fresh) \\
+  14 & fl oz & tomato sauce (canned) \\
+  8 & ct & bay leaves \\
+  \end{tabular}
+\\
 \midrule
 Cancel saute. Secure lid. Switch to vent, then to seal. Cook on high pressure for 1~hour. Allow natural release for 30~minutes. Then cancel and remove lid. Pick out bay leaves.
-  &  &  &  \\
+  &
+  \mbox{}
+\\
 \midrule
 Saute on high until desired consistency is reached.
-  &  &  &  \\
+  &
+  \mbox{}
+\\
 \midrule
 Meanwhile, brown ground beef separately. Drain fat and add to pot.
-  & 2 & lbs & ground beef \\
+  &
+  \begin{tabular}[t]{@{}R{2em}@{\hspace{0.3em}}l@{\hspace{0.8em}}l@{}}
+  2 & lbs & ground beef \\
+  \end{tabular}
+\\
 \bottomrule
 \end{tabularx}
 
@@ -115,5 +139,7 @@ Meanwhile, brown ground beef separately. Drain fat and add to pot.
 \subsection*{Notes}
 
 \paragrcompact{2024-01-15} I made this without oregano. Next time, consider: 1~t paprika, 2~T brown sugar, and 1~t cacao powder.
+
+\paragrcompact{To self} Verify this against your old version.
 
 \end{document}

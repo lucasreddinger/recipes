@@ -14,7 +14,6 @@
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{nicefrac}
-\usepackage{multirow}
 \usepackage{tabularx}
 
 %%%% METADATA  %%%% %%%% %%%% %%%%
@@ -69,39 +68,56 @@ My attempt at a knock-off of a favorite muffin from a major chain in the U.S. Yi
 \begin{center}
 \renewcommand{\arraystretch}{1.15}
 
-\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X
-    R{2em} @{\hspace{0.3em}}
-    l @{\hspace{0.8em}}
-    l @{}}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X l@{}}
 \toprule
 Preheat the oven to 375°F.
-  &  &  &  \\
+  &
+  \mbox{}
+\\
 \midrule
-\multirow[t]{4}{\linewidth}{Combine in a bowl.}
-  & 2 & cups & flour \\
-  & 1 & Tbsp & baking powder \\
-  & \nicefrac{1}{2} & tsp & baking soda \\
-  & \nicefrac{1}{2} & tsp & salt \\
+Combine in a bowl.
+  &
+  \begin{tabular}[t]{@{}R{2em}@{\hspace{0.3em}}l@{\hspace{0.8em}}l@{}}
+  2 & cups & flour \\
+  1 & Tbsp & baking powder \\
+  1/2 & tsp & baking soda \\
+  1/2 & tsp & salt \\
+  \end{tabular}
+\\
 \midrule
-\multirow[t]{2}{\linewidth}{In another larger bowl, cream for 3~minutes.}
-  & 1 & stick & butter \\
-  & 2/3 & cup & sugar \\
+In another larger bowl, cream for 3~minutes.
+  &
+  \begin{tabular}[t]{@{}R{2em}@{\hspace{0.3em}}l@{\hspace{0.8em}}l@{}}
+  1 & stick & butter \\
+  2/3 & cup & sugar \\
+  \end{tabular}
+\\
 \midrule
-\multirow[t]{5}{\linewidth}{Add to creamed mixture.}
-  & 2 &  & large eggs \\
-  & 1 & cup & cream \\
-  & 1 & Tbsp & almond extract \\
-  & 1 & tsp & vanilla extract \\
-  & 2 & Tbsp & poppy seeds \\
+Add to creamed mixture.
+  &
+  \begin{tabular}[t]{@{}R{2em}@{\hspace{0.3em}}l@{\hspace{0.8em}}l@{}}
+  2 & \mbox{} & large eggs \\
+  1 & cup & cream \\
+  1 & Tbsp & almond extract \\
+  1 & tsp & vanilla extract \\
+  2 & Tbsp & poppy seeds \\
+  \end{tabular}
+\\
 \midrule
 Mix the contents of the wet bowl into the dry bowl until just combined and still lumpy.
-  &  &  &  \\
+  &
+  \mbox{}
+\\
 \midrule
 Portion batter into muffin pan, then top muffins with sliced almonds if desired.
-  &  &  &  \\
+  &
+  \mbox{}
+\\
 \midrule
 Bake for 20--22~minutes.
-  &  &  &  \\
+  &
+  \mbox{}
+\\
 \bottomrule
 \end{tabularx}
 

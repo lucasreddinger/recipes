@@ -14,7 +14,6 @@
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{nicefrac}
-\usepackage{multirow}
 \usepackage{tabularx}
 
 %%%% METADATA  %%%% %%%% %%%% %%%%
@@ -69,41 +68,64 @@ Indian potato-cauliflower dish made in an Instant Pot.
 \begin{center}
 \renewcommand{\arraystretch}{1.15}
 
-\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X
-    R{2em} @{\hspace{0.3em}}
-    l @{\hspace{0.8em}}
-    l @{}}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X l@{}}
 \toprule
-\multirow[t]{3}{\linewidth}{Saute until cumin seeds brown and mustard seeds pop.}
-  & 3 & T & oil \\
-  & 1 & t & cumin seeds \\
-  & ½ & t & black mustard seeds \\
+Saute until cumin seeds brown and mustard seeds pop.
+  &
+  \begin{tabular}[t]{@{}R{2em}@{\hspace{0.3em}}l@{\hspace{0.8em}}l@{}}
+  3 & T & oil \\
+  1 & t & cumin seeds \\
+  1/2 & t & black mustard seeds \\
+  \end{tabular}
+\\
 \midrule
-\multirow[t]{2}{\linewidth}{Add and continue saute for about 6~minutes until onions begin to brown.}
-  & 1 &  & onion diced \\
-  & 3 &  & serrano peppers, minced \\
+Add and continue saute for about 6~minutes until onions begin to brown.
+  &
+  \begin{tabular}[t]{@{}R{2em}@{\hspace{0.3em}}l@{\hspace{0.8em}}l@{}}
+  1 & \mbox{} & onion diced \\
+  3 & \mbox{} & serrano peppers, minced \\
+  \end{tabular}
+\\
 \midrule
-\multirow[t]{2}{\linewidth}{Add and saute for 30~seconds.}
-  & 2 & t & minced garlic \\
-  & 2 & t & minced ginger \\
+Add and saute for 30~seconds.
+  &
+  \begin{tabular}[t]{@{}R{2em}@{\hspace{0.3em}}l@{\hspace{0.8em}}l@{}}
+  2 & t & minced garlic \\
+  2 & t & minced ginger \\
+  \end{tabular}
+\\
 \midrule
-\multirow[t]{2}{\linewidth}{Deglaze and mix.}
-  & ¼ & c & water \\
-  & 1 & lb & potatoes, peeled, 1~inch cubes \\
+Deglaze and mix.
+  &
+  \begin{tabular}[t]{@{}R{2em}@{\hspace{0.3em}}l@{\hspace{0.8em}}l@{}}
+  1/4 & c & water \\
+  1 & lb & potatoes, peeled, 1~inch cubes \\
+  \end{tabular}
+\\
 \midrule
 Move to Instant Pot (if sauteed elsewhere) and cook at high pressure for 3~minutes then quick-release pressure.
-  &  &  &  \\
+  &
+  \mbox{}
+\\
 \midrule
-\multirow[t]{6}{\linewidth}{Add florets. Sprinkle spices thereon. Cook at high pressure for 1~minute then quick-release pressure.}
-  & 1 &  & cauliflower, cut into florets \\
-  & 1 & t & paprika \\
-  & 1 & t & salt \\
-  & 1 & t & turmeric \\
-  & ½ & t & garam masala \\
-  & 1 & t & cayenne \\
+Add florets. Sprinkle spices thereon. Cook at high pressure for 1~minute then quick-release pressure.
+  &
+  \begin{tabular}[t]{@{}R{2em}@{\hspace{0.3em}}l@{\hspace{0.8em}}l@{}}
+  1 & \mbox{} & cauliflower, cut into florets \\
+  1 & t & paprika \\
+  1 & t & salt \\
+  1 & t & turmeric \\
+  1/2 & t & garam masala \\
+  1 & t & cayenne \\
+  \end{tabular}
+\\
 \midrule
 Remove contents immediately to avoid overcooking! Garnish.
-  &  &  & cilantro leaves, chopped \\
+  &
+  \begin{tabular}[t]{@{}R{2em}@{\hspace{0.3em}}l@{\hspace{0.8em}}l@{}}
+   & \mbox{} & cilantro leaves, chopped \\
+  \end{tabular}
+\\
 \bottomrule
 \end{tabularx}
 

@@ -26,40 +26,40 @@ groups:
       - amount: 2
         unit: lb
         desc: dry beans (great northern or mix)
-      - amount: 2–3
+      - amount: "2–3"
         unit: ""
         desc: large onions, diced
-      - amount: 3–4
+      - amount: "3–4"
         unit: ""
         desc: carrots, diced
-      - amount: 3–4
+      - amount: "3–4"
         unit: ""
         desc: celery stalks, diced
-      - amount: 4–8
+      - amount: "4–8"
         unit: ""
         desc: garlic cloves, minced
-      - amount: 3–4
+      - amount: "3–4"
         unit: ""
         desc: medium potatoes, diced
-      - amount: 3–4
+      - amount: "3–4"
         unit: Tbsp
         desc: veg. Better Than Bouillon
-      - amount: 2–3
+      - amount: "2–3"
         unit: Tbsp
         desc: olive or avocado oil
 
   - title: Recommended
     items:
-      - amount: 8–12
+      - amount: "8–12"
         unit: oz
         desc: mushrooms, chopped
-      - amount: 1–2
+      - amount: "1–2"
         unit: Tbsp
         desc: gochugaru
-      - amount: 3–4
+      - amount: "3–4"
         unit: Tbsp
         desc: MCT oil
-      - amount: 2–3
+      - amount: "2–3"
         unit: Tbsp
         desc: liquid aminos
       - amount: ""
@@ -71,7 +71,7 @@ groups:
 
   - title: Nice to have
     items:
-      - amount: 2–3
+      - amount: "2–3"
         unit: Tbsp
         desc: tomato paste
       - amount: ""
