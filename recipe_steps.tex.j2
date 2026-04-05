@@ -64,6 +64,10 @@
 
 {{ desc }}
 
+{% if steps %}
+\subsection*{Steps}
+
+{% endif %}
 \begin{center}
 \renewcommand{\arraystretch}{1.15}
 
@@ -97,6 +101,8 @@
 \end{center}
 
 {% if notes %}
+\subsection*{Notes}
+
 {% for note in notes %}
 \paragrcompact{ {{- note.title -}} } {{ note.desc }}
 

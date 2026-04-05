@@ -79,10 +79,14 @@
 
 \vspace{\baselineskip}
 
+{% if steps %}
+\subsection*{Steps}
+
 {% for step in steps %}
 \paragrcompact{ {{- step.title -}} } {{ step.desc }}
 
 {% endfor %}
+{% endif %}
 {% if notes %}
 \vspace{\baselineskip}
 
