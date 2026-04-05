@@ -8,6 +8,10 @@ tags:
   - muffins
   - almond
   - non-non-fat
+index_tags:
+  - baking
+  - muffins
+  - non-non-fat
 categories:
   - recipes
 type: recipe

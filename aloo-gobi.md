@@ -7,6 +7,10 @@ tags:
   - indian
   - vegan
   - instant pot
+index_tags:
+  - indian
+  - vegan
+  - instant pot
 categories:
   - recipes
 type: recipe

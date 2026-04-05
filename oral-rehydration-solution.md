@@ -5,6 +5,8 @@ slug: "oral-rehydration-solution"
 draft: false
 tags:
   - hydration
+index_tags:
+  - hydration
 categories:
   - recipes
 type: recipe

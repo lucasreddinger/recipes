@@ -8,6 +8,9 @@ tags:
   - muffins
   - banana
   - walnut
+index_tags:
+  - baking
+  - muffins
 categories:
   - recipes
 type: recipe

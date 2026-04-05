@@ -10,6 +10,11 @@ tags:
   - meal prep
   - freezes well
   - instant pot
+index_tags:
+  - vegan
+  - meal prep
+  - freezes well
+  - instant pot
 categories:
   - recipes
 type: recipe

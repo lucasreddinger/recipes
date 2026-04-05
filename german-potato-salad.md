@@ -9,6 +9,9 @@ tags:
   - german
   - meal prep
   - instant pot
+index_tags:
+  - meal prep
+  - instant pot
 categories:
   - recipes
 type: recipe

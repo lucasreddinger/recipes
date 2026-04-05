@@ -254,6 +254,7 @@ for input_yaml in yaml_files:
     slug = data_raw.get("slug", "")
     draft = data_raw.get("draft", False)
     tags = data_raw.get("tags", [])
+    index_tags = data_raw.get("index_tags", [])
     categories = data_raw.get("categories", [])
 
     md_lines.append("---")
@@ -266,6 +267,10 @@ for input_yaml in yaml_files:
     if tags:
         md_lines.append("tags:")
         for t in tags:
+            md_lines.append(f"  - {t}")
+    if index_tags:
+        md_lines.append("index_tags:")
+        for t in index_tags:
             md_lines.append(f"  - {t}")
     if categories:
         md_lines.append("categories:")
