@@ -253,6 +253,7 @@ for input_yaml in yaml_files:
 
     title = data_raw.get("title", "")
     slug = data_raw.get("slug", "")
+    short_desc = data_raw.get("short_desc", "")
     draft = data_raw.get("draft", False)
     tags = data_raw.get("tags", [])
     index_tags = data_raw.get("index_tags", [])
@@ -264,6 +265,8 @@ for input_yaml in yaml_files:
         md_lines.append(f"date: {raw_date}")
     if slug:
         md_lines.append(f"slug: {quote_yaml_string(slug)}")
+    if short_desc:
+        md_lines.append(f"short_desc: {quote_yaml_string(short_desc)}")
     md_lines.append(f"draft: {'true' if draft else 'false'}")
     if tags:
         md_lines.append("tags:")
