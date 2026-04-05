@@ -309,10 +309,12 @@ for input_yaml in yaml_files:
         if steps:
             md_lines.append("## Steps")
             md_lines.append("")
-            for step in steps:
+            for i, step in enumerate(steps, start=1):
                 st_title = (step.get("title", "") or "").strip()
                 if st_title:
                     md_lines.append(f"### {st_title}")
+                else:
+                    md_lines.append(f"### {i}")
                 step_desc = (step.get("desc", "") or "").strip()
                 if step_desc:
                     md_lines.append(step_desc)
@@ -322,10 +324,12 @@ for input_yaml in yaml_files:
         if steps:
             md_lines.append("## Steps")
             md_lines.append("")
-            for step in steps:
+            for i, step in enumerate(steps, start=1):
                 st_title = (step.get("title", "") or "").strip()
                 if st_title:
                     md_lines.append(f"### {st_title}")
+                else:
+                    md_lines.append(f"### {i}")
                 step_desc = (step.get("desc", "") or "").strip()
                 if step_desc:
                     md_lines.append(step_desc)
