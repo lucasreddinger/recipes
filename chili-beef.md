@@ -66,3 +66,8 @@ Saute on high until desired consistency is reached.
 Meanwhile, brown ground beef separately. Drain fat and add to pot.
 
 - 2 lbs ground beef
+
+## Notes
+
+### 2024-01-15
+I made this without oregano. Next time, consider: 1 t paprika, 2 T brown sugar, and 1 t cacao powder.

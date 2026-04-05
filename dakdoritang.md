@@ -47,3 +47,8 @@ Place trivet in the Instant Pot. Combine boiling water, bouillon, and oil. Then 
 - 2 c boiling water
 - 2 T neutral oil (or sesame for aroma)
 - 1 t fine salt, to finish
+
+## Notes
+
+### Easy version
+Use 5 lbs chicken tenderloins instead of 1 whole chicken. For the prep step, drain and pat dry, then season with kosher salt and pepper. Skinless chicken pieces also work.

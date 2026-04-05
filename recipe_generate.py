@@ -1,5 +1,3 @@
-# recipe_generate.py
-
 import yaml
 import sys
 import os
@@ -111,21 +109,26 @@ def normalize_notes(v):
     if not v:
         return []
 
-    if isinstance(v, str):
-        v = v.strip()
-        return [{"title": "Notes", "desc": v}] if v else []
+    if not isinstance(v, list):
+        raise TypeError("notes must be a list of note objects with title and desc")
 
     notes = []
-    for note in v:
+    for idx, note in enumerate(v, start=1):
         if not isinstance(note, dict):
-            continue
+            raise TypeError(f"notes[{idx}] must be an object with title and desc")
+        if "title" not in note or "desc" not in note:
+            raise ValueError(f"notes[{idx}] must include both title and desc")
+
         title = norm(note.get("title"))
         desc = norm(note.get("desc"))
-        if title or desc:
-            notes.append({
-                "title": title,
-                "desc": desc,
-            })
+        if not title or not desc:
+            raise ValueError(f"notes[{idx}] title and desc must both be non-empty")
+
+        notes.append({
+            "title": title,
+            "desc": desc,
+        })
+
     return notes
 
 ###############################################################################
@@ -165,7 +168,10 @@ for input_yaml in yaml_files:
         data_raw = yaml.safe_load(f)
 
     raw_date = data_raw.get("date", "")
-    notes = normalize_notes(data_raw.get("notes", []))
+    try:
+        notes = normalize_notes(data_raw.get("notes", []))
+    except (TypeError, ValueError) as exc:
+        raise ValueError(f"{input_yaml}: {exc}") from exc
     steps = data_raw.get("steps", []) or []
     groups = data_raw.get("groups", []) or []
 

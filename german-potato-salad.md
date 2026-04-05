@@ -7,8 +7,8 @@ tags:
   - potato
   - salad
   - german
-  - instant pot
   - meal prep
+  - instant pot
 categories:
   - recipes
 type: recipe
@@ -41,3 +41,11 @@ When cool enough to handle, peel potatoes. Cut off and discard any brown spots. 
 
 - 0.4 c MCT oil
 - 1 green onion bunch
+
+## Notes
+
+### Variation
+Peel and cut 2.5 lbs of russet potatoes into 0.5" cubes up-front.
+Cook HP for 6 min and QR pressure.
+Use 1 medium onion, 1 cup water, 0.5 cups vinegar, 1 t salt,
+0.5 t no-salt, 0.5 t ground black pepper, and 1 T Better-Than-Bouillon.
