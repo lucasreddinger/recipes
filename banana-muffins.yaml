@@ -2,12 +2,14 @@ title: Banana muffins
 date: 2026-04-05
 slug: banana-muffins
 draft: true
+index_tags:
+  - baking
+  - muffins
 tags:
   - baking
   - muffins
   - banana
   - walnut
-  - non-non-fat
 categories:
   - recipes
 type: recipe
