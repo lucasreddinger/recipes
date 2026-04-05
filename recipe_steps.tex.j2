@@ -1,3 +1,5 @@
+% recipe_steps.tex.j2
+
 \documentclass[
     fontsize=12pt,DIV=12,
     letterpaper,oneside,paper=portrait
@@ -98,5 +100,10 @@
 
 \vspace{\baselineskip}
 
-\end{document}
+{% if notes %}
+{% for note in notes %}
+\paragrcompact{ {{- note.title -}} } {{ note.desc }}
 
+{% endfor %}
+{% endif %}
+\end{document}
