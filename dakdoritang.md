@@ -34,10 +34,10 @@ Blend. Pour over chicken to thoroughly coat. Let marinate while prepping carrots
 - 12 garlic cloves, grated
 - 2 in ginger, grated
 - 1 c gochujang
-- 0.25 c coarse gochugaru
-- 0.25 c fine gochugaru
+- 1/4 c coarse gochugaru
+- 1/4 c fine gochugaru
 - 1 c soy sauce
-- 0.33 c mirin
+- 1/3 c mirin
 - 6 T honey
 - 2 t black pepper
 

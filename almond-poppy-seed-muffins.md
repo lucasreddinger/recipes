@@ -30,8 +30,8 @@ Combine in a bowl.
 
 - 2 cups flour
 - 1 Tbsp baking powder
-- 0.5 tsp baking soda
-- 0.5 tsp salt
+- 1/2 tsp baking soda
+- 1/2 tsp salt
 
 ### Cream butter and sugar
 In another larger bowl, cream for 3 minutes.

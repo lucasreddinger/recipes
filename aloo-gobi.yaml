@@ -26,7 +26,7 @@ steps:
       - amount: 1
         unit: t
         desc: cumin seeds
-      - amount: ½
+      - amount: "1/2"
         unit: t
         desc: black mustard seeds
 
@@ -53,7 +53,7 @@ steps:
   - title: Deglaze and add potatoes
     desc: Deglaze and mix.
     items:
-      - amount: ¼
+      - amount: "1/4"
         unit: c
         desc: water
       - amount: 1
@@ -79,7 +79,7 @@ steps:
       - amount: 1
         unit: t
         desc: turmeric
-      - amount: ½
+      - amount: "1/2"
         unit: t
         desc: garam masala
       - amount: 1

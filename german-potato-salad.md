@@ -36,10 +36,10 @@ In a stovetop pot, bring to a boil over medium heat. Once at a rolling boil, rem
 
 - 2 chopped yellow onions
 - 1.5 c water
-- 0.5 c vinegar
+- 1/2 c vinegar
 - 2 t sea salt
 - 1 t ground black pepper
-- 0.25 t white pepper, if desired
+- 1/4 t white pepper, if desired
 - 2 T Alstertor Dusseldorf-style mustard
 - 2 T beef or veg Better-Than-Bouillon
 
@@ -52,7 +52,7 @@ When cool enough to handle, peel potatoes. Cut off and discard any brown spots. 
 ## Notes
 
 ### Variation
-Peel and cut 2.5 lbs of russet potatoes into 0.5" cubes up-front.
+Peel and cut 2.5 lbs of russet potatoes into 1/2" cubes up-front.
 Cook HP for 6 min and QR pressure.
-Use 1 medium onion, 1 cup water, 0.5 cups vinegar, 1 t salt,
-0.5 t no-salt, 0.5 t ground black pepper, and 1 T Better-Than-Bouillon.
+Use 1 medium onion, 1 cup water, 1/2 cup vinegar, 1 t salt,
+1/2 t no-salt, 1/2 t ground black pepper, and 1 T Better-Than-Bouillon.

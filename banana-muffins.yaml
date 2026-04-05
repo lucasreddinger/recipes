@@ -28,7 +28,7 @@ steps:
       - amount: 1.5
         unit: c
         desc: all-purpose flour
-      - amount: 0.5
+      - amount: "1/2"
         unit: c
         desc: wheat bran
       - amount: 2
@@ -37,10 +37,10 @@ steps:
       - amount: 1
         unit: t
         desc: ground cinnamon
-      - amount: 0.5
+      - amount: "1/2"
         unit: t
         desc: baking soda
-      - amount: 0.25
+      - amount: "1/4"
         unit: t
         desc: salt
       - amount: "1/8"

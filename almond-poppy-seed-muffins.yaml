@@ -31,10 +31,10 @@ steps:
       - amount: 1
         unit: Tbsp
         desc: baking powder
-      - amount: 0.5
+      - amount: "1/2"
         unit: tsp
         desc: baking soda
-      - amount: 0.5
+      - amount: "1/2"
         unit: tsp
         desc: salt
 
@@ -44,7 +44,7 @@ steps:
       - amount: 1
         unit: stick
         desc: butter
-      - amount: 2/3
+      - amount: "2/3"
         unit: cup
         desc: sugar
 

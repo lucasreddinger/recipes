@@ -39,16 +39,16 @@ steps:
       - amount: 1
         unit: c
         desc: gochujang
-      - amount: 0.25
+      - amount: "1/4"
         unit: c
         desc: coarse gochugaru
-      - amount: 0.25
+      - amount: "1/4"
         unit: c
         desc: fine gochugaru
       - amount: 1
         unit: c
         desc: soy sauce
-      - amount: 0.33
+      - amount: "1/3"
         unit: c
         desc: mirin
       - amount: 6

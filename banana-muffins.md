@@ -28,11 +28,11 @@ Preheat the oven to 375°F. Use a non-stick muffin pan or paper cups.
 Add to a bowl and Whisk thoroughly. Stir in walnuts.
 
 - 1.5 c all-purpose flour
-- 0.5 c wheat bran
+- 1/2 c wheat bran
 - 2 t baking powder
 - 1 t ground cinnamon
-- 0.5 t baking soda
-- 0.25 t salt
+- 1/2 t baking soda
+- 1/4 t salt
 - 1/8 t ground nutmeg (optional)
 - 2/3 c chopped walnuts (optional)
 

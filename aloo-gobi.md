@@ -25,7 +25,7 @@ Saute until cumin seeds brown and mustard seeds pop.
 
 - 3 T oil
 - 1 t cumin seeds
-- ½ t black mustard seeds
+- 1/2 t black mustard seeds
 
 ### Add onions and peppers
 Add and continue saute for about 6 minutes until onions begin to brown.
@@ -42,7 +42,7 @@ Add and saute for 30 seconds.
 ### Deglaze and add potatoes
 Deglaze and mix.
 
-- ¼ c water
+- 1/4 c water
 - 1 lb potatoes, peeled, 1 inch cubes
 
 ### Pressure cook potatoes
@@ -56,7 +56,7 @@ Add florets. Sprinkle spices thereon. Cook at high pressure for 1 minute then qu
 - 1 t paprika
 - 1 t salt
 - 1 t turmeric
-- ½ t garam masala
+- 1/2 t garam masala
 - 1 t cayenne
 
 ### Finish

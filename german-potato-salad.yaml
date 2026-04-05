@@ -41,7 +41,7 @@ steps:
       - amount: 1.5
         unit: c
         desc: water
-      - amount: 0.5
+      - amount: "1/2"
         unit: c
         desc: vinegar
       - amount: 2
@@ -50,7 +50,7 @@ steps:
       - amount: 1
         unit: t
         desc: ground black pepper
-      - amount: 0.25
+      - amount: "1/4"
         unit: t
         desc: white pepper, if desired
       - amount: 2
@@ -73,7 +73,7 @@ steps:
 notes:
   - title: Variation
     desc: |
-      Peel and cut 2.5 lbs of russet potatoes into 0.5" cubes up-front.
+      Peel and cut 2.5 lbs of russet potatoes into 1/2" cubes up-front.
       Cook HP for 6 min and QR pressure.
-      Use 1 medium onion, 1 cup water, 0.5 cups vinegar, 1 t salt,
-      0.5 t no-salt, 0.5 t ground black pepper, and 1 T Better-Than-Bouillon.
+      Use 1 medium onion, 1 cup water, 1/2 cup vinegar, 1 t salt,
+      1/2 t no-salt, 1/2 t ground black pepper, and 1 T Better-Than-Bouillon.
