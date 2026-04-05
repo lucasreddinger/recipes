@@ -17,7 +17,7 @@ categories:
 type: recipe
 ---
 
-Yield: one tray of muffins (12 standard or 6 jumbo).
+My attempt at a knock-off of a favorite muffin from a major chain in the U.S. Yield: one tray of muffins (12 standard or 6 jumbo).
 
 ## Steps
 

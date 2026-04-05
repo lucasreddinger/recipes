@@ -2,7 +2,7 @@
 title: "Banana muffins"
 date: 2026-04-05
 slug: "banana-muffins"
-draft: true
+draft: false
 tags:
   - baking
   - muffins
@@ -16,7 +16,7 @@ categories:
 type: recipe
 ---
 
-Banana muffins with wheat bran. Yield: 12 standard muffins.
+Banana muffins with wheat bran. Yield: one tray of muffins (12 standard or 6 jumbo).
 
 ## Steps
 
