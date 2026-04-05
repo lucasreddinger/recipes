@@ -1,0 +1,115 @@
+\documentclass[
+    fontsize=12pt,DIV=12,
+    letterpaper,oneside,paper=portrait
+]{scrartcl}
+
+\usepackage[charter]{mathdesign}
+\usepackage[sups,osf]{XCharter}
+\usepackage[semibold]{sourcesanspro}
+\usepackage[scaled=1.04,varqu,varl]{inconsolata}
+
+\usepackage{microtype}
+\usepackage[x11names,svgnames,dvipsnames,table]{xcolor}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{nicefrac}
+\usepackage{multirow}
+\usepackage{tabularx}
+
+%%%% METADATA  %%%% %%%% %%%% %%%%
+\newcommand{\myname}{lipidless.com}
+\newcommand{\mydate}{18~January 2025}
+\newcommand{\mytitle}{Chili, beef}
+\newcommand{\myurl}{https://www.lipidless.com/recipes/chili-beef}
+%%%% %%%% %%%% %%%% %%%% %%%% %%%%
+
+% links
+\hypersetup{
+  colorlinks=false,
+  pdfborderstyle={/S/S/W 0.5},
+  pdfborder={0 0 0.5},
+  allbordercolors={0.8 0.8 1}
+}
+
+% no section numbering
+\setcounter{secnumdepth}{0}
+
+% reduce paragraph vspace
+\KOMAoptions{parskip=half}
+
+% do not indent paragraphs
+\setlength{\parindent}{0pt}
+
+% section heading styling
+\addtokomafont{section}{\sffamily\Large}
+\addtokomafont{subsection}{\sffamily\large}
+
+% bold sans
+\newcommand{\sfbf}[1]{\textbf{\sffamily #1}}
+
+% bold sans with some spacing, like a compact paragraph
+\newcommand{\paragrcompact}[1]{\textbf{\sffamily #1}\quad}
+
+% right-aligned paragraph column for amounts
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+
+\pagestyle{empty}
+
+\begin{document}
+
+{\sffamily \textbf{\LARGE \mytitle} \hfill \mydate \hfill \href{\myurl}{\myname}}
+
+\vspace{\baselineskip}
+
+Please verify against cloud doc!
+
+\begin{center}
+\renewcommand{\arraystretch}{1.15}
+
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X
+    R{2em} @{\hspace{0.3em}}
+    l @{\hspace{0.8em}}
+    l @{}}
+\toprule
+\multirow[t]{2}{\linewidth}{Set Instant Pot to Saute on medium. Add oil. While oil heats, chop or dice onions (use food processor if desired). Once oil shimmers, add onions and saute a few minutes.}
+  & 2 & ct & med/lg yellow onions \\
+  & 2 & T & neutral oil (e.g., avocado) \\
+\midrule
+\multirow[t]{2}{\linewidth}{Mince garlic and chilis (food processor recommended). Add to pot and saute a few minutes.}
+  & 1 & head & garlic \\
+  & 6 & ct & serrano chili peppers \\
+\midrule
+\multirow[t]{5}{\linewidth}{Add to pot and saute a few minutes.\\\textit{Can substitute cayenne pepper (maybe 1--2~T?) or gochugaru (maybe 3~T?) in place of serranos.}}
+  & 4 & T & chili powder \\
+  & 2 & T & ground cumin \\
+  & 3 & T & mexican oregano \\
+  & 2 & t & sea salt \\
+  & 1 & t & ground black pepper \\
+\midrule
+\multirow[t]{2}{\linewidth}{Add to pot using hot water to deglaze and clean spoon used for bouillon.}
+  & 4 & T & beef Better-Than-Bouillon \\
+  & 10 & c & boiling water \\
+\midrule
+\multirow[t]{4}{\linewidth}{Pick out crummy beans and rinse well. Add to pot with diced tomato and tomato sauce. Stir. Lay bay leaves on top (count them so you can remove later).}
+  & 2 & lbs & beans of choice \\
+  & 14 & fl oz & diced tomato (canned or fresh) \\
+  & 14 & fl oz & tomato sauce (canned) \\
+  & 8 & ct & bay leaves \\
+\midrule
+Cancel saute. Secure lid. Switch to vent, then to seal. Cook on high pressure for 1~hour. Allow natural release for 30~minutes. Then cancel and remove lid. Pick out bay leaves.
+  &  &  &  \\
+\midrule
+Saute on high until desired consistency is reached.
+  &  &  &  \\
+\midrule
+Meanwhile, brown ground beef separately. Drain fat and add to pot.
+  & 2 & lbs & ground beef \\
+\bottomrule
+\end{tabularx}
+
+\end{center}
+
+\vspace{\baselineskip}
+
+\end{document}

@@ -1,0 +1,101 @@
+\documentclass[
+    fontsize=12pt,DIV=12,
+    letterpaper,oneside,paper=portrait
+]{scrartcl}
+
+\usepackage[charter]{mathdesign}
+\usepackage[sups,osf]{XCharter}
+\usepackage[semibold]{sourcesanspro}
+\usepackage[scaled=1.04,varqu,varl]{inconsolata}
+
+\usepackage{microtype}
+\usepackage[x11names,svgnames,dvipsnames,table]{xcolor}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{nicefrac}
+\usepackage{multirow}
+\usepackage{tabularx}
+
+%%%% METADATA  %%%% %%%% %%%% %%%%
+\newcommand{\myname}{lipidless.com}
+\newcommand{\mydate}{29~April 2024}
+\newcommand{\mytitle}{German potato salad}
+\newcommand{\myurl}{https://www.lipidless.com/recipes/german-potato-salad}
+%%%% %%%% %%%% %%%% %%%% %%%% %%%%
+
+% links
+\hypersetup{
+  colorlinks=false,
+  pdfborderstyle={/S/S/W 0.5},
+  pdfborder={0 0 0.5},
+  allbordercolors={0.8 0.8 1}
+}
+
+% no section numbering
+\setcounter{secnumdepth}{0}
+
+% reduce paragraph vspace
+\KOMAoptions{parskip=half}
+
+% do not indent paragraphs
+\setlength{\parindent}{0pt}
+
+% section heading styling
+\addtokomafont{section}{\sffamily\Large}
+\addtokomafont{subsection}{\sffamily\large}
+
+% bold sans
+\newcommand{\sfbf}[1]{\textbf{\sffamily #1}}
+
+% bold sans with some spacing, like a compact paragraph
+\newcommand{\paragrcompact}[1]{\textbf{\sffamily #1}\quad}
+
+% right-aligned paragraph column for amounts
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+
+\pagestyle{empty}
+
+\begin{document}
+
+{\sffamily \textbf{\LARGE \mytitle} \hfill \mydate \hfill \href{\myurl}{\myname}}
+
+\vspace{\baselineskip}
+
+Cold potato salad using mustard and vinegar (no mayonnaise). Potatoes freeze poorly, so this is best kept refrigerated.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.15}
+
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X
+    R{2em} @{\hspace{0.3em}}
+    l @{\hspace{0.8em}}
+    l @{}}
+\toprule
+Scrub and rinse.
+  & 5 & lbs & medium russet potatoes \\
+\midrule
+Add 1~cup of water to the Instant Pot. Insert a metal trivet to keep the potatoes above the water. Stack potatoes above the water level. Cook on high pressure for 16~minutes. Allow 10~minutes of natural pressure release.
+  & 1 & c & water \\
+\midrule
+\multirow[t]{8}{\linewidth}{In a stovetop pot, bring to a boil over medium heat. Once at a rolling boil, remove from heat.}
+  & 2 &  & chopped yellow onions \\
+  & 1.5 & c & water \\
+  & \nicefrac{1}{2} & c & vinegar \\
+  & 2 & t & sea salt \\
+  & 1 & t & ground black pepper \\
+  & \nicefrac{1}{4} & t & white pepper, if desired \\
+  & 2 & T & Alstertor Dusseldorf-style mustard \\
+  & 2 & T & beef or veg Better-Than-Bouillon \\
+\midrule
+\multirow[t]{2}{\linewidth}{When cool enough to handle, peel potatoes. Cut off and discard any brown spots. Chop into 3/4`` to 1'' cubes. Collect potato cubes in a 9x12" glass pan, or a (preferably non-metal) bowl. Pour sauce over still-hot potatoes. As they cool, occasionally mix gently. Once cooled, place in the fridge for at least 12~hours. Remove, drizzle MCT oil over potatoes, and toss. As the oil works into the sauced potatoes, it should become creamy and emulsified. If desired, garnish with minced green onions.}
+  & 0.4 & c & MCT oil \\
+  & 1 &  & green onion bunch \\
+\bottomrule
+\end{tabularx}
+
+\end{center}
+
+\vspace{\baselineskip}
+
+\end{document}
