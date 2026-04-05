@@ -104,11 +104,10 @@ steps:
         unit: lbs
         desc: ground beef
 
-notes: |
-  Cooked this exact recipe (without oregano) on 2024-01-15.
-
-  Next time, consider: 
-  - 1 t paprika  
-  - 2 T brown sugar  
-  - 1 t cacao powder
-
+notes:
+  - title: "Notes from 2024-01-15"
+    desc: |
+      I made this without oregano. Next time, consider:
+        - 1 t paprika
+        - 2 T brown sugar
+        - 1 t cacao powder
