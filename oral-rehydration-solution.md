@@ -12,7 +12,7 @@ categories:
 type: recipe
 ---
 
-Low-osmolatiry is strongly recommended for beginners.
+Low-osmolarity is strongly recommended for beginners.
 
 ## Ingredients
 
