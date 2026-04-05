@@ -1,3 +1,5 @@
+# recipe_generate.py
+
 import yaml
 import sys
 import os
@@ -35,10 +37,23 @@ class InlineLatexRenderer(mistune.HTMLRenderer):
         return r'\texttt{%s}' % text
 
     def linebreak(self):
-        return r"\\" 
+        return r"\\"
 
     def paragraph(self, text):
         return text
+
+    def list(self, text, ordered, **attrs):
+        env = "enumerate" if ordered else "itemize"
+        return "\n\\begin{%s}\n%s\\end{%s}\n" % (env, text, env)
+
+    def list_item(self, text):
+        return "\\item %s\n" % text
+
+    def block_html(self, html):
+        return ""
+
+    def inline_html(self, html):
+        return ""
 
 md_inline_to_latex = mistune.create_markdown(renderer=InlineLatexRenderer())
 
@@ -92,6 +107,27 @@ def norm(v):
         return ""
     return str(v).strip()
 
+def normalize_notes(v):
+    if not v:
+        return []
+
+    if isinstance(v, str):
+        v = v.strip()
+        return [{"title": "Notes", "desc": v}] if v else []
+
+    notes = []
+    for note in v:
+        if not isinstance(note, dict):
+            continue
+        title = norm(note.get("title"))
+        desc = norm(note.get("desc"))
+        if title or desc:
+            notes.append({
+                "title": title,
+                "desc": desc,
+            })
+    return notes
+
 ###############################################################################
 # determine input file(s)
 ###############################################################################
@@ -129,6 +165,7 @@ for input_yaml in yaml_files:
         data_raw = yaml.safe_load(f)
 
     raw_date = data_raw.get("date", "")
+    notes = normalize_notes(data_raw.get("notes", []))
     steps = data_raw.get("steps", []) or []
     groups = data_raw.get("groups", []) or []
 
@@ -151,6 +188,13 @@ for input_yaml in yaml_files:
     data_tex = copy.deepcopy(data_raw)
     data_tex["date"] = format_date(data_tex.get("date", ""))
     data_tex["desc"] = typographic(data_tex.get("desc", ""))
+    data_tex["notes"] = [
+        {
+            "title": typographic(note.get("title", "")),
+            "desc": typographic(note.get("desc", "")),
+        }
+        for note in notes
+    ]
 
     if style == "groups":
         for step in data_tex.get("steps", []):
@@ -283,9 +327,20 @@ for input_yaml in yaml_files:
                             md_lines.append(f"- {nice}")
                     md_lines.append("")
 
+    if notes:
+        md_lines.append("## Notes")
+        md_lines.append("")
+        for note in notes:
+            note_title = (note.get("title", "") or "").strip()
+            note_desc = (note.get("desc", "") or "").strip()
+            if note_title:
+                md_lines.append(f"### {note_title}")
+            if note_desc:
+                md_lines.append(note_desc)
+            md_lines.append("")
+
     with open(f"{base}.md", "w", encoding="utf-8") as f:
         f.write("\n".join(md_lines))
 
     print(f"wrote: {base}.tex")
     print(f"wrote: {base}.md")
-

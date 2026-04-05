@@ -1,5 +1,3 @@
-% recipe_groups.tex.j2
-
 \documentclass[
     fontsize=10pt,DIV=12,
     letterpaper,oneside,paper=portrait
@@ -85,7 +83,6 @@
 \paragrcompact{ {{- step.title -}} } {{ step.desc }}
 
 {% endfor %}
-
 {% if notes %}
 \vspace{\baselineskip}
 
@@ -96,5 +93,5 @@
 
 {% endfor %}
 {% endif %}
-
 \end{document}
+
