@@ -60,7 +60,8 @@
 
 {{ desc }}
 
-\vspace{\baselineskip}
+{% if groups %}
+\subsection*{Ingredients}
 
 % tight vertical spacing for this block only
 {\setlength{\parskip}{0.25\baselineskip}\small
@@ -76,8 +77,7 @@
 {% endfor %}
 \end{paracol}
 }
-
-\vspace{\baselineskip}
+{% endif %}
 
 {% if steps %}
 \subsection*{Steps}
@@ -88,8 +88,6 @@
 {% endfor %}
 {% endif %}
 {% if notes %}
-\vspace{\baselineskip}
-
 \subsection*{Notes}
 
 {% for note in notes %}

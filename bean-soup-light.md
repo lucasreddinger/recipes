@@ -73,5 +73,7 @@ Stir in MCT oil. Mash some beans or potatoes against the side if the soup is too
 ### Serve
 Add black pepper and vinegar. *Optional:* Add arugula.
 
+## Notes
+
 ### Substitutions
 Arugula: kale or chard. Vinegar: lemon juice. Liquid aminos: soy sauce. Gochugaru: 2–3 banana peppers, chopped.

@@ -35,5 +35,7 @@ Low-osmolatiry is strongly recommended for beginners.
 ### Prepare
 Dissolve all ingredients in 1/2 cup hot water. Then add cold water to fill to 1 Liter.
 
+## Notes
+
 ### Substitutions
-I use "sodium citrate" and dextrose instead of glucose.
+I purchase _sodium citrate_ (for trisodium citrate dihydrate) and _dextrose_ instead of glucose.
