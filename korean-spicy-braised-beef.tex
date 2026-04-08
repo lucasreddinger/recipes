@@ -1,0 +1,229 @@
+\documentclass[
+    fontsize=11pt,
+    letterpaper,oneside,paper=portrait
+]{scrartcl}
+
+\usepackage[charter]{mathdesign}
+\usepackage[sups,osf]{XCharter}
+\usepackage[semibold]{sourcesanspro}
+\usepackage[scaled=1.04,varqu,varl]{inconsolata}
+
+\usepackage{microtype}
+\usepackage[x11names,svgnames,dvipsnames,table]{xcolor}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{nicefrac}
+\usepackage{longtable}
+
+\usepackage[margin=0.75in]{geometry}
+
+%%%% METADATA  %%%% %%%% %%%% %%%%
+\newcommand{\myname}{lipidless.com}
+\newcommand{\mydate}{7~April 2026}
+\newcommand{\mytitle}{Korean spicy braised beef (Maeun sogogi-jjim)}
+\newcommand{\myurl}{https://www.lipidless.com/recipes/korean-spicy-braised-beef}
+%%%% %%%% %%%% %%%% %%%% %%%% %%%%
+
+% links
+\hypersetup{
+  colorlinks=false,
+  pdfborderstyle={/S/S/W 0.5},
+  pdfborder={0 0 0.5},
+  allbordercolors={0.8 0.8 1}
+}
+
+% no section numbering
+\setcounter{secnumdepth}{0}
+
+% reduce paragraph vspace
+\KOMAoptions{parskip=half}
+
+% do not indent paragraphs
+\setlength{\parindent}{0pt}
+
+% section heading styling
+\addtokomafont{section}{\sffamily\Large}
+\addtokomafont{subsection}{\sffamily\large}
+
+% bold sans
+\newcommand{\sfbf}[1]{\textbf{\sffamily #1}}
+
+% bold sans with some spacing, like a compact paragraph
+\newcommand{\paragrcompact}[1]{\textbf{\sffamily #1}\quad}
+
+% shared recipe layout lengths
+\newlength{\recipeamountwidth}
+\newlength{\recipeunitwidth}
+\newlength{\recipedescnaturalwidth}
+\newlength{\recipeingredientdescwidth}
+\newlength{\recipeingredientblockwidth}
+\newlength{\recipestepwidth}
+\newlength{\recipecolumngap}
+\newlength{\recipeamountunitgap}
+\newlength{\recipeunitdescgap}
+\newlength{\recipewidthbuffer}
+\newcommand{\measuremaxwidth}[2]{
+
+  \settowidth{\dimen0}{#2}%
+  \ifdim\dimen0>#1\relax
+    #1=\dimen0\relax
+  \fi
+}
+
+\pagestyle{empty}
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{0pt}
+
+\begin{document}
+
+{\sffamily \textbf{\LARGE \mytitle} \hfill \mydate \hfill \href{\myurl}{\myname}}
+
+\vspace{\baselineskip}
+
+Instant-Pot Korean-style spicy beef made with a lean roast so the meat stays in chunks rather than naturally shredding. Finished with a bright red glaze.
+
+\subsection*{Steps}
+
+\renewcommand{\arraystretch}{1.15}
+\setlength{\recipecolumngap}{1.0em}
+\setlength{\recipeamountunitgap}{0.3em}
+\setlength{\recipeunitdescgap}{0.8em}
+\setlength{\recipewidthbuffer}{0.35em}
+\setlength{\recipeamountwidth}{2em}
+\setlength{\recipeunitwidth}{0pt}
+\setlength{\recipedescnaturalwidth}{0pt}
+\measuremaxwidth{\recipeamountwidth}{3.5}
+\measuremaxwidth{\recipeunitwidth}{lb}
+\measuremaxwidth{\recipedescnaturalwidth}{sirloin tip roast}
+\measuremaxwidth{\recipeamountwidth}{2}
+\measuremaxwidth{\recipeunitwidth}{tsp}
+\measuremaxwidth{\recipedescnaturalwidth}{kosher salt}
+\measuremaxwidth{\recipeamountwidth}{1}
+\measuremaxwidth{\recipeunitwidth}{tsp}
+\measuremaxwidth{\recipedescnaturalwidth}{black pepper}
+\measuremaxwidth{\recipeamountwidth}{1}
+\measuremaxwidth{\recipeunitwidth}{Tbsp}
+\measuremaxwidth{\recipedescnaturalwidth}{neutral oil}
+\measuremaxwidth{\recipeamountwidth}{2}
+\measuremaxwidth{\recipeunitwidth}{\mbox{}}
+\measuremaxwidth{\recipedescnaturalwidth}{medium onions, chopped}
+\measuremaxwidth{\recipeamountwidth}{3/4}
+\measuremaxwidth{\recipeunitwidth}{c}
+\measuremaxwidth{\recipedescnaturalwidth}{water}
+\measuremaxwidth{\recipeamountwidth}{1}
+\measuremaxwidth{\recipeunitwidth}{tsp}
+\measuremaxwidth{\recipedescnaturalwidth}{Better Than Bouillon roasted beef base}
+\measuremaxwidth{\recipeamountwidth}{1/3}
+\measuremaxwidth{\recipeunitwidth}{c}
+\measuremaxwidth{\recipedescnaturalwidth}{soy sauce}
+\measuremaxwidth{\recipeamountwidth}{2}
+\measuremaxwidth{\recipeunitwidth}{Tbsp}
+\measuremaxwidth{\recipedescnaturalwidth}{Korean cooking wine or real mirin}
+\measuremaxwidth{\recipeamountwidth}{2}
+\measuremaxwidth{\recipeunitwidth}{Tbsp}
+\measuremaxwidth{\recipedescnaturalwidth}{rice vinegar}
+\measuremaxwidth{\recipeamountwidth}{6}
+\measuremaxwidth{\recipeunitwidth}{\mbox{}}
+\measuremaxwidth{\recipedescnaturalwidth}{garlic cloves, minced}
+\measuremaxwidth{\recipeamountwidth}{1}
+\measuremaxwidth{\recipeunitwidth}{Tbsp}
+\measuremaxwidth{\recipedescnaturalwidth}{fresh ginger, grated}
+\measuremaxwidth{\recipeamountwidth}{3}
+\measuremaxwidth{\recipeunitwidth}{\mbox{}}
+\measuremaxwidth{\recipedescnaturalwidth}{Thai chiles, sliced}
+\measuremaxwidth{\recipeamountwidth}{3}
+\measuremaxwidth{\recipeunitwidth}{Tbsp}
+\measuremaxwidth{\recipedescnaturalwidth}{gochujang}
+\measuremaxwidth{\recipeamountwidth}{2}
+\measuremaxwidth{\recipeunitwidth}{Tbsp}
+\measuremaxwidth{\recipedescnaturalwidth}{coarse gochugaru}
+\measuremaxwidth{\recipeamountwidth}{1}
+\measuremaxwidth{\recipeunitwidth}{Tbsp}
+\measuremaxwidth{\recipedescnaturalwidth}{fine gochugaru}
+\measuremaxwidth{\recipeamountwidth}{2}
+\measuremaxwidth{\recipeunitwidth}{Tbsp}
+\measuremaxwidth{\recipedescnaturalwidth}{brown sugar}
+\measuremaxwidth{\recipeamountwidth}{1}
+\measuremaxwidth{\recipeunitwidth}{Tbsp}
+\measuremaxwidth{\recipedescnaturalwidth}{sesame oil}
+\measuremaxwidth{\recipeamountwidth}{1}
+\measuremaxwidth{\recipeunitwidth}{Tbsp}
+\measuremaxwidth{\recipedescnaturalwidth}{gochujang}
+\measuremaxwidth{\recipeamountwidth}{1}
+\measuremaxwidth{\recipeunitwidth}{Tbsp}
+\measuremaxwidth{\recipedescnaturalwidth}{ketchup}
+\measuremaxwidth{\recipeamountwidth}{1}
+\measuremaxwidth{\recipeunitwidth}{Tbsp}
+\measuremaxwidth{\recipedescnaturalwidth}{honey or rice syrup}
+\measuremaxwidth{\recipeamountwidth}{1}
+\measuremaxwidth{\recipeunitwidth}{tsp}
+\measuremaxwidth{\recipedescnaturalwidth}{rice vinegar}
+\measuremaxwidth{\recipeamountwidth}{1}
+\measuremaxwidth{\recipeunitwidth}{Tbsp}
+\measuremaxwidth{\recipedescnaturalwidth}{cornstarch}
+\measuremaxwidth{\recipeamountwidth}{1}
+\measuremaxwidth{\recipeunitwidth}{Tbsp}
+\measuremaxwidth{\recipedescnaturalwidth}{cold water}
+\setlength{\recipeingredientdescwidth}{\dimexpr\recipedescnaturalwidth+\recipewidthbuffer\relax}
+\setlength{\recipeingredientblockwidth}{\dimexpr\recipeamountwidth+\recipeamountunitgap+\recipeunitwidth+\recipeunitdescgap+\recipeingredientdescwidth\relax}
+\ifdim\recipeingredientblockwidth>0.48\textwidth
+  \setlength{\recipeingredientblockwidth}{0.48\textwidth}
+  \setlength{\recipeingredientdescwidth}{\dimexpr\recipeingredientblockwidth-\recipeamountwidth-\recipeamountunitgap-\recipeunitwidth-\recipeunitdescgap\relax}
+\fi
+\setlength{\recipestepwidth}{\dimexpr\textwidth-\recipecolumngap-\recipeingredientblockwidth\relax}
+
+{\setlength{\parskip}{0pt}%
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\recipestepwidth}@{\hspace{\recipecolumngap}}>{\raggedright\arraybackslash}p{\recipeingredientblockwidth}@{}}
+\toprule
+\endfirsthead
+\toprule
+\endhead
+\bottomrule
+\endfoot
+\bottomrule
+\endlastfoot
+Trim fat and cut into 1.5-inch chunks. Toss with salt and pepper, then toss in oil.  \textit{Optionally} brown beef in a cast iron pan (you could sauté it in the Instant Pot, but you risk a ``burn error''). Mix in chopped onions.& \parbox[t]{\recipeingredientblockwidth}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{\recipeamountwidth}@{\hspace{\recipeamountunitgap}}>{\raggedright\arraybackslash}p{\recipeunitwidth}@{\hspace{\recipeunitdescgap}}>{\raggedright\arraybackslash}p{\recipeingredientdescwidth}@{}}%
+3.5&lb&sirloin tip roast\\
+2&tsp&kosher salt\\
+1&tsp&black pepper\\
+1&Tbsp&neutral oil\\
+2&\mbox{}&medium onions, chopped\\
+\end{tabular}}\tabularnewline
+\midrule
+Place a trivet or silicone insert in the pot to keep the beef raised above the liquid.& \parbox[t]{\recipeingredientblockwidth}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{\recipeamountwidth}@{\hspace{\recipeamountunitgap}}>{\raggedright\arraybackslash}p{\recipeunitwidth}@{\hspace{\recipeunitdescgap}}>{\raggedright\arraybackslash}p{\recipeingredientdescwidth}@{}}%
+3/4&c&water\\
+1&tsp&Better Than Bouillon roasted beef base\\
+1/3&c&soy sauce\\
+2&Tbsp&Korean cooking wine or real mirin\\
+2&Tbsp&rice vinegar\\
+6&\mbox{}&garlic cloves, minced\\
+1&Tbsp&fresh ginger, grated\\
+3&\mbox{}&Thai chiles, sliced\\
+\end{tabular}}\tabularnewline
+\midrule
+Add the beef mixture (with the chopped onions to help keep beef chunks separated). Top with paste made with these ingredients. Cook on high pressure for 20~minutes. Allow natural release for 10~minutes, then vent remaining pressure.& \parbox[t]{\recipeingredientblockwidth}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{\recipeamountwidth}@{\hspace{\recipeamountunitgap}}>{\raggedright\arraybackslash}p{\recipeunitwidth}@{\hspace{\recipeunitdescgap}}>{\raggedright\arraybackslash}p{\recipeingredientdescwidth}@{}}%
+3&Tbsp&gochujang\\
+2&Tbsp&coarse gochugaru\\
+1&Tbsp&fine gochugaru\\
+2&Tbsp&brown sugar\\
+1&Tbsp&sesame oil\\
+\end{tabular}}\tabularnewline
+\midrule
+Remove the beef. Skim fat. If there is still a lot of liquid, pour some off before reducing. Set pot to sauté. Stir in these ingredients, then add the cornstarch+water slurry and simmer until glossy. Return the beef and toss to coat. Serve over rice with \href{https://www.lipidless.com/recipes/oi-muchim}{oi muchim}.& \parbox[t]{\recipeingredientblockwidth}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{\recipeamountwidth}@{\hspace{\recipeamountunitgap}}>{\raggedright\arraybackslash}p{\recipeunitwidth}@{\hspace{\recipeunitdescgap}}>{\raggedright\arraybackslash}p{\recipeingredientdescwidth}@{}}%
+1&Tbsp&gochujang\\
+1&Tbsp&ketchup\\
+1&Tbsp&honey or rice syrup\\
+1&tsp&rice vinegar\\
+1&Tbsp&cornstarch\\
+1&Tbsp&cold water\\
+\end{tabular}}\tabularnewline
+\end{longtable}}
+
+\subsection*{Notes}
+
+\paragrcompact{Beef cut} I like top sirloin, sirloin tip, and similar lean beef because they are relatively low in fat and stay in solid chunks. If you want beef that is more tender, use chuck roast or another fattier braising cut.
+
+\paragrcompact{Heat} Add more Thai chiles for more heat.
+
+\end{document}
