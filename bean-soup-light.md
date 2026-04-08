@@ -4,17 +4,19 @@ date: 2025-11-09
 slug: "bean-soup-light"
 draft: false
 tags:
+  - protein
+  - meal prep
+  - freezes well
+  - instant pot
+  - vegan
   - soup
   - beans
-  - vegan
-  - meal prep
-  - freezes well
-  - instant pot
 index_tags:
-  - vegan
+  - protein
   - meal prep
   - freezes well
   - instant pot
+  - vegan
 categories:
   - recipes
 type: recipe

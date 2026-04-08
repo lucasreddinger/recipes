@@ -3,12 +3,12 @@ date: 2025-01-18
 slug: chili-beef
 draft: false
 index_tags:
+  - protein
   - meal prep
   - freezes well
   - instant pot
 tags:
-  - chili
-  - beef
+  - protein
   - meal prep
   - freezes well
   - instant pot
@@ -16,7 +16,7 @@ categories:
   - recipes
 type: recipe
 
-desc: Basic chili con carne.
+desc: Basic chili _con carne_.
 
 steps:
   - title: Saute onions

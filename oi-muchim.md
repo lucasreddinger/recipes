@@ -4,12 +4,14 @@ date: 2026-04-05
 slug: "oi-muchim"
 draft: false
 tags:
-  - korean
   - cucumber
   - garnish
-index_tags:
   - korean
+  - mildly spicy
+index_tags:
   - garnish
+  - cucumber
+  - korean
 categories:
   - recipes
 type: recipe

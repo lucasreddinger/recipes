@@ -1,21 +1,20 @@
 ---
-title: "Korean spicy braised beef (Maeun sogogi-jjim)"
+title: "Korean spicy braised beef"
 date: 2026-04-07
 slug: "korean-spicy-braised-beef"
 draft: false
 tags:
-  - korean
-  - beef
-  - spicy
+  - protein
   - instant pot
+  - meal prep
+  - korean
+  - spicy
   - braise
-  - meal prep
 index_tags:
-  - korean
-  - beef
-  - spicy
+  - protein
   - instant pot
   - meal prep
+  - korean
 categories:
   - recipes
 type: recipe
