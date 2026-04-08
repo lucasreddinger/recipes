@@ -96,7 +96,7 @@
 \setlength{\recipeunitwidth}{0pt}
 \setlength{\recipedescnaturalwidth}{0pt}
 {% for step in steps %}
-{% for item in step["items"] %}
+{% for item in step.get("items", []) %}
 \measuremaxwidth{\recipeamountwidth}{ {{- item.amount if item.amount else '\\mbox{}' -}} }
 \measuremaxwidth{\recipeunitwidth}{ {{- item.unit if item.unit else '\\mbox{}' -}} }
 \measuremaxwidth{\recipedescnaturalwidth}{ {{- item.desc -}} }
@@ -121,8 +121,8 @@
 \bottomrule
 \endlastfoot
 {% for step in steps -%}
-{{- step.desc -}} & {% if step["items"] -%}\parbox[t]{\recipeingredientblockwidth}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{\recipeamountwidth}@{\hspace{\recipeamountunitgap}}>{\raggedright\arraybackslash}p{\recipeunitwidth}@{\hspace{\recipeunitdescgap}}>{\raggedright\arraybackslash}p{\recipeingredientdescwidth}@{}}%
-{% for item in step["items"] -%}
+{{- step.desc -}} & {% if step.get("items", []) -%}\parbox[t]{\recipeingredientblockwidth}{\begin{tabular}[t]{@{}>{\raggedleft\arraybackslash}p{\recipeamountwidth}@{\hspace{\recipeamountunitgap}}>{\raggedright\arraybackslash}p{\recipeunitwidth}@{\hspace{\recipeunitdescgap}}>{\raggedright\arraybackslash}p{\recipeingredientdescwidth}@{}}%
+{% for item in step.get("items", []) -%}
 {{- item.amount if item.amount else '' -}} & {{- item.unit if item.unit else '\\mbox{}' -}} & {{- item.desc -}} \\
 {% endfor -%}
 \end{tabular}}{% else -%}\mbox{}{% endif %}\tabularnewline

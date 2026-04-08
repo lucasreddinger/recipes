@@ -1,0 +1,133 @@
+title: Korean spicy braised beef (Maeun sogogi-jjim)
+date: 2026-04-07
+slug: korean-spicy-braised-beef
+draft: true
+index_tags:
+  - korean
+  - beef
+  - spicy
+  - instant pot
+  - meal prep
+tags:
+  - korean
+  - beef
+  - spicy
+  - instant pot
+  - braise
+  - meal prep
+categories:
+  - recipes
+type: recipe
+
+desc: "Instant-Pot Korean-style spicy beef made with a lean roast so the meat stays in chunks rather than naturally shredding. Built in layers: thin sauce under the meat, thick paste on top during pressure cooking, then a bright red finishing glaze."
+
+steps:
+  - title: Prep beef
+    desc: Trim silver skin and large exterior fat. Cut into 1.25–1.5 in chunks. Toss with salt, pepper, and oil.
+    items:
+      - amount: 3.5
+        unit: lb
+        desc: sirloin tip roast
+      - amount: 2
+        unit: tsp
+        desc: kosher salt
+      - amount: 1
+        unit: tsp
+        desc: black pepper
+      - amount: 1
+        unit: Tbsp
+        desc: neutral oil
+
+  - title: Brown beef (*optional*)
+    desc: Set Instant Pot to sauté. Brown the beef chunks in batches for color, then remove.
+
+  - title: Build thin sauce
+    desc: |
+      Place a trivet or silicone insert in the pot to keep the beef raised above the liquid. Add these ingredients to the Instant Pot and stir to dissolve the bouillon. This is the thin liquid that goes under the meat.
+    items:
+      - amount: "3/4"
+        unit: c
+        desc: water
+      - amount: 1
+        unit: tsp
+        desc: Better Than Bouillon roasted beef base
+      - amount: "1/3"
+        unit: c
+        desc: soy sauce
+      - amount: 2
+        unit: Tbsp
+        desc: Korean cooking wine or real mirin
+      - amount: 2
+        unit: Tbsp
+        desc: rice vinegar
+      - amount: 6
+        unit: ""
+        desc: garlic cloves, minced
+      - amount: 1
+        unit: Tbsp
+        desc: fresh ginger, grated
+      - amount: 1
+        unit: ""
+        desc: small onion, sliced
+      - amount: 3
+        unit: ""
+        desc: Thai chiles, sliced
+
+  - title: Add beef and top paste
+    desc: |
+      Add the beef to the trivet or silicone insert. Spoon these ingredients over the top of the meat. Do not stir the thick paste down into the bottom liquid.
+    items:
+      - amount: 3
+        unit: Tbsp
+        desc: gochujang
+      - amount: 2
+        unit: Tbsp
+        desc: coarse gochugaru
+      - amount: 1
+        unit: Tbsp
+        desc: fine gochugaru
+      - amount: 2
+        unit: Tbsp
+        desc: brown sugar
+      - amount: 1
+        unit: Tbsp
+        desc: sesame oil
+
+  - title: Pressure cook
+    desc: Cook on high pressure for 20 minutes. Allow natural release for 10 minutes, then vent remaining pressure.
+
+  - title: Finish glaze
+    desc: |
+      Remove the beef. If there is quite a bit of liquid, skim off some fat or pour off some liquid before reducing. Set the pot to sauté. Stir in the glaze ingredients, then add the cornstarch slurry and simmer until glossy. Return the beef and toss to coat.
+    items:
+      - amount: 1
+        unit: Tbsp
+        desc: gochujang
+      - amount: 1
+        unit: Tbsp
+        desc: ketchup
+      - amount: 1
+        unit: Tbsp
+        desc: honey or rice syrup
+      - amount: 1
+        unit: tsp
+        desc: rice vinegar
+      - amount: 1
+        unit: Tbsp
+        desc: cornstarch
+      - amount: 1
+        unit: Tbsp
+        desc: cold water
+
+notes:
+  - title: Beef cut
+    desc: Top sirloin, sirloin tip, and similar cuts are recommended because they are relatively low in fat and stay in solid chunks. If you want beef that is more tender or tends to break apart, use chuck roast or another fattier braising cut.
+
+  - title: Mirin
+    desc: If using real mirin and you want less sweetness, reduce the brown sugar from 2 Tbsp to 1 Tbsp.
+
+  - title: Heat
+    desc: This is intentionally spicy. Increase Thai chiles to 4–5 for more heat.
+
+  - title: Serving
+    desc: Serve over rice with [oi muchim](https://www.lipidless.com/recipes/oi-muchim).
