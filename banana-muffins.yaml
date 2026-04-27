@@ -23,7 +23,7 @@ steps:
     items: []
 
   - title: Mix dry ingredients
-    desc: Add to a bowl and Whisk thoroughly. Stir in walnuts.
+    desc: Add to a bowl and whisk thoroughly. Stir in walnuts.
     items:
       - amount: 1.5
         unit: c
